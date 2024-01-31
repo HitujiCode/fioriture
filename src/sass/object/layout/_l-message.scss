@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.l-massage {
+  margin-top: rem(50);
+  padding: rem(50) 0;
+  @include mq("md") {
+    padding: rem(160) 0 rem(100);
+  }
+}

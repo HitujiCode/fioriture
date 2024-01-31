@@ -1,0 +1,31 @@
+@use "global" as *;
+
+.p-message {
+  background-image: url(../images/top/bg@2x.webp);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  @include mq("md") {
+    background-image: url(../images/top/bg_pc@2x.webp);
+  }
+}
+
+.p-message__inner.l-inner {
+}
+
+.p-message__wrap {
+}
+
+.p-message__title {
+}
+
+.p-message__body {
+  text-align: center;
+}
+
+.p-message__text {
+  margin-top: rem(20);
+  @include mq("md") {
+    margin-top: rem(48);
+  }
+}

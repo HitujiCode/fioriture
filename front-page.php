@@ -26,8 +26,49 @@
 
     </div>
   </div>
-
-
+  <div class="p-message l-massage">
+    <div class="p-message__inner l-inner">
+      <div class="p-message__wrap">
+        <div class="p-message__title">
+          <h2 class="c-section-title">
+            <span class="c-section-title__main">message</span><span class="c-section-title__sub">fiorituraの想い</span>
+          </h2>
+        </div>
+        <div class="p-message__body">
+          <p class="p-message__text c-text">同性の結婚だから…<br>
+            年齢を重ねてからの結婚だから…<br>
+            2回目の結婚だから…<br>
+            2.5次元推しキャラとの結婚だから…
+          </p>
+          <p class="p-message__text c-text">FIORITURAでは悩まないで。<br>
+            あなたの個性は美しい。<br>
+            大切に残したいステキなあなたの今この瞬間を。<br>
+            それぞれの想いに沿うウェディングフォトや<br class="u-mobile">
+            記念写真を。<br>
+            FIORITURAは尊い愛を永遠のフォトに創り上げる。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-about l-about">
+    <div class="p-about__inner l-inner">
+      <div class="p-about__list">
+        <ul class="p-card-list">
+          <li class="p-card-list__item">
+            <a href="#" class="p-card">
+              <div class="p-card__img">
+                <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.webp')); ?>" alt="" width="" height="" loading="lazy" />
+              </div>
+              <div class="p-card__body">
+                <p class="p-card__category">同性カップル</p>
+                <p class="p-card__title">目黒様（仮）からのご相談</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <!-- 共通 -->
 
 
@@ -110,19 +151,7 @@
       </div>
     </div>
 
-    <ul class="p-card-list">
-      <li class="p-card-list__item">
-        <a href="#" class="p-card">
-          <div class="p-card__img">
-            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.webp')); ?>" alt="" width="" height="" loading="lazy" />
-          </div>
-          <div class="p-card__body">
-            <p class="p-card__category">同性カップル</p>
-            <p class="p-card__title">目黒様（仮）からのご相談</p>
-          </div>
-        </a>
-      </li>
-    </ul>
+
 
     <ul class="p-grid-list">
       <li class="p-grid-list__item p-grid-item">
