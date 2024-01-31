@@ -73,22 +73,22 @@
         <span></span>
       </button>
       <div class="p-header__drawer js-drawer">
-        <nav class="p-header__drawer-nav">
-          <ul class="p-header__drawer-items">
-            <li class="p-header__drawer-item">
-              <a class="p-header__nav-link" href="./#works"><span>plan</span></a>
+        <nav class="p-global-nav">
+          <ul class="p-global-nav__items">
+            <li class="p-global-nav__item">
+              <a class="p-global-nav__link" href="./#works"><span>plan</span></a>
             </li>
-            <li class="p-header__drawer-item">
-              <a class="p-header__nav-link" href="./#flow"><span>case</span></a>
+            <li class="p-global-nav__item">
+              <a class="p-global-nav__link" href="./#flow"><span>case</span></a>
             </li>
-            <li class="p-header__drawer-item">
-              <a class="p-header__nav-link" href="./#profile"><span>works</span></a>
+            <li class="p-global-nav__item">
+              <a class="p-global-nav__link" href="./#profile"><span>works</span></a>
             </li>
-            <li class="p-header__drawer-item">
-              <a class="p-header__nav-link" href="./#contact" target="_blank" rel="noopener"><span>flow</span></a>
+            <li class="p-global-nav__item">
+              <a class="p-global-nav__link" href="./#contact" target="_blank" rel="noopener"><span>flow</span></a>
             </li>
           </ul>
-          <ul class="p-header__drawer-icons p-sns-icons">
+          <ul class="p-global-nav__icons p-sns-icons--white">
             <li class="p-sns-icons__item">
               <a href="" target="_blank" rel="noopener noreferrer">
                 <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/instagram.svg')); ?>"

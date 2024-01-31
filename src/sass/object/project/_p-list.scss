@@ -7,6 +7,7 @@
   @include mq(md) {
     display: flex;
     align-items: center;
+    gap: rem(40);
   }
 }
 
@@ -19,10 +20,8 @@
 .p-list__item-img {
   position: relative;
   margin-left: calc(50% - 50vw);
-  @include mq(md) {
-    margin: initial;
-    max-width: rem(860);
-    width: 100%;
+  @include mq("md") {
+    flex: 1;
   }
 }
 
@@ -31,18 +30,14 @@
   margin-left: initial;
   margin-right: calc(50% - 50vw);
   @include mq(md) {
-    margin: initial;
-    max-width: rem(860);
-    width: 100%;
   }
 }
 
 .p-list__item-img img {
   width: 100%;
-  aspect-ratio: 690/460;
+  aspect-ratio: 700/466;
   object-fit: cover;
   @include mq(md) {
-    aspect-ratio: 860/650;
   }
 }
 
@@ -75,6 +70,9 @@
 
 .p-list__item-body {
   margin-top: rem2(40);
+  @include mq("md") {
+    width: calc(440 / 960 * 100%);
+  }
 }
 
 .p-list__item-head {
@@ -85,19 +83,30 @@
 .p-list__item-head-main {
   font-size: rem2(32);
   line-height: calc(50 / 32);
+  @include mq("md") {
+    font-size: rem(24);
+    line-height: calc(38 / 24);
+  }
 }
 
 .p-list__head-sub {
   display: block;
-  font-size: rem2(24);
+  font-size: rem(12);
   line-height: calc(50 / 24);
+  @include mq("md") {
+    font-size: rem(14);
+  }
 }
 
 .p-list__item-text {
-  margin-top: rem2(32);
-  font-size: rem2(26);
+  margin-top: rem(16);
+  font-size: rem(13);
   font-weight: $medium;
   line-height: calc(50 / 26);
+  @include mq("md") {
+    font-size: rem(14);
+    line-height: calc(30 / 14);
+  }
 }
 
 .p-list__item-button {
