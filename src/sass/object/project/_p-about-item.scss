@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.p-about-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem2(48);
+}
+
+.p-about-item__head {
+  font-size: rem2(32);
+  font-weight: $semi-bold;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.p-about-item__img {
+  width: fit-content;
+}
+
+.p-about-item__img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.p-about-item__text {
+  font-size: rem2(26);
+  font-weight: $medium;
+  line-height: calc(50 / 26);
+  letter-spacing: 0.15em;
+}

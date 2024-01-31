@@ -1,0 +1,30 @@
+@use "global" as *;
+
+.p-sns-icons {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  gap: rem(20);
+  justify-content: center;
+  @include mq("md") {
+    flex-direction: initial;
+  }
+}
+
+.p-sns-icons__icon {
+  width: rem(16);
+  transition: opacity 0.3s ease;
+}
+
+.p-sns-icons__icon a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.p-sns-icons__icon img {
+  aspect-ratio: 16/16;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

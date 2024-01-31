@@ -1,0 +1,48 @@
+@use "global" as *;
+
+.c-button {
+  display: inline-block;
+  font-size: rem2(32);
+  font-weight: $semi-bold;
+  color: $white;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: rem(17);
+  background-color: $base;
+  width: 100%;
+  max-width: rem2(630);
+  text-align: center;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $black;
+  }
+  @include mq(md) {
+    font-size: rem2(16);
+    padding: rem2(16) rem2(32);
+  }
+}
+
+.c-button--blank {
+  @extend .c-button;
+  text-transform: initial;
+}
+
+.c-button--blank span {
+  padding: 0 rem2(38);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.c-button--blank span::before {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  width: rem(10);
+  height: rem(10);
+  background-image: url(../images/common/icon-blank.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}

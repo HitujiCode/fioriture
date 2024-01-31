@@ -1,0 +1,67 @@
+@use "global" as *;
+
+.p-form {
+  padding: rem(30) rem(20);
+  background-color: $beige;
+  // filter: brightness(0.95);
+}
+
+.p-form__wrap {
+}
+
+.p-form__wrap:not(:first-child) {
+  margin-top: rem(20);
+}
+
+.p-form__label {
+  font-size: rem2(26);
+  font-weight: $semi-bold;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.p-form__label label {
+  display: inline-flex;
+  gap: rem(8);
+  align-items: center;
+}
+
+.p-form__label span {
+  font-size: rem(10);
+  font-weight: $medium;
+  color: $white;
+  line-height: 1;
+  background-color: $darkgray;
+  padding: rem(4) rem(8);
+}
+
+.p-form__input {
+  margin-top: rem(12);
+}
+
+.p-form-input {
+  font-size: rem(16);
+  background-color: $white;
+  border-radius: rem(4);
+  padding: rem(12);
+}
+
+.p-form__textarea {
+  margin-top: rem(12);
+}
+
+.p-form-textarea {
+  font-size: rem(16);
+  background-color: $white;
+  border-radius: rem(4);
+  padding: rem(12);
+  height: rem2(360);
+}
+
+.p-form__submit {
+  margin-top: rem(30);
+}
+
+.p-form-submit input {
+  color: $white;
+}

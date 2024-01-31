@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.p-grid-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem2(20);
+}
+
+.p-grid-list__item {
+}
+
+.p-grid-item {
+}
+
+.p-grid-item__img {
+}
+
+.p-grid-item__img img {
+  aspect-ratio: 295/295;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
