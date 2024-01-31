@@ -1,8 +1,36 @@
 <?php get_header(); ?>
 
 <main>
+  <div class="p-fv l-fv">
+    <div class="p-fv__inner l-inner">
+      <div class="p-fv__swiper swiper js-fv-swiper">
+        <div class="p-fv__swiper-wrapper swiper-wrapper">
+          <div class="p-fv__img swiper-slide">
+            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv1@2x.webp')); ?>" alt="" width="" height="" />
+          </div>
+          <div class="p-fv__img swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2@2x.webp')); ?>" alt="" width="" height="" /></div>
+          <div class="p-fv__img swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3@2x.webp')); ?>" alt="" width="" height="" /></div>
+        </div>
+      </div>
+      <div class="p-fv__read">
+        <div class="p-fv__title">
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-title.svg')); ?>" alt="" width="" height="" />
+        </div>
+        <div class="p-fv__text">
+          <picture>
+            <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-text_pc.svg')); ?>" media="(min-width:768px)" width="" height="" />
+            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-text.svg')); ?>" alt="" width="" height="" />
+          </picture>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 
   <!-- 共通 -->
+
+
   <div class="l-inner">
     <h2 class="c-section-title">
       <span class="c-section-title__main">message</span><span class="c-section-title__sub">fiorituraの想い</span>
@@ -18,8 +46,7 @@
     <ul class="p-list">
       <li class="p-list__item">
         <div class="p-list__item-img">
-          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan-img1.webp')); ?>" alt="" width=""
-            height="" loading="lazy" />
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan-img1.webp')); ?>" alt="" width="" height="" loading="lazy" />
         </div>
         <div class="p-list__item-body">
           <h3 class="p-list__item-head"><span class="p-list__item-head-main">個々のアイデンティティを尊重し、<br>
@@ -34,8 +61,7 @@
       </li>
       <li class="p-list__item">
         <div class="p-list__item-img">
-          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan-img2.webp')); ?>" alt="" width=""
-            height="" loading="lazy" />
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan-img2.webp')); ?>" alt="" width="" height="" loading="lazy" />
         </div>
         <div class="p-list__item-body">
           <h3 class="p-list__item-head"><span class="p-list__item-head-main">かけがえのない思い出になる
@@ -88,8 +114,7 @@
       <li class="p-card-list__item">
         <a href="#" class="p-card">
           <div class="p-card__img">
-            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.webp')); ?>" alt=""
-              width="" height="" loading="lazy" />
+            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.webp')); ?>" alt="" width="" height="" loading="lazy" />
           </div>
           <div class="p-card__body">
             <p class="p-card__category">同性カップル</p>
@@ -102,8 +127,7 @@
     <ul class="p-grid-list">
       <li class="p-grid-list__item p-grid-item">
         <div class="p-grid-item__img">
-          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/instagram1.webp')); ?>" alt="" width=""
-            height="" loading="lazy" />
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/instagram1.webp')); ?>" alt="" width="" height="" loading="lazy" />
         </div>
       </li>
     </ul>
@@ -113,8 +137,7 @@
     <div class="p-about-item">
       <p class="p-about-item__head">同性カップル</p>
       <div class="p-about-item__img">
-        <img src="<?php echo esc_url(get_theme_file_uri("assets/images/top/about1.svg")); ?>" alt="" width="" height=""
-          loading="lazy" />
+        <img src="<?php echo esc_url(get_theme_file_uri("assets/images/top/about1.svg")); ?>" alt="" width="" height="" loading="lazy" />
       </div>
       <p class="p-about-item__text">男性同士、女性同士で愛し合っているカップル</p>
     </div>

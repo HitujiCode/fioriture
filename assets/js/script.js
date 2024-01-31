@@ -67,14 +67,11 @@ jQuery(function ($) {
     }, 300, "swing");
     return false;
   });
-  var swiper = new Swiper(".js-works-swiper", {
-    pagination: {
-      el: ".js-works-pagination"
-    },
+  var fvSwiper = new Swiper(".js-fv-swiper", {
     loop: true,
     clickable: true
     // autoplay: {
-    //   delay: 3000,
+    //   delay: 1000,
     // },
   });
 });
