@@ -267,6 +267,10 @@ select::-ms-expand {
 	line-height: 1.9230769231;
 }
 
+.l-about {
+	margin-top: 3.125rem;
+}
+
 .l-footer {
 	margin-top: 3.125rem;
 	padding: 3.125rem 0 0.625rem;
@@ -314,13 +318,12 @@ select::-ms-expand {
 }
 
 .p-about-item__img {
-	width: -moz-fit-content;
-	width: fit-content;
+	height: 6.25rem;
 }
 
-.p-about-item__img {
+.p-about-item__img img {
 	-o-object-fit: contain;
-	height: auto;
+	height: 100%;
 	object-fit: contain;
 	width: auto;
 }
@@ -330,6 +333,29 @@ select::-ms-expand {
 	font-weight: 500;
 	letter-spacing: 0.15em;
 	line-height: 1.9230769231;
+}
+
+.p-about__list {
+	margin-top: 1.875rem;
+}
+
+.p-about__pagination {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.p-about__pagination .swiper-pagination-bullet {
+	background-color: #5d5d5d;
+	height: 0.625rem;
+	opacity: 1;
+	width: 0.625rem;
+}
+
+.p-about__pagination .swiper-pagination-bullet-active {
+	background-color: #79c9bc;
+	height: 0.875rem;
+	width: 0.875rem;
 }
 
 .p-card {
@@ -919,6 +945,10 @@ a[href^="tel:"] {
 	letter-spacing: 0.15em;
 }
 
+.l-about {
+	margin-top: 6.25rem;
+}
+
 .l-fv {
 	margin-top: 4.875rem;
 }
@@ -937,6 +967,32 @@ a[href^="tel:"] {
 
 .l-massage {
 	padding: 10rem 0 6.25rem;
+}
+
+.p-about-item__head {
+	font-size: 1.375rem;
+}
+
+.p-about-item__text {
+	font-size: 0.875rem;
+	letter-spacing: normal;
+	letter-spacing: initial;
+}
+
+.p-about__list {
+	margin-top: 3rem;
+}
+
+.p-about__button-prev.swiper-button-prev,
+.p-about__button-next.swiper-button-next {
+	display: none;
+}
+
+.p-card-list {
+	grid-gap: 1.875rem;
+	display: grid;
+	gap: 1.875rem;
+	grid-template-columns: repeat(3, 1fr);
 }
 
 .p-footer__inner.l-inner {

@@ -50,22 +50,83 @@
       </div>
     </div>
   </div>
+  <?php
+  // aboutの情報を配列に格納
+  $aboutItems = [
+    [
+      'head' => '同性カップル',
+      'img' => 'assets/images/top/about1.svg',
+      'text' => '男性同士、女性同士で愛し合っているカップル',
+    ],
+    [
+      'head' => 'エイジングカップル',
+      'img' => 'assets/images/top/about2.svg',
+      'text' => '共に年を重ねた人生経験豊富な熟年のカップル',
+    ],
+    [
+      'head' => '再婚カップル',
+      'img' => 'assets/images/top/about3.svg',
+      'text' => '一方もしくは二人とも結婚経験があるカップル',
+    ],
+    [
+      'head' => 'ソロ',
+      'img' => 'assets/images/top/about4.svg',
+      'text' => '年齢や未婚・既婚問わず自由にウエディングフォトを希望される方',
+    ],
+    [
+      'head' => '2次元カップル',
+      'img' => 'assets/images/top/about5.svg',
+      'text' => '推しさんのうちわなどのグッズ・思い出の品と一緒に撮影を希望される方',
+    ],
+    [
+      'head' => '十三詣り',
+      'img' => 'assets/images/top/about6.svg',
+      'text' => '13歳になったお子さまの撮影を希望される方',
+    ],
+    [
+      'head' => 'コスプレ',
+      'img' => 'assets/images/top/about7.svg',
+      'text' => '推しキャラになりきって撮影を希望される方',
+    ],
+    [
+      'head' => 'ロケーション（新潟県内）',
+      'img' => 'assets/images/top/about8.svg',
+      'text' => '政令指定都市でもある新潟県の街、自然の中で撮影を希望される方',
+    ],
+    [
+      'head' => 'ドローン',
+      'img' => 'assets/images/top/about9.svg',
+      'text' => '主に商用利用向けのドローン撮影を希望される方',
+    ],
+  ];
+
+  ?>
   <div class="p-about l-about">
     <div class="p-about__inner l-inner">
-      <div class="p-about__list">
-        <ul class="p-card-list">
-          <li class="p-card-list__item">
-            <a href="#" class="p-card">
-              <div class="p-card__img">
-                <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.webp')); ?>" alt="" width="" height="" loading="lazy" />
+      <div class="p-about__title">
+        <h2 class="c-section-title">
+          <span class="c-section-title__main">about</span><span class="c-section-title__sub">対象の方々</span>
+        </h2>
+      </div>
+      <div class="p-about__list swiper js-about-swiper">
+        <ul class="p-card-list swiper-wrapper">
+          <?php foreach ($aboutItems as $item) : ?>
+            <li class="p-card-list__item swiper-slide">
+              <div class="p-about-item">
+                <p class="p-about-item__head"><?php echo esc_html($item['head']); ?></p>
+                <div class="p-about-item__img">
+                  <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
+                </div>
+                <p class="p-about-item__text"><?php echo esc_html($item['text']); ?></p>
               </div>
-              <div class="p-card__body">
-                <p class="p-card__category">同性カップル</p>
-                <p class="p-card__title">目黒様（仮）からのご相談</p>
-              </div>
-            </a>
-          </li>
+            </li>
+          <?php endforeach; ?>
         </ul>
+        <!-- ページネーション -->
+        <div class="p-about__pagination swiper-pagination"></div>
+        <!-- 前後の矢印 -->
+        <div class="p-about__button-prev swiper-button-prev"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-prev.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
+        <div class="p-about__button-next swiper-button-next"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
       </div>
     </div>
   </div>

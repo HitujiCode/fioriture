@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.p-about {
+}
+
+.p-about__inner.l-inner {
+}
+
+.p-about__list {
+  margin-top: rem(30);
+  @include mq("md") {
+    margin-top: rem(48);
+  }
+}
+
+.p-about__button-prev.swiper-button-prev,
+.p-about__button-next.swiper-button-next {
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.p-about__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-about__pagination .swiper-pagination-bullet {
+  background-color: $darkgray;
+  opacity: 1;
+  width: rem(10);
+  height: rem(10);
+}
+
+.p-about__pagination .swiper-pagination-bullet-active {
+  background-color: $base;
+  width: rem(14);
+  height: rem(14);
+}
