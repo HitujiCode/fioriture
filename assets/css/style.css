@@ -303,8 +303,13 @@ select::-ms-expand {
 	padding: 3.125rem 0;
 }
 
+.p-about__inner.l-inner {
+	padding: 0 0.625rem;
+}
+
 .p-about__list {
 	margin-top: 1.875rem;
+	padding-bottom: 1.875rem;
 }
 
 .p-about__item {
@@ -312,6 +317,7 @@ select::-ms-expand {
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
+	padding: 0 2.1875rem;
 }
 
 .p-about__item-head {
@@ -339,14 +345,13 @@ select::-ms-expand {
 	line-height: 1.9230769231;
 }
 
-.p-about__button-prev.swiper-button-next {
-	right: 0;
-}
-
 .p-about__pagination {
 	align-items: center;
+	bottom: 0;
 	display: flex;
 	justify-content: center;
+	top: auto;
+	top: initial;
 }
 
 .p-about__pagination .swiper-pagination-bullet {
@@ -360,6 +365,14 @@ select::-ms-expand {
 	background-color: #79c9bc;
 	height: 0.875rem;
 	width: 0.875rem;
+}
+
+.p-about__button-prev.swiper-button-prev {
+	left: 0;
+}
+
+.p-about__button-next.swiper-button-next {
+	right: 0;
 }
 
 .p-card {
@@ -986,6 +999,8 @@ a[href^="tel:"] {
 	gap: 1.875rem;
 	grid-template-columns: repeat(3, 1fr);
 	margin-top: 3rem;
+	padding-bottom: 0;
+	padding-bottom: initial;
 }
 
 .p-about__item-head {
@@ -996,6 +1011,10 @@ a[href^="tel:"] {
 	font-size: 0.875rem;
 	letter-spacing: normal;
 	letter-spacing: initial;
+}
+
+.p-about__pagination {
+	display: none;
 }
 
 .p-about__button-prev.swiper-button-prev,

@@ -52,75 +52,126 @@ jQuery(function ($) {
     if (bodyHeight - scrollPosition <= windowHeight + footerHeight) {
       pageTop.css({
         position: "absolute",
-        bottom: footerHeight - buttonHeightHalf + "px"
+        bottom: footerHeight - buttonHeightHalf + "px",
       });
     } else {
       pageTop.css({
         position: "fixed",
-        bottom: "20px"
+        bottom: "20px",
       });
     }
   });
   pageTop.click(function () {
-    $("body,html").animate({
-      scrollTop: 0
-    }, 300, "swing");
+    $("body,html").animate(
+      {
+        scrollTop: 0,
+      },
+      300,
+      "swing"
+    );
     return false;
   });
 
   // Fvスライダー
   var fvSwiper = new Swiper(".js-fv-swiper", {
     loop: true,
-    clickable: true
+    clickable: true,
     // autoplay: {
     //   delay: 1000,
     // },
   });
 
   // Aboutスライダー
-  var swiperSlides = document.getElementsByClassName("swiper-slide");
-  var breakPoint = 767; // ブレークポイントを設定
-  var swiper;
-  var swiperBool;
-  window.addEventListener("load", function () {
-    if (breakPoint < window.innerWidth) {
-      swiperBool = false;
-    } else {
-      createSwiper();
-      swiperBool = true;
-    }
-  }, false);
-  window.addEventListener("resize", function () {
-    if (breakPoint < window.innerWidth && swiperBool) {
-      swiper.destroy(false, true);
-      swiperBool = false;
-    } else if (breakPoint >= window.innerWidth && !swiperBool) {
-      createSwiper();
-      swiperBool = true;
-    }
-  }, false);
-  var createSwiper = function createSwiper() {
-    swiper = new Swiper(".swiper", {
-      loop: true,
-      // ループさせる
-      speed: 1500,
-      // 少しゆっくり(デフォルトは300)
-      // autoplay: {
-      //   // 自動再生
-      //   delay: 1000, // 1秒後に次のスライド
-      //   disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
-      // },
-      // ページネーション
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true // クリック可能にする
-      },
+  // var swiperSlides = document.getElementsByClassName("swiper-slide");
+  // var breakPoint = 767; // ブレークポイントを設定
+  // var swiper;
+  // var swiperBool;
+  // window.addEventListener(
+  //   "load",
+  //   function () {
+  //     if (breakPoint < window.innerWidth) {
+  //       swiperBool = false;
+  //     } else {
+  //       createSwiper();
+  //       swiperBool = true;
+  //     }
+  //   },
+  //   false
+  // );
+  // window.addEventListener(
+  //   "resize",
+  //   function () {
+  //     if (breakPoint < window.innerWidth && swiperBool) {
+  //       swiper.destroy(false, true);
+  //       swiperBool = false;
+  //     } else if (breakPoint >= window.innerWidth && !swiperBool) {
+  //       createSwiper();
+  //       swiperBool = true;
+  //     }
+  //   },
+  //   false
+  // );
+  // var createSwiper = function createSwiper() {
+  //   aboutSwiper = new Swiper(".js-about-swiper", {
+  //     loop: true,
+  //     speed: 1500,
+  //     // centeredSlides: true,
+  //     // slidesPerView: "auto",
+  //     // autoplay: {
+  //     //   // 自動再生
+  //     //   delay: 1000, // 1秒後に次のスライド
+  //     //   disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+  //     // },
+  //     // ページネーション
+  //     pagination: {
+  //       el: ".swiper-pagination",
+  //       clickable: true, // クリック可能にする
+  //     },
 
-      // 前後の矢印
+  //     // 前後の矢印
+  //     navigation: {
+  //       nextEl: ".swiper-button-next",
+  //       prevEl: ".swiper-button-prev",
+  //     },
+  //   });
+  // };
+  var breakPoint = 767; // ブレークポイントを設定
+
+  // aboutSwiperの初期化関数
+  var aboutSwiper;
+  function initializeAboutSwiper() {
+    aboutSwiper = new Swiper(".js-about-swiper", {
+      loop: true,
+      speed: 1500,
+      pagination: {
+        el: ".js-about-swiper .swiper-pagination",
+        clickable: true,
+      },
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      }
+        nextEl: ".js-about-swiper .swiper-button-next",
+        prevEl: ".js-about-swiper .swiper-button-prev",
+      },
     });
-  };
+  }
+
+  // aboutSwiperの無効化関数
+  function destroyAboutSwiper() {
+    if (aboutSwiper !== undefined) {
+      aboutSwiper.destroy();
+      aboutSwiper = undefined;
+    }
+  }
+
+  // ウィンドウのリサイズイベントに応じてSwiperの有効/無効を切り替え
+  function handleSwiperResize() {
+    if (window.innerWidth <= breakPoint && aboutSwiper === undefined) {
+      initializeAboutSwiper();
+    } else if (window.innerWidth > breakPoint && aboutSwiper !== undefined) {
+      destroyAboutSwiper();
+    }
+  }
+
+  // イベントリスナーの設定
+  window.addEventListener("load", handleSwiperResize);
+  window.addEventListener("resize", handleSwiperResize);
 });

@@ -4,28 +4,19 @@
 }
 
 .p-about__inner.l-inner {
-  // padding: 0 rem(35);
+  padding: 0 rem(10);
 }
 
 .p-about__list {
   margin-top: rem(30);
+  padding-bottom: rem(30);
   @include mq("md") {
     margin-top: rem(48);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: rem(30);
+    padding-bottom: initial;
   }
-}
-
-.p-about__list .swiper-slide {
-  // width: calc(570 / 690 * 100%);
-  // width: 200px;
-}
-
-.p-about__list {
-}
-
-.swiper-wrapper {
 }
 
 .p-about__item {
@@ -33,6 +24,7 @@
   flex-direction: column;
   align-items: center;
   gap: rem(24);
+  padding: 0 rem(35);
 }
 
 .swiper-slide {
@@ -69,25 +61,20 @@
   }
 }
 
-.p-about__button-prev.swiper-button-prev,
-.p-about__button-next.swiper-button-next {
-  @include mq("md") {
-    display: none;
-  }
+.p-about__list {
 }
 
-.p-about__button-prev.swiper-button-prev {
-  // left: rem(-30);
-}
-
-.p-about__button-prev.swiper-button-next {
-  right: 0;
-}
+// AboutSwiper
 
 .p-about__pagination {
   display: flex;
   align-items: center;
   justify-content: center;
+  top: initial;
+  bottom: 0;
+  @include mq("md") {
+    display: none;
+  }
 }
 
 .p-about__pagination .swiper-pagination-bullet {
@@ -101,4 +88,19 @@
   background-color: $base;
   width: rem(14);
   height: rem(14);
+}
+
+.p-about__button-prev.swiper-button-prev,
+.p-about__button-next.swiper-button-next {
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.p-about__button-prev.swiper-button-prev {
+  left: 0;
+}
+
+.p-about__button-next.swiper-button-next {
+  right: 0;
 }
