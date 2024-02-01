@@ -6,20 +6,28 @@
       <div class="p-fv__swiper swiper js-fv-swiper">
         <div class="p-fv__swiper-wrapper swiper-wrapper">
           <div class="p-fv__img swiper-slide">
-            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv1@2x.webp')); ?>" alt="" width="" height="" />
+            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv1@2x.webp')); ?>" alt="" width=""
+              height="" />
           </div>
-          <div class="p-fv__img swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2@2x.webp')); ?>" alt="" width="" height="" /></div>
-          <div class="p-fv__img swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3@2x.webp')); ?>" alt="" width="" height="" /></div>
+          <div class="p-fv__img swiper-slide"><img
+              src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2@2x.webp')); ?>" alt="" width=""
+              height="" /></div>
+          <div class="p-fv__img swiper-slide"><img
+              src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3@2x.webp')); ?>" alt="" width=""
+              height="" /></div>
         </div>
       </div>
       <div class="p-fv__read">
         <div class="p-fv__title">
-          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-title.svg')); ?>" alt="" width="" height="" />
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-title.svg')); ?>" alt="" width=""
+            height="" />
         </div>
         <div class="p-fv__text">
           <picture>
-            <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-text_pc.svg')); ?>" media="(min-width:768px)" width="" height="" />
-            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-text.svg')); ?>" alt="" width="" height="" />
+            <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-text_pc.svg')); ?>"
+              media="(min-width:768px)" width="" height="" />
+            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-text.svg')); ?>" alt="" width=""
+              height="" />
           </picture>
         </div>
       </div>
@@ -108,25 +116,28 @@
           <span class="c-section-title__main">about</span><span class="c-section-title__sub">対象の方々</span>
         </h2>
       </div>
-      <div class="p-about__list swiper js-about-swiper">
-        <ul class="p-card-list swiper-wrapper">
+      <div class="p-about__list-wrap swiper js-about-swiper">
+        <ul class="p-about__list swiper-wrapper">
           <?php foreach ($aboutItems as $item) : ?>
-            <li class="p-card-list__item swiper-slide">
-              <div class="p-about-item">
-                <p class="p-about-item__head"><?php echo esc_html($item['head']); ?></p>
-                <div class="p-about-item__img">
-                  <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
-                </div>
-                <p class="p-about-item__text"><?php echo esc_html($item['text']); ?></p>
-              </div>
-            </li>
+          <li class="p-about__item swiper-slide">
+            <p class="p-about__item-head"><?php echo esc_html($item['head']); ?></p>
+            <div class="p-about__item-img">
+              <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height=""
+                loading="lazy" />
+            </div>
+            <p class="p-about__item-text"><?php echo esc_html($item['text']); ?></p>
+          </li>
           <?php endforeach; ?>
         </ul>
         <!-- ページネーション -->
         <div class="p-about__pagination swiper-pagination"></div>
         <!-- 前後の矢印 -->
-        <div class="p-about__button-prev swiper-button-prev"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-prev.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
-        <div class="p-about__button-next swiper-button-next"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
+        <div class="p-about__button-prev swiper-button-prev"><img
+            src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-prev.svg')); ?>" alt="" width=""
+            height="" loading="lazy" /></div>
+        <div class="p-about__button-next swiper-button-next"><img
+            src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="" width=""
+            height="" loading="lazy" /></div>
       </div>
     </div>
   </div>
@@ -148,7 +159,8 @@
     <ul class="p-list">
       <li class="p-list__item">
         <div class="p-list__item-img">
-          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan-img1.webp')); ?>" alt="" width="" height="" loading="lazy" />
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan-img1.webp')); ?>" alt="" width=""
+            height="" loading="lazy" />
         </div>
         <div class="p-list__item-body">
           <h3 class="p-list__item-head"><span class="p-list__item-head-main">個々のアイデンティティを尊重し、<br>
@@ -163,7 +175,8 @@
       </li>
       <li class="p-list__item">
         <div class="p-list__item-img">
-          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan-img2.webp')); ?>" alt="" width="" height="" loading="lazy" />
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan-img2.webp')); ?>" alt="" width=""
+            height="" loading="lazy" />
         </div>
         <div class="p-list__item-body">
           <h3 class="p-list__item-head"><span class="p-list__item-head-main">かけがえのない思い出になる
@@ -217,7 +230,8 @@
     <ul class="p-grid-list">
       <li class="p-grid-list__item p-grid-item">
         <div class="p-grid-item__img">
-          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/instagram1.webp')); ?>" alt="" width="" height="" loading="lazy" />
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/instagram1.webp')); ?>" alt="" width=""
+            height="" loading="lazy" />
         </div>
       </li>
     </ul>
@@ -227,7 +241,8 @@
     <div class="p-about-item">
       <p class="p-about-item__head">同性カップル</p>
       <div class="p-about-item__img">
-        <img src="<?php echo esc_url(get_theme_file_uri("assets/images/top/about1.svg")); ?>" alt="" width="" height="" loading="lazy" />
+        <img src="<?php echo esc_url(get_theme_file_uri("assets/images/top/about1.svg")); ?>" alt="" width="" height=""
+          loading="lazy" />
       </div>
       <p class="p-about-item__text">男性同士、女性同士で愛し合っているカップル</p>
     </div>

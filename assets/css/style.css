@@ -303,40 +303,44 @@ select::-ms-expand {
 	padding: 3.125rem 0;
 }
 
-.p-about-item {
+.p-about__list {
+	margin-top: 1.875rem;
+}
+
+.p-about__item {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
 }
 
-.p-about-item__head {
+.p-about__item-head {
 	font-size: 1rem;
 	font-weight: 600;
 	letter-spacing: 0.05em;
 	line-height: 1;
 }
 
-.p-about-item__img {
+.p-about__item-img {
 	height: 6.25rem;
 }
 
-.p-about-item__img img {
+.p-about__item-img img {
 	-o-object-fit: contain;
 	height: 100%;
 	object-fit: contain;
 	width: auto;
 }
 
-.p-about-item__text {
+.p-about__item-text {
 	font-size: 0.8125rem;
 	font-weight: 500;
 	letter-spacing: 0.15em;
 	line-height: 1.9230769231;
 }
 
-.p-about__list {
-	margin-top: 1.875rem;
+.p-about__button-prev.swiper-button-next {
+	right: 0;
 }
 
 .p-about__pagination {
@@ -969,30 +973,34 @@ a[href^="tel:"] {
 	padding: 10rem 0 6.25rem;
 }
 
-.p-about-item__head {
+.p-about-list {
+	grid-gap: 1.875rem;
+	display: grid;
+	gap: 1.875rem;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.p-about__list {
+	grid-gap: 1.875rem;
+	display: grid;
+	gap: 1.875rem;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: 3rem;
+}
+
+.p-about__item-head {
 	font-size: 1.375rem;
 }
 
-.p-about-item__text {
+.p-about__item-text {
 	font-size: 0.875rem;
 	letter-spacing: normal;
 	letter-spacing: initial;
 }
 
-.p-about__list {
-	margin-top: 3rem;
-}
-
 .p-about__button-prev.swiper-button-prev,
 .p-about__button-next.swiper-button-next {
 	display: none;
-}
-
-.p-card-list {
-	grid-gap: 1.875rem;
-	display: grid;
-	gap: 1.875rem;
-	grid-template-columns: repeat(3, 1fr);
 }
 
 .p-footer__inner.l-inner {

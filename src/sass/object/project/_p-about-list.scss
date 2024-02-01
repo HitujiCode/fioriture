@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.p-card-list {
+.p-about-list {
   @include mq("md") {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -8,5 +8,5 @@
   }
 }
 
-.p-card-list__item {
+.p-about-list__item {
 }

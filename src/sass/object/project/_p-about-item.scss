@@ -1,39 +1,13 @@
 @use "global" as *;
 
 .p-about-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: rem2(48);
 }
 
 .p-about-item__head {
-  font-size: rem(16);
-  font-weight: $semi-bold;
-  line-height: 1;
-  letter-spacing: 0.05em;
-  @include mq("md") {
-    font-size: rem(22);
-  }
 }
 
 .p-about-item__img {
-  height: rem(100);
 }
 
-.p-about-item__img img {
-  width: auto;
-  height: 100%;
-  object-fit: contain;
-}
-
-.p-about-item__text {
-  font-size: rem(13);
-  font-weight: $medium;
-  line-height: calc(50 / 26);
-  letter-spacing: 0.15em;
-  @include mq("md") {
-    font-size: rem(14);
-    letter-spacing: initial;
-  }
+.p-about-item__img .p-about-item__text {
 }
