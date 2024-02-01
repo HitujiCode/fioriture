@@ -70,7 +70,7 @@
 .p-list__item:nth-child(even) .p-list__item-img::before {
   content: "";
   position: absolute;
-  top: rem(-20);
+  top: rem(-18);
   left: initial;
   right: 0;
   width: rem2(606);
@@ -102,7 +102,8 @@
 }
 
 .p-list__item-head-main {
-  font-size: rem2(32);
+  display: block;
+  font-size: rem(16);
   line-height: calc(50 / 32);
   @include mq("md") {
     font-size: rem(24);
@@ -114,18 +115,17 @@
   display: block;
   font-size: rem(12);
   line-height: calc(50 / 24);
-  letter-spacing: initial;
+  letter-spacing: 0.05em;
   @include mq("md") {
     font-size: rem(14);
   }
 }
 
 .p-list__item-text {
-  margin-top: rem(16);
+  margin-top: rem(10);
   font-size: rem(13);
   font-weight: $medium;
   line-height: calc(50 / 26);
-  text-align: justify;
   @include mq("md") {
     font-size: rem(14);
     line-height: calc(30 / 14);
@@ -134,4 +134,8 @@
 
 .p-list__item-button {
   margin-top: rem(30);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(48);
+  }
 }

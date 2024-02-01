@@ -9,7 +9,7 @@
 
 .p-about__list {
   margin-top: rem(30);
-  padding-bottom: rem(30);
+  padding-bottom: rem(38);
   @include mq("md") {
     margin-top: rem(48);
     display: grid;
@@ -23,8 +23,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: rem(24);
+  gap: rem(20);
   padding: 0 rem(35);
+  @include mq("md") {
+    gap: rem(24);
+  }
 }
 
 .swiper-slide {
@@ -33,7 +36,7 @@
 .p-about__item-head {
   font-size: rem(16);
   font-weight: $semi-bold;
-  line-height: 1;
+  line-height: 2;
   letter-spacing: 0.05em;
   @include mq("md") {
     font-size: rem(22);
@@ -41,7 +44,10 @@
 }
 
 .p-about__item-img {
-  height: rem(100);
+  height: rem(90);
+  @include mq("md") {
+    height: rem(100);
+  }
 }
 
 .p-about__item-img img {
@@ -84,6 +90,11 @@
   height: rem(10);
 }
 
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 rem(6);
+}
+
 .p-about__pagination .swiper-pagination-bullet-active {
   background-color: $base;
   width: rem(14);
@@ -92,6 +103,7 @@
 
 .p-about__button-prev.swiper-button-prev,
 .p-about__button-next.swiper-button-next {
+  top: 62%;
   @include mq("md") {
     display: none;
   }

@@ -1,9 +1,6 @@
 @use "global" as *;
 
 .p-form {
-  padding: rem(30) rem(20);
-  background-color: $beige;
-  // filter: brightness(0.95);
 }
 
 .p-form__wrap {
@@ -14,10 +11,13 @@
 }
 
 .p-form__label {
-  font-size: rem2(26);
+  font-size: rem(13);
   font-weight: $semi-bold;
   line-height: 1;
   letter-spacing: 0.05em;
+  @include mq("md") {
+    font-size: rem(14);
+  }
 }
 
 .p-form__label label {
@@ -55,11 +55,18 @@
   background-color: $white;
   border-radius: rem(4);
   padding: rem(12);
-  height: rem2(360);
+  height: rem(180);
+  @include mq("md") {
+    height: rem(80);
+  }
 }
 
 .p-form__submit {
   margin-top: rem(30);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(40);
+  }
 }
 
 .p-form-submit input {

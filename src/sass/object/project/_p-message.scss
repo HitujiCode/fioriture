@@ -20,12 +20,24 @@
 }
 
 .p-message__body {
-  text-align: center;
+  margin-top: rem(30);
+  @include mq("md") {
+    text-align: center;
+  }
 }
 
 .p-message__text {
-  margin-top: rem(20);
+  font-size: rem(13);
+  font-weight: $medium;
+  line-height: calc(50 / 26);
+  text-transform: uppercase;
   @include mq("md") {
     margin-top: rem(48);
+    font-size: rem(14);
+    letter-spacing: 0.15em;
   }
+}
+
+.p-message__text:not(:first-child) {
+  margin-top: rem(24);
 }

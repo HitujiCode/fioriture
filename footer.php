@@ -14,7 +14,7 @@
           新潟市中央区本町通6番町1141番地1<br>
           ストークスビル 新潟一番館 3階313号室<br>
           Tel：090-3233-2023<br>
-          営業時間：平日 10時～18時 /<wbr>
+          営業時間：平日 10時～18時 /<br class="u-tab">
           土日祝日 10時～19時 / 定休日：月火
         </address>
         <div class="p-footer__info-text">
@@ -55,7 +55,7 @@
     </div>
     <div class="p-footer__text-wrap">
       <p class="p-footer__text">
-        This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+        This site is protected by reCAPTCHA and the Google<br class="u-mobile"> Privacy Policy and Terms of Service apply.
       </p>
       <div class="p-footer__copyright">
         <small>

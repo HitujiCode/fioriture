@@ -2,28 +2,27 @@
 
 .c-section-title {
   font-weight: $medium;
-  font-family: $en-font;
   line-height: 1;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-align: center;
-
 }
 
 .c-section-title__main {
   font-size: rem2(56);
+  font-family: $en-font;
   font-weight: $regular;
-  line-height: 1;
+  line-height: 1.3;
+  letter-spacing: 0.1em;
   @include mq("md") {
     font-size: rem(32);
   }
 }
 
 .c-section-title__sub {
-  margin-top: rem(6);
-  font-size: rem2(20);
+  font-size: rem(10);
   font-weight: $bold;
   line-height: 1;
+  letter-spacing: 0.05em;
   display: block;
   @include mq("md") {
     font-size: rem(12);

@@ -34,6 +34,9 @@
   @extend .p-sns-icons;
   filter: brightness(0) invert(1);
   gap: rem(30);
+  @include mq("md") {
+    padding-right: rem(20);
+  }
 }
 
 .p-sns-icons--white .p-sns-icons__item {

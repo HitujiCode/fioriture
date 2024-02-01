@@ -1,12 +1,9 @@
 @use "global" as *;
 
 .c-text {
-  font-size: rem2(26);
-  font-weight: $medium;
-  line-height: calc(50 / 26);
+
   @include mq("md") {
-    font-size: rem(14);
-    letter-spacing: 0.15em;
+
   }
 }
 

@@ -153,11 +153,9 @@
   background-color: $base;
   overflow-y: scroll;
   transition: opacity 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
+  display: none;
 }
 
 .p-header__drawer.is-open {
-  visibility: visible;
-  opacity: 1;
+  display: block;
 }

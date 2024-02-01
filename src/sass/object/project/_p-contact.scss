@@ -1,28 +1,28 @@
 @use "global" as *;
 
 .p-contact {
-}
-
-.l-contact {
+  padding: rem(50) 0;
+  background-color: $beige;
+  @include mq("md") {
+    padding: rem(100) 0;
+  }
 }
 
 .p-contact__inner {
 }
 
-.l-inner {
-}
-
 .p-contact__title {
 }
 
-.c-section-title {
-}
-
-.c-section-title__main {
-}
-
-.c-section-title__sub {
-}
-
 .p-contact__content {
+  margin-top: rem(30);
+  padding: rem(30) rem(20);
+  background-color: $contact;
+  position: relative;
+  @include mq("md") {
+    padding: rem(60);
+  }
+}
+
+.p-form {
 }

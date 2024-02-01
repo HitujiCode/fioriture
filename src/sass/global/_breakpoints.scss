@@ -79,3 +79,10 @@ $mediaquerys: (
     }
   }
 }
+
+.u-tab {
+  display: block;
+  @include mq("lg") {
+    display: none;
+  }
+}

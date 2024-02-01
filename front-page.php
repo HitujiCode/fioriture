@@ -35,17 +35,17 @@
           </h2>
         </div>
         <div class="p-message__body">
-          <p class="p-message__text c-text">同性の結婚だから…<br>
+          <p class="p-message__text">同性の結婚だから…<br>
             年齢を重ねてからの結婚だから…<br>
             2回目の結婚だから…<br>
             2.5次元推しキャラとの結婚だから…
           </p>
-          <p class="p-message__text c-text">FIORITURAでは悩まないで。<br>
+          <p class="p-message__text">fioritureでは悩まないで。<br>
             あなたの個性は美しい。<br>
             大切に残したいステキなあなたの今この瞬間を。<br>
             それぞれの想いに沿うウェディングフォトや<br class="u-mobile">
             記念写真を。<br>
-            FIORITURAは尊い愛を永遠のフォトに創り上げる。</p>
+            fioritureは尊い愛を永遠のフォトに創り上げる。</p>
         </div>
       </div>
     </div>
@@ -336,54 +336,39 @@
             </dd>
           </dl>
           <dl class="p-form__wrap">
-            <dt class="p-form__label"><label for="message">お問い合わせ内容<span>必須</span></label></dt>
+            <dt class="p-form__label"><label for="message">お問合せ内容<span>必須</span></label></dt>
             <dd class="p-form__textarea p-form-textarea">
               <textarea id="message" name="message"></textarea>
             </dd>
           </dl>
-          <div class="p-form__submit p-form-submit c-button">
-            <input type="submit" value="SEND">
+          <div class="p-form__submit">
+            <div class=" p-form-submit c-button">
+              <input type="submit" value="SEND">
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- 共通 -->
-
-
-  <div class="l-inner">
-    <h2 class="c-section-title">
-      <span class="c-section-title__main">message</span><span class="c-section-title__sub">fiorituraの想い</span>
-    </h2>
-    <p class="c-text">同性の結婚だから…
-      年齢を重ねてからの結婚だから…
-      2回目の結婚だから…
-      2.5次元推しキャラとの</p>
-    <p class="c-text">
-      2回目の結婚だから…
-      2.5次元推しの</p>
-
-
-    <a class="c-button--blank" href="#" target="_blank"><span>Instagram</span></a>
-
-
-
-
-
-
-
-  </div>
-  <div class="l-inner--large">
-    <div class="p-about-item">
-      <p class="p-about-item__head">同性カップル</p>
-      <div class="p-about-item__img">
-        <img src="<?php echo esc_url(get_theme_file_uri("assets/images/top/about1.svg")); ?>" alt="" width="" height="" loading="lazy" />
+  <div class="p-profile l-profile">
+    <div class="p-profile__inner l-inner">
+      <div class="p-profile__title">
+        <h2 class="c-section-title">
+          <span class="c-section-title__main">profile</span><span class="c-section-title__sub">プロフィール</span>
+        </h2>
       </div>
-      <p class="p-about-item__text">男性同士、女性同士で愛し合っているカップル</p>
+      <div class="p-profile__content">
+        <div class="p-profile__img">
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile@2x.webp')); ?>" alt="プロフィール写真" width="" height="" loading="lazy" />
+        </div>
+        <div class="p-profile__body">
+          <p class="p-profile__head">肩書が入ります。肩書が入ります。</p>
+          <p class="p-profile__name">石井 由香里</p>
+          <p class="p-profile__text">ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。</p>
+        </div>
+      </div>
     </div>
   </div>
-
-
 </main>
 
 <?php get_footer(); ?>
