@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.p-case {
+}
+
+.p-case__inner.l-inner {
+}
+
+.p-case__title {
+}
+
+.p-case__content {
+  margin-top: rem(30);
+}
+
+.p-case__button {
+  margin-top: rem(50);
+  @include mq("md") {
+    margin-top: rem(48);
+    text-align: center;
+  }
+}

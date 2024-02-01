@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.p-plan {
+  padding: rem(50) 0;
+  background-color: $beige;
+  @include mq("md") {
+    padding: rem(100) 0;
+  }
+}
+
+.p-plan__inner.l-inner {
+}
+
+.p-plan__title {
+}
+
+.p-plan__content {
+  margin-top: rem(48);
+  @include mq("md") {
+    margin-top: rem(86);
+  }
+}
+
+.p-plan__button {
+  margin-top: rem(48);
+  text-align: center;
+}
