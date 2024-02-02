@@ -7,41 +7,32 @@
         <div class="p-fv__swiper-wrapper swiper-wrapper">
           <div class="p-fv__img swiper-slide">
             <picture>
-              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv1_pc@2x.webp')); ?>" width=""
-                height="" />
-              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv1@2x.webp')); ?>" alt="" width=""
-                height="" />
+              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv1_pc@2x.webp')); ?>" width="" height="" />
+              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv1@2x.webp')); ?>" alt="" width="" height="" />
             </picture>
           </div>
           <div class="p-fv__img swiper-slide">
             <picture>
-              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2_pc@2x.webp')); ?>" width=""
-                height="" />
-              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2@2x.webp')); ?>" alt="" width=""
-                height="" />
+              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2_pc@2x.webp')); ?>" width="" height="" />
+              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2@2x.webp')); ?>" alt="" width="" height="" />
             </picture>
           </div>
           <div class="p-fv__img swiper-slide">
             <picture>
-              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3_pc@2x.webp')); ?>" width=""
-                height="" />
-              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3@2x.webp')); ?>" alt="" width=""
-                height="" />
+              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3_pc@2x.webp')); ?>" width="" height="" />
+              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3@2x.webp')); ?>" alt="" width="" height="" />
             </picture>
           </div>
         </div>
       </div>
       <div class="p-fv__read">
         <div class="p-fv__title">
-          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-title.svg')); ?>" alt="" width=""
-            height="" />
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-title.svg')); ?>" alt="" width="" height="" />
         </div>
         <div class="p-fv__text">
           <picture>
-            <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-text_pc.svg')); ?>"
-              media="(min-width:768px)" width="" height="" />
-            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-text.svg')); ?>" alt="" width=""
-              height="" />
+            <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-text_pc.svg')); ?>" media="(min-width:768px)" width="" height="" />
+            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv-text.svg')); ?>" alt="" width="" height="" />
           </picture>
         </div>
       </div>
@@ -75,56 +66,56 @@
     </div>
   </div>
   <?php
-    // aboutの情報を配列に格納
-    $aboutItems = [
-      [
-        'head' => '同性カップル',
-        'img' => 'assets/images/top/about1.svg',
-        'text' => '男性同士、女性同士で愛し合っているカップル',
-      ],
-      [
-        'head' => 'エイジングカップル',
-        'img' => 'assets/images/top/about2.svg',
-        'text' => '共に年を重ねた人生経験豊富な熟年のカップル',
-      ],
-      [
-        'head' => '再婚カップル',
-        'img' => 'assets/images/top/about3.svg',
-        'text' => '一方もしくは二人とも結婚経験があるカップル',
-      ],
-      [
-        'head' => 'ソロ',
-        'img' => 'assets/images/top/about4.svg',
-        'text' => '年齢や未婚・既婚問わず自由にウエディングフォトを希望される方',
-      ],
-      [
-        'head' => '2次元カップル',
-        'img' => 'assets/images/top/about5.svg',
-        'text' => '推しさんのうちわなどのグッズ・思い出の品と一緒に撮影を希望される方',
-      ],
-      [
-        'head' => '十三詣り',
-        'img' => 'assets/images/top/about6.svg',
-        'text' => '13歳になったお子さまの撮影を希望される方',
-      ],
-      [
-        'head' => 'コスプレ',
-        'img' => 'assets/images/top/about7.svg',
-        'text' => '推しキャラになりきって撮影を希望される方',
-      ],
-      [
-        'head' => 'ロケーション（新潟県内）',
-        'img' => 'assets/images/top/about8.svg',
-        'text' => '政令指定都市でもある新潟県の街、自然の中で撮影を希望される方',
-      ],
-      [
-        'head' => 'ドローン',
-        'img' => 'assets/images/top/about9.svg',
-        'text' => '主に商用利用向けのドローン撮影を希望される方',
-      ],
-    ];
+  // aboutの情報を配列に格納
+  $aboutItems = [
+    [
+      'head' => '同性カップル',
+      'img' => 'assets/images/top/about1.svg',
+      'text' => '男性同士、女性同士で愛し合っているカップル',
+    ],
+    [
+      'head' => 'エイジングカップル',
+      'img' => 'assets/images/top/about2.svg',
+      'text' => '共に年を重ねた人生経験豊富な熟年のカップル',
+    ],
+    [
+      'head' => '再婚カップル',
+      'img' => 'assets/images/top/about3.svg',
+      'text' => '一方もしくは二人とも結婚経験があるカップル',
+    ],
+    [
+      'head' => 'ソロ',
+      'img' => 'assets/images/top/about4.svg',
+      'text' => '年齢や未婚・既婚問わず自由にウエディングフォトを希望される方',
+    ],
+    [
+      'head' => '2次元カップル',
+      'img' => 'assets/images/top/about5.svg',
+      'text' => '推しさんのうちわなどのグッズ・思い出の品と一緒に撮影を希望される方',
+    ],
+    [
+      'head' => '十三詣り',
+      'img' => 'assets/images/top/about6.svg',
+      'text' => '13歳になったお子さまの撮影を希望される方',
+    ],
+    [
+      'head' => 'コスプレ',
+      'img' => 'assets/images/top/about7.svg',
+      'text' => '推しキャラになりきって撮影を希望される方',
+    ],
+    [
+      'head' => 'ロケーション（新潟県内）',
+      'img' => 'assets/images/top/about8.svg',
+      'text' => '政令指定都市でもある新潟県の街、自然の中で撮影を希望される方',
+    ],
+    [
+      'head' => 'ドローン',
+      'img' => 'assets/images/top/about9.svg',
+      'text' => '主に商用利用向けのドローン撮影を希望される方',
+    ],
+  ];
 
-    ?>
+  ?>
   <div class="p-about l-about">
     <div class="p-about__inner l-inner">
       <div class="p-about__title">
@@ -136,25 +127,20 @@
         <div class="p-about__list-wrap swiper js-about-swiper">
           <ul class="p-about__list swiper-wrapper">
             <?php foreach ($aboutItems as $item) : ?>
-            <li class="p-about__item swiper-slide">
-              <p class="p-about__item-head"><?php echo esc_html($item['head']); ?></p>
-              <div class="p-about__item-img">
-                <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height=""
-                  loading="lazy" />
-              </div>
-              <p class="p-about__item-text"><?php echo esc_html($item['text']); ?></p>
-            </li>
+              <li class="p-about__item swiper-slide">
+                <p class="p-about__item-head"><?php echo esc_html($item['head']); ?></p>
+                <div class="p-about__item-img">
+                  <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
+                </div>
+                <p class="p-about__item-text"><?php echo esc_html($item['text']); ?></p>
+              </li>
             <?php endforeach; ?>
           </ul>
           <!-- ページネーション -->
           <div class="p-about__pagination swiper-pagination"></div>
           <!-- 前後の矢印 -->
-          <div class="p-about__button-prev swiper-button-prev"><img
-              src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-prev.svg')); ?>" alt="" width=""
-              height="" loading="lazy" /></div>
-          <div class="p-about__button-next swiper-button-next"><img
-              src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="" width=""
-              height="" loading="lazy" /></div>
+          <div class="p-about__button-prev swiper-button-prev"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-prev.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
+          <div class="p-about__button-next swiper-button-next"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
         </div>
       </div>
     </div>
@@ -172,10 +158,8 @@
               <li class="p-list__item">
                 <div class="p-list__item-img">
                   <picture>
-                    <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan1_pc@2x.webp')); ?>"
-                      media="(min-width:768px)" width="" height="" />
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan1@2x.webp')); ?>" alt=""
-                      width="" height="" loading="lazy" />
+                    <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan1_pc@2x.webp')); ?>" media="(min-width:768px)" width="" height="" />
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan1@2x.webp')); ?>" alt="" width="" height="" loading="lazy" />
                   </picture>
                 </div>
                 <div class="p-list__item-body">
@@ -193,10 +177,8 @@
               <li class="p-list__item">
                 <div class="p-list__item-img">
                   <picture>
-                    <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan2_pc@2x.webp')); ?>"
-                      media="(min-width:768px)" width="" height="" />
-                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan2@2x.webp')); ?>" alt=""
-                      width="" height="" loading="lazy" />
+                    <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan2_pc@2x.webp')); ?>" media="(min-width:768px)" width="" height="" />
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan2@2x.webp')); ?>" alt="" width="" height="" loading="lazy" />
                   </picture>
                 </div>
                 <div class="p-list__item-body">
@@ -223,24 +205,24 @@
     </div>
 
     <?php
-        // caseの情報を配列に格納
-        $caseItems = [
-          [
-            'img' => 'assets/images/common/noimage@2x.webp',
-            'label' => '同性カップル',
-            'text' => '目黒様（仮）からのご相談',
-          ],
-          [
-            'img' => 'assets/images/common/noimage@2x.webp',
-            'label' => 'エイジングカップル',
-            'text' => '小野様（仮）からのご相談',
-          ],
-          [
-            'img' => 'assets/images/common/noimage@2x.webp',
-            'label' => '再婚カップル',
-            'text' => '稲葉様（仮）からのご相談',
-          ],
-        ] ?>
+    // instaの情報を配列に格納
+    $caseItems = [
+      [
+        'img' => 'assets/images/common/noimage@2x.webp',
+        'label' => '同性カップル',
+        'text' => '目黒様（仮）からのご相談',
+      ],
+      [
+        'img' => 'assets/images/common/noimage@2x.webp',
+        'label' => 'エイジングカップル',
+        'text' => '小野様（仮）からのご相談',
+      ],
+      [
+        'img' => 'assets/images/common/noimage@2x.webp',
+        'label' => '再婚カップル',
+        'text' => '稲葉様（仮）からのご相談',
+      ],
+    ] ?>
     <div class="p-case l-case">
       <div class="p-case__inner l-inner">
         <div class="p-case__title">
@@ -252,18 +234,17 @@
           <div class="p-case__content">
             <ul class="p-cards">
               <?php foreach ($caseItems as $item) : ?>
-              <li class="p-cards__item">
-                <a href="#" class="p-card">
-                  <div class="p-card__img">
-                    <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height=""
-                      loading="lazy" />
-                  </div>
-                  <div class="p-card__body">
-                    <p class="p-card__category"><?php echo esc_html($item['label']); ?></p>
-                    <p class="p-card__title"><?php echo esc_html($item['text']); ?></p>
-                  </div>
-                </a>
-              </li>
+                <li class="p-cards__item">
+                  <a href="#" class="p-card">
+                    <div class="p-card__img">
+                      <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
+                    </div>
+                    <div class="p-card__body">
+                      <p class="p-card__category"><?php echo esc_html($item['label']); ?></p>
+                      <p class="p-card__title"><?php echo esc_html($item['text']); ?></p>
+                    </div>
+                  </a>
+                </li>
               <?php endforeach; ?>
             </ul>
             <div class="p-case__button">
@@ -272,42 +253,42 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <?php
-          // worksの情報を配列に格納
-          $worksItems = [
-            [
-              'img' => 'assets/images/works/wokrs1@2x.webp',
-              'label' => '十三詣り',
-              'text' => '丸山様（仮）の撮影',
-            ],
-            [
-              'img' => 'assets/images/works/wokrs2@2x.webp',
-              'label' => 'ソロ',
-              'text' => '鈴木様（仮）の撮影',
-            ],
-            [
-              'img' => 'assets/images/common/noimage@2x.webp',
-              'label' => 'エイジングカップル',
-              'text' => '稲葉様（仮）の撮影',
-            ],
-          ] ?>
-      <div class="p-works l-works">
-        <div class="p-works__inner l-inner">
-          <div class="p-works__title">
-            <div class="c-title">
-              <span class="c-title__en">works</span>
-              <h2 class="c-title__ja">撮影事例</h2>
-              </d>
-            </div>
-            <div class="p-works__content">
-              <ul class="p-cards">
-                <?php foreach ($worksItems as $item) : ?>
+    <?php
+    // worksの情報を配列に格納
+    $worksItems = [
+      [
+        'img' => 'assets/images/works/wokrs1@2x.webp',
+        'label' => '十三詣り',
+        'text' => '丸山様（仮）の撮影',
+      ],
+      [
+        'img' => 'assets/images/works/wokrs2@2x.webp',
+        'label' => 'ソロ',
+        'text' => '鈴木様（仮）の撮影',
+      ],
+      [
+        'img' => 'assets/images/common/noimage@2x.webp',
+        'label' => 'エイジングカップル',
+        'text' => '稲葉様（仮）の撮影',
+      ],
+    ] ?>
+    <div class="p-works l-works">
+      <div class="p-works__inner l-inner">
+        <div class="p-works__title">
+          <div class="c-title">
+            <span class="c-title__en">works</span>
+            <h2 class="c-title__ja">撮影事例</h2>
+            </d>
+          </div>
+          <div class="p-works__content">
+            <ul class="p-cards">
+              <?php foreach ($worksItems as $item) : ?>
                 <li class="p-cards__item">
                   <a href="#" class="p-card">
                     <div class="p-card__img">
-                      <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height=""
-                        loading="lazy" />
+                      <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
                     </div>
                     <div class="p-card__body">
                       <p class="p-card__category"><?php echo esc_html($item['label']); ?></p>
@@ -315,78 +296,75 @@
                     </div>
                   </a>
                 </li>
-                <?php endforeach; ?>
-              </ul>
-              <div class="p-works__button">
-                <a class="c-button" href="#"><span>view all</span></a>
-              </div>
+              <?php endforeach; ?>
+            </ul>
+            <div class="p-works__button">
+              <a class="c-button" href="#"><span>view all</span></a>
             </div>
           </div>
         </div>
-      </div>
-
-      <?php
-            // instaの情報を配列に格納 後でプラグインで実装
-            $instaItem = [
-              [
-                'img' => 'assets/images/top/instagram@2x.webp',
-              ],
-            ] ?>
-      <div class="p-instagram l-instagram">
-        <div class="p-instagram__inner l-inner">
-          <div class="p-instagram__title">
-            <div class="c-title">
-              <span class="c-title__en">instagram</span>
-              <h2 class="c-title__ja">インスタグラム</span>
-              </h2>
-            </div>
-            <div class="p-instagram__content">
-              <ul class="p-grid-list">
-                <?php for ($i = 0; $i < 10; $i++) : ?>
-                <li class="p-grid-list__item p-grid-item">
-                  <div class="p-grid-item__img">
-                    <img src="<?php echo esc_url(get_theme_file_uri($instaItem[0]['img'])); ?>" alt="" width=""
-                      height="" loading="lazy" />
-                  </div>
-                </li>
-                <?php endfor; ?>
-              </ul>
-              <div class="p-instagram__button">
-                <a class="c-button--blank" href="#"><span>Instagram</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <?php get_template_part("parts/contact") ?>
       </div>
     </div>
-    <div class="p-profile l-profile">
-      <div class="p-profile__inner l-inner">
-        <div class="p-profile__title">
+
+    <?php
+    // instaの情報を配列に格納 後でプラグインで実装
+    $instaItem = [
+      [
+        'img' => 'assets/images/top/instagram@2x.webp',
+      ],
+    ] ?>
+    <div class="p-instagram l-instagram">
+      <div class="p-instagram__inner l-inner">
+        <div class="p-instagram__title">
           <div class="c-title">
-            <span class="c-title__en">profile</span>
-            <h2 class="c-title__ja">プロフィール</span>
+            <span class="c-title__en">instagram</span>
+            <h2 class="c-title__ja">インスタグラム</span>
             </h2>
           </div>
-          <div class="p-profile__content">
-            <div class="p-profile__img">
-              <picture>
-                <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile_pc@2x.webp')); ?>"
-                  media="(min-width:768px)" width="" height="" />
-                <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile@2x.webp')); ?>"
-                  alt="プロフィール写真" width="" height="" loading="lazy" />
-              </picture>
-            </div>
-            <div class="p-profile__body">
-              <p class="p-profile__head">肩書が入ります。肩書が入ります。</p>
-              <p class="p-profile__name">石井 由香里</p>
-              <p class="p-profile__text">
-                ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。
-              </p>
+          <div class="p-instagram__content">
+            <ul class="p-grid-list">
+              <?php for ($i = 0; $i < 10; $i++) : ?>
+                <li class="p-grid-list__item p-grid-item">
+                  <div class="p-grid-item__img">
+                    <img src="<?php echo esc_url(get_theme_file_uri($instaItem[0]['img'])); ?>" alt="" width="" height="" loading="lazy" />
+                  </div>
+                </li>
+              <?php endfor; ?>
+            </ul>
+            <div class="p-instagram__button">
+              <a class="c-button--blank" href="#"><span>Instagram</span></a>
             </div>
           </div>
         </div>
       </div>
+      <?php get_template_part("parts/contact") ?>
+    </div>
+  </div>
+  <div class="p-profile l-profile">
+    <div class="p-profile__inner l-inner">
+      <div class="p-profile__title">
+        <div class="c-title">
+          <span class="c-title__en">profile</span>
+          <h2 class="c-title__ja">プロフィール</span>
+          </h2>
+        </div>
+        <div class="p-profile__content">
+          <div class="p-profile__img">
+            <picture>
+              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile_pc@2x.webp')); ?>" media="(min-width:768px)" width="" height="" />
+              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile@2x.webp')); ?>" alt="プロフィール写真" width="" height="" loading="lazy" />
+            </picture>
+          </div>
+          <div class="p-profile__body">
+            <p class="p-profile__head">肩書が入ります。肩書が入ります。</p>
+            <p class="p-profile__name">石井 由香里</p>
+            <p class="p-profile__text">
+              ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 </main>
 
 <?php get_footer(); ?>

@@ -27,13 +27,11 @@ jQuery(function ($) {
   function openDrawer() {
     $(".js-drawer").addClass("is-open");
     $(".js-hamburger").addClass("is-open");
-    // $("html, body").css("overflow", "hidden");
     $("body").css("overflow", "clip");
   }
   function closeDrawer() {
     $(".js-drawer").removeClass("is-open");
     $(".js-hamburger").removeClass("is-open");
-    // $("html, body").css("overflow", "");
     $("body").css("overflow", "");
   }
 
@@ -104,21 +102,15 @@ jQuery(function ($) {
   var createSwiper = function createSwiper() {
     swiper = new Swiper(".swiper", {
       loop: true,
-      // ループさせる
       speed: 1500,
-      // 少しゆっくり(デフォルトは300)
-      // autoplay: {
-      //   // 自動再生
-      //   delay: 1000, // 1秒後に次のスライド
-      //   disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
-      // },
-      // ページネーション
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false
+      },
       pagination: {
         el: ".swiper-pagination",
-        clickable: true // クリック可能にする
+        clickable: true
       },
-
-      // 前後の矢印
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
