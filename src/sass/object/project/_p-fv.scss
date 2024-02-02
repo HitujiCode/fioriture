@@ -9,7 +9,7 @@
     display: flex;
     // align-items: center;
     flex-direction: row-reverse;
-    gap: rem(60);
+    gap: min(5vw, calc(60 / 960 * 100%));
   }
 }
 
@@ -34,9 +34,11 @@
   align-items: center;
   gap: rem(20);
   @include mq("md") {
-    margin-top: calc(118 / 960 * 100%);
+    // margin-top: calc(118 / 960 * 100%);
+    margin-top: calc(118 / 1400 * 100vw);
     align-items: start;
     gap: rem(40);
+    width: calc(356 / 960 * 100%);
   }
 }
 

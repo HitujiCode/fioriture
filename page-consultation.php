@@ -87,30 +87,38 @@
           <div class="c-title">
             <span class="c-title__en">case</span>
             <h2 class="c-title__ja">ご相談事例</h2>
-            </h1>
           </div>
-          <div class="p-case__content">
-            <ul class="p-cards">
-              <?php foreach ($caseItems as $item) : ?>
-                <li class="p-cards__item">
-                  <a href="#" class="p-card">
-                    <div class="p-card__img">
-                      <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
-                    </div>
-                    <div class="p-card__body">
-                      <p class="p-card__category"><?php echo esc_html($item['label']); ?></p>
-                      <p class="p-card__title"><?php echo esc_html($item['text']); ?></p>
-                    </div>
-                  </a>
-                </li>
-              <?php endforeach; ?>
-            </ul>
-            <div class="p-case__button">
-              <a class="c-button" href="#"><span>view all</span></a>
+        </div>
+        <div class="p-case__content">
+          <ul class="p-cards">
+            <?php foreach ($caseItems as $item) : ?>
+              <li class="p-cards__item">
+                <a href="#" class="p-card">
+                  <div class="p-card__img">
+                    <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
+                  </div>
+                  <div class="p-card__body">
+                    <p class="p-card__category"><?php echo esc_html($item['label']); ?></p>
+                    <p class="p-card__title"><?php echo esc_html($item['text']); ?></p>
+                  </div>
+                </a>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+          <div class="p-case__button">
+            <a class="c-button" href="#"><span>view all</span></a>
+          </div>
+          <div class="p-case__nav-buttons">
+            <div class="p-case__nav-button">
+              <a class="c-button" href="#"><span>back</span></a>
+            </div>
+            <div class="p-case__nav-button">
+              <a class="c-button" href="#"><span>top</span></a>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
     <?php get_template_part("parts/contact") ?>
 </main>
