@@ -1,6 +1,7 @@
 @use "global" as *;
 
 .p-fv {
+  overflow-x: hidden;
 }
 
 .p-fv__inner.l-inner {

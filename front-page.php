@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<main>
-  <div class="p-fv l-fv">
+<main class="l-main">
+  <div class="p-fv">
     <div class="p-fv__inner l-inner">
       <div class="p-fv__swiper swiper js-fv-swiper">
         <div class="p-fv__swiper-wrapper swiper-wrapper">
@@ -43,8 +43,8 @@
     <div class="p-message__inner l-inner">
       <div class="p-message__wrap">
         <div class="p-message__title">
-          <h2 class="c-section-title">
-            <span class="c-section-title__main">message</span><span class="c-section-title__sub">fiorituraの想い</span>
+          <h2 class="c-title">
+            <span class="c-title__main">message</span><span class="c-title__sub">fiorituraの想い</span>
           </h2>
         </div>
         <div class="p-message__body">
@@ -117,8 +117,8 @@
   <div class="p-about l-about">
     <div class="p-about__inner l-inner">
       <div class="p-about__title">
-        <h2 class="c-section-title">
-          <span class="c-section-title__main">about</span><span class="c-section-title__sub">対象の方々</span>
+        <h2 class="c-title">
+          <span class="c-title__main">about</span><span class="c-title__sub">対象の方々</span>
         </h2>
       </div>
       <div class="p-about__list-wrap swiper js-about-swiper">
@@ -145,8 +145,8 @@
   <div class="p-plan l-plan">
     <div class="p-plan__inner l-inner">
       <div class="p-plan__title">
-        <h2 class="c-section-title">
-          <span class="c-section-title__main">plan</span><span class="c-section-title__sub">プラン紹介</span>
+        <h2 class="c-title">
+          <span class="c-title__main">plan</span><span class="c-title__sub">プラン紹介</span>
         </h2>
       </div>
       <div class="p-plan__content">
@@ -220,8 +220,8 @@
   <div class="p-case l-case">
     <div class="p-case__inner l-inner">
       <div class="p-case__title">
-        <h2 class="c-section-title">
-          <span class="c-section-title__main">case</span><span class="c-section-title__sub">ご相談事例</span>
+        <h2 class="c-title">
+          <span class="c-title__main">case</span><span class="c-title__sub">ご相談事例</span>
         </h2>
       </div>
       <div class="p-case__content">
@@ -269,8 +269,8 @@
   <div class="p-works l-works">
     <div class="p-works__inner l-inner">
       <div class="p-works__title">
-        <h2 class="c-section-title">
-          <span class="c-section-title__main">works</span><span class="c-section-title__sub">撮影事例</span>
+        <h2 class="c-title">
+          <span class="c-title__main">works</span><span class="c-title__sub">撮影事例</span>
         </h2>
       </div>
       <div class="p-works__content">
@@ -306,8 +306,8 @@
   <div class="p-instagram l-instagram">
     <div class="p-instagram__inner l-inner">
       <div class="p-instagram__title">
-        <h2 class="c-section-title">
-          <span class="c-section-title__main">instagram</span><span class="c-section-title__sub">インスタグラム</span>
+        <h2 class="c-title">
+          <span class="c-title__main">instagram</span><span class="c-title__sub">インスタグラム</span>
         </h2>
       </div>
       <div class="p-instagram__content">
@@ -330,8 +330,8 @@
   <div class="p-contact l-contact">
     <div class="p-contact__inner l-inner">
       <div class="p-contact__title">
-        <h2 class="c-section-title">
-          <span class="c-section-title__main">contact</span><span class="c-section-title__sub">お問合せ</span>
+        <h2 class="c-title">
+          <span class="c-title__main">contact</span><span class="c-title__sub">お問合せ</span>
         </h2>
       </div>
       <div class="p-contact__content">
@@ -373,8 +373,8 @@
   <div class="p-profile l-profile">
     <div class="p-profile__inner l-inner">
       <div class="p-profile__title">
-        <h2 class="c-section-title">
-          <span class="c-section-title__main">profile</span><span class="c-section-title__sub">プロフィール</span>
+        <h2 class="c-title">
+          <span class="c-title__main">profile</span><span class="c-title__sub">プロフィール</span>
         </h2>
       </div>
       <div class="p-profile__content">

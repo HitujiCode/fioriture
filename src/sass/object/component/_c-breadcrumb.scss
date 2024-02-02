@@ -1,0 +1,20 @@
+@use "global" as *;
+
+.c-breadcrumb {
+  position: absolute;
+  top: rem(15);
+  left: rem(15);
+  z-index: 1;
+}
+
+.top-breadcrumb {
+}
+
+.breadcrumb {
+  display: flex;
+  gap: rem(10);
+  font-size: rem(10);
+  font-weight: $bold;
+  color: $white;
+  line-height: 1;
+}

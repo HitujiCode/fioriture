@@ -1,15 +1,17 @@
 <?php get_header(); ?>
 
-<!-- Contact -->
-<main class="l-main l-main--top">
+<main class="l-main">
 
-  <section class="p-sub-fv">
-    <div class="p-sub-fv__inner l-inner">
-      <div class="p-sub-fv__body">
-        <h1 class="p-sub-fv__title"></h1>
+  <div class="p-sub-fv">
+    <?php if (function_exists('bcn_display')) { ?>
+    <div class="p-sub-fv__breadcrumb c-breadcrumb top-breadcrumb">
+      <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+        <?php bcn_display(); ?>
       </div>
     </div>
-  </section>
+    <?php } ?>
+    <?php get_template_part("parts/fv"); ?>
+  </div>
 
 </main>
 

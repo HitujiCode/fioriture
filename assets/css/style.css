@@ -184,6 +184,22 @@ select::-ms-expand {
 	display: none;
 }
 
+.c-breadcrumb {
+	left: 0.9375rem;
+	position: absolute;
+	top: 0.9375rem;
+	z-index: 1;
+}
+
+.breadcrumb {
+	color: #fff;
+	display: flex;
+	font-size: 0.625rem;
+	font-weight: 700;
+	gap: 0.625rem;
+	line-height: 1;
+}
+
 .c-button,
 .c-button--blank {
 	background-color: #79c9bc;
@@ -242,14 +258,15 @@ select::-ms-expand {
 	width: 100%;
 }
 
-.c-section-title {
+.c-title,
+.c-title--left {
 	font-weight: 500;
 	line-height: 1;
 	text-align: center;
 	text-transform: uppercase;
 }
 
-.c-section-title__main {
+.c-title__main {
 	font-family: "Lora", sans-serif;
 	font-size: 1.75rem;
 	font-weight: 400;
@@ -257,12 +274,17 @@ select::-ms-expand {
 	line-height: 1.3;
 }
 
-.c-section-title__sub {
+.c-title__sub {
 	display: block;
 	font-size: 0.625rem;
 	font-weight: 700;
 	letter-spacing: 0.1em;
 	line-height: 1;
+}
+
+.c-title--left {
+	color: #fff;
+	text-align: left;
 }
 
 .l-about {
@@ -279,11 +301,6 @@ select::-ms-expand {
 
 .l-footer {
 	margin-top: 3.125rem;
-}
-
-.l-fv {
-	margin-top: 4.125rem;
-	overflow-x: hidden;
 }
 
 .l-inner {
@@ -306,6 +323,10 @@ select::-ms-expand {
 
 .l-instagram {
 	margin-top: 3.125rem;
+}
+
+.l-main {
+	margin-top: 4.125rem;
 }
 
 .l-massage {
@@ -623,6 +644,10 @@ select::-ms-expand {
 
 .p-form-submit input {
 	color: #fff;
+}
+
+.p-fv {
+	overflow-x: hidden;
 }
 
 .p-fv__img {
@@ -1067,6 +1092,40 @@ select::-ms-expand {
 	width: 1.5625rem;
 }
 
+.p-sub-fv {
+	height: 14.5625rem;
+	position: relative;
+}
+
+.p-sub-fv__bg {
+	position: relative;
+}
+
+.p-sub-fv__bg::before {
+	background-color: rgba(121, 201, 188, 0.3);
+	bottom: 0;
+	content: "";
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.p-sub-fv__bg img {
+	-o-object-fit: cover;
+	aspect-ratio: 750/467;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.p-sub-fv__inner.l-inner {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
 .p-works {
 	background-color: #f5f4f1;
 	padding: 3.125rem 0;
@@ -1123,11 +1182,11 @@ a[href^="tel:"] {
 	width: 10.6875rem;
 }
 
-.c-section-title__main {
+.c-title__main {
 	font-size: 2rem;
 }
 
-.c-section-title__sub {
+.c-title__sub {
 	font-size: 0.75rem;
 	margin-top: 0.125rem;
 }
@@ -1148,10 +1207,6 @@ a[href^="tel:"] {
 	margin-top: 6.25rem;
 }
 
-.l-fv {
-	margin-top: 4.875rem;
-}
-
 .l-inner {
 	max-width: 1010px;
 	padding-left: 25px;
@@ -1166,6 +1221,10 @@ a[href^="tel:"] {
 
 .l-instagram {
 	margin-top: 6.25rem;
+}
+
+.l-main {
+	margin-top: 4.875rem;
 }
 
 .l-massage {
@@ -1590,6 +1649,14 @@ a[href^="tel:"] {
 .p-sns-icons--white .p-sns-icons__item {
 	display: inline-flex;
 	width: 1rem;
+}
+
+.p-sub-fv {
+	height: 18.75rem;
+}
+
+.p-sub-fv__bg img {
+	aspect-ratio: 14/3;
 }
 
 .p-works {

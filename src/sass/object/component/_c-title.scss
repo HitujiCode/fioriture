@@ -1,13 +1,13 @@
 @use "global" as *;
 
-.c-section-title {
+.c-title {
   font-weight: $medium;
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
 }
 
-.c-section-title__main {
+.c-title__main {
   font-size: rem2(56);
   font-family: $en-font;
   font-weight: $regular;
@@ -18,7 +18,7 @@
   }
 }
 
-.c-section-title__sub {
+.c-title__sub {
   font-size: rem(10);
   font-weight: $bold;
   line-height: 1;
@@ -28,4 +28,10 @@
     margin-top: rem(2);
     font-size: rem(12);
   }
+}
+
+.c-title--left {
+  @extend .c-title;
+  text-align: left;
+  color: $white;
 }
