@@ -10,7 +10,7 @@ $pageSettings = [
     "image_pc" => "/assets/images/consultation/fv_pc@2x.webp",
     "image_sp" => "/assets/images/consultation/fv@2x.webp",
     "title_en" => "consultation service",
-    "title_ja" => "プラン紹介"
+    "title_ja" => "様々なお悩みに応えるカウンセリング"
   ],
   "photograph" => [
     "image_pc" => "/assets/images/photograph/fv_pc@2x.webp",
@@ -73,7 +73,7 @@ $title_ja = $pageSettings[$current_page]['title_ja'] ?? "タイトルが設定�
 <div class="p-sub-fv__inner l-inner">
   <div class="p-sub-fv__title">
     <h2 class="c-title--left">
-      <span class="c-title__main"><?php echo $title_en; ?></span><span class="c-title__sub"><?php echo $title_ja; ?></span>
+      <span class="c-title__en"><?php echo $title_en; ?></span><span class="c-title__ja"><?php echo $title_ja; ?></span>
     </h2>
   </div>
 </div>

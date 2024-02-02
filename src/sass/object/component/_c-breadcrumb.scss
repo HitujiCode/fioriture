@@ -18,3 +18,8 @@
   color: $white;
   line-height: 1;
 }
+
+.breadcrumb span > a {
+  position: relative;
+  text-decoration: underline;
+}

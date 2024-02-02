@@ -42,11 +42,16 @@
 }
 
 .p-list__item-img img {
+  border-radius: 0 rem(6) rem(6) 0;
   width: 100%;
   aspect-ratio: 700/466;
   object-fit: cover;
   @include mq(md) {
   }
+}
+
+.p-list__item-img:nth-child(even) img {
+  border-radius: rem(6) 0 0 rem(6);
 }
 
 .p-list__item-img::before {

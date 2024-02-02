@@ -1,6 +1,4 @@
-<?php get_template_part('parts/p-top-sns'); ?>
-
-<footer class="p-footer l-footer">
+<footer class="p-footer <?php echo is_front_page() ? 'l-footer' : ''; ?>">
   <div class="p-footer__inner l-inner">
     <div class="p-footer__wrap">
       <div class="p-footer__logo">
