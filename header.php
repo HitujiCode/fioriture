@@ -19,9 +19,9 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <header class="p-header js-header">
-    <?php if (is_front_page()) :
-    ?>
-      <div class="p-header__inner">
+    <div class="p-header__inner">
+      <?php if (is_front_page()) :
+      ?>
         <a href="./" class="p-header__logo c-logo">
           <h1 class="c-logo__img">
             <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/logo.svg')); ?>" alt="Logo" width="" height="" />
@@ -101,5 +101,5 @@
             </nav>
           </div>
         </div>
-      </div>
+    </div>
   </header>

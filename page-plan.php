@@ -2,14 +2,15 @@
 
 <!-- Contact -->
 <main class="l-main l-main--top">
-  <section class="p-contact">
-    <div class="p-contact__wrap">
-      <div class="p-contact__inner l-inner">
-        <h1 class="p-contact__title">お問い合わせ確認</h1>
-        <?php the_content(); ?>
+
+  <section class="p-sub-fv">
+    <div class="p-sub-fv__inner l-inner">
+      <div class="p-sub-fv__body">
+        <h1 class="p-sub-fv__title"></h1>
       </div>
     </div>
   </section>
+
 </main>
 
 <?php get_footer(); ?>
