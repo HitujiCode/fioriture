@@ -25,16 +25,16 @@
       <div class="p-footer__nav p-global-nav ">
         <ul class="p-global-nav__items">
           <li class="p-global-nav__item">
-            <a class="p-global-nav__link" href="./#works"><span>plan</span></a>
+            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/plan")) ?>"><span>plan</span></a>
           </li>
           <li class="p-global-nav__item">
-            <a class="p-global-nav__link" href="./#flow"><span>case</span></a>
+            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/case")) ?>"><span>case</span></a>
           </li>
           <li class="p-global-nav__item">
-            <a class="p-global-nav__link" href="./#profile"><span>works</span></a>
+            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/works")) ?>"><span>works</span></a>
           </li>
           <li class="p-global-nav__item">
-            <a class="p-global-nav__link" href="./#contact" target="_blank" rel="noopener"><span>flow</span></a>
+            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/flow")) ?>" target="_blank" rel="noopener"><span>flow</span></a>
           </li>
         </ul>
         <ul class="p-global-nav__icons p-sns-icons--white">
@@ -55,7 +55,8 @@
     </div>
     <div class="p-footer__text-wrap">
       <p class="p-footer__text">
-        This site is protected by reCAPTCHA and the Google<br class="u-mobile"> Privacy Policy and Terms of Service apply.
+        This site is protected by reCAPTCHA and the Google<br class="u-mobile"> Privacy Policy and Terms of Service
+        apply.
       </p>
       <div class="p-footer__copyright">
         <small>

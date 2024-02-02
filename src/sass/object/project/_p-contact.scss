@@ -20,6 +20,7 @@
   background-color: $contact;
   position: relative;
   @include mq("md") {
+    margin-top: rem(48);
     padding: rem(60);
   }
 }

@@ -22,9 +22,10 @@
   font-size: rem(10);
   font-weight: $bold;
   line-height: 1;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   display: block;
   @include mq("md") {
+    margin-top: rem(2);
     font-size: rem(12);
   }
 }

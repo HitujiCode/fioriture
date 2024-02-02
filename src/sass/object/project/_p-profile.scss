@@ -56,6 +56,9 @@
 
 .p-profile__head {
   letter-spacing: 0.15em;
+  @include mq("md") {
+    letter-spacing: 0.05em;
+  }
 }
 
 .p-profile__name {
@@ -65,8 +68,9 @@
   line-height: calc(50 / 32);
   letter-spacing: 0.05em;
   @include mq("md") {
+    margin-top: rem(6);
     font-size: rem(20);
-    line-height: calc(38 / 20);
+    line-height: 1;
     letter-spacing: 0.034em;
   }
 }
@@ -74,4 +78,8 @@
 .p-profile__text {
   margin-top: rem(14);
   text-align: justify;
+  @include mq("md") {
+    margin-top: rem(24);
+    letter-spacing: 0.05em;
+  }
 }

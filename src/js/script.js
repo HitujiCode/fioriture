@@ -25,12 +25,14 @@ jQuery(function ($) {
   function openDrawer() {
     $(".js-drawer").addClass("is-open");
     $(".js-hamburger").addClass("is-open");
-    $("body").addClass("is-fixed");
+    // $("html, body").css("overflow", "hidden");
+    $("body").css("overflow", "clip");
   }
   function closeDrawer() {
     $(".js-drawer").removeClass("is-open");
     $(".js-hamburger").removeClass("is-open");
-    $("body").removeClass("is-fixed");
+    // $("html, body").css("overflow", "");
+    $("body").css("overflow", "");
   }
 
   // ページトップボタン

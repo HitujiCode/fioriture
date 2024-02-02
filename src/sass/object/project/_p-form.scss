@@ -24,6 +24,9 @@
   display: inline-flex;
   gap: rem(8);
   align-items: center;
+  @include mq("md") {
+    gap: rem(10);
+  }
 }
 
 .p-form__label span {
@@ -33,17 +36,21 @@
   line-height: 1;
   background-color: $darkgray;
   padding: rem(4) rem(8);
-}
-
-.p-form__input {
-  margin-top: rem(12);
+  @include mq("md") {
+    padding: rem(5) rem(5);
+  }
 }
 
 .p-form-input {
+  margin-top: rem(12);
   font-size: rem(16);
   background-color: $white;
   border-radius: rem(4);
   padding: rem(12);
+  @include mq("md") {
+    margin-top: rem(10);
+    padding: rem(7);
+  }
 }
 
 .p-form__textarea {
@@ -59,6 +66,12 @@
   @include mq("md") {
     height: rem(80);
   }
+}
+
+.p-form-input input,
+.p-form-textarea textarea {
+  font-size: inherit;
+  width: 100%;
 }
 
 .p-form__submit {

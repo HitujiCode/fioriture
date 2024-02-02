@@ -6,10 +6,23 @@
       <div class="p-fv__swiper swiper js-fv-swiper">
         <div class="p-fv__swiper-wrapper swiper-wrapper">
           <div class="p-fv__img swiper-slide">
-            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv1@2x.webp')); ?>" alt="" width="" height="" />
+            <picture>
+              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv1_pc@2x.webp')); ?>" width="" height="" />
+              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv1@2x.webp')); ?>" alt="" width="" height="" />
+            </picture>
           </div>
-          <div class="p-fv__img swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2@2x.webp')); ?>" alt="" width="" height="" /></div>
-          <div class="p-fv__img swiper-slide"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3@2x.webp')); ?>" alt="" width="" height="" /></div>
+          <div class="p-fv__img swiper-slide">
+            <picture>
+              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2_pc@2x.webp')); ?>" width="" height="" />
+              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv2@2x.webp')); ?>" alt="" width="" height="" />
+            </picture>
+          </div>
+          <div class="p-fv__img swiper-slide">
+            <picture>
+              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3_pc@2x.webp')); ?>" width="" height="" />
+              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/fv3@2x.webp')); ?>" alt="" width="" height="" />
+            </picture>
+          </div>
         </div>
       </div>
       <div class="p-fv__read">
@@ -140,7 +153,10 @@
         <ul class="p-list">
           <li class="p-list__item">
             <div class="p-list__item-img">
-              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan-img1.webp')); ?>" alt="" width="" height="" loading="lazy" />
+              <picture>
+                <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan1_pc@2x.webp')); ?>" media="(min-width:768px)" width="" height="" />
+                <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan1@2x.webp')); ?>" alt="" width="" height="" loading="lazy" />
+              </picture>
             </div>
             <div class="p-list__item-body">
               <h3 class="p-list__item-head"><span class="p-list__item-head-main">個々のアイデンティティを尊重し、<br>
@@ -155,7 +171,10 @@
           </li>
           <li class="p-list__item">
             <div class="p-list__item-img">
-              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan-img2.webp')); ?>" alt="" width="" height="" loading="lazy" />
+              <picture>
+                <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan2_pc@2x.webp')); ?>" media="(min-width:768px)" width="" height="" />
+                <img src="<?php echo esc_url(get_theme_file_uri('assets/images/plan/plan2@2x.webp')); ?>" alt="" width="" height="" loading="lazy" />
+              </picture>
             </div>
             <div class="p-list__item-body">
               <h3 class="p-list__item-head"><span class="p-list__item-head-main">かけがえのない思い出になる
@@ -163,7 +182,8 @@
                   記念撮影</span>
                 <span class="p-list__head-sub">（ロケーションの提案、ヘアメイク、小道具貸出など）</span>
               </h3>
-              <p class="p-list__item-text">同性、年齢、未婚や既婚問わず、ご自身の「今」を残す撮影をいたします。ロケーションの提案、ヘアメイクや小道具の貸出も承っております。一緒に思い出を作りましょう！
+              <p class="p-list__item-text">
+                同性、年齢、未婚や既婚問わず、ご自身の「今」を残す撮影をいたします。ロケーションの提案、ヘアメイクや小道具の貸出も承っております。一緒に思い出を作りましょう！
               </p>
               <div class="p-list__item-button">
                 <a class="c-button" href="#">more</a>
@@ -359,12 +379,17 @@
       </div>
       <div class="p-profile__content">
         <div class="p-profile__img">
-          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile@2x.webp')); ?>" alt="プロフィール写真" width="" height="" loading="lazy" />
+          <picture>
+            <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile_pc@2x@2x.webp')); ?>" media="(min-width:768px)" width="" height="" />
+            <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile@2x.webp')); ?>" alt="プロフィール写真" width="" height="" loading="lazy" />
+          </picture>
         </div>
         <div class="p-profile__body">
           <p class="p-profile__head">肩書が入ります。肩書が入ります。</p>
           <p class="p-profile__name">石井 由香里</p>
-          <p class="p-profile__text">ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。</p>
+          <p class="p-profile__text">
+            ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。
+          </p>
         </div>
       </div>
     </div>
