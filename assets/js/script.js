@@ -179,4 +179,56 @@ jQuery(function ($) {
       }, false);
     }
   };
+
+  // flowSwiper
+  window.onload = function () {
+    // Swiper1の初期化
+    initializeSwiper(".js-flow-swiper1");
+    // Swiper2の初期化
+    initializeSwiper(".js-flow-swiper2");
+    // Swiper3の初期化
+    initializeSwiper(".js-flow-swiper3");
+  };
+  function initializeSwiper(swiperSelector) {
+    var swiperContainer = document.querySelector(swiperSelector);
+    if (swiperContainer) {
+      var swiper;
+      var swiperBool = false; // 初期状態ではSwiperは未初期化とする
+      var breakPoint = 767; // ブレークポイントを設定
+
+      var createSwiper = function createSwiper() {
+        swiper = new Swiper(swiperContainer, {
+          loop: true,
+          speed: 1500,
+          slidesPerView: "auto",
+          centeredSlides: true,
+          spaceBetween: 45,
+          pagination: {
+            el: swiperContainer.querySelector(".swiper-pagination"),
+            clickable: true
+          },
+          navigation: {
+            nextEl: swiperContainer.querySelector(".swiper-button-next"),
+            prevEl: swiperContainer.querySelector(".swiper-button-prev")
+          }
+        });
+        swiperBool = true; // Swiperが初期化されたことを示す
+      };
+
+      // ページロード時にSwiperの初期化を決定
+      if (window.innerWidth <= breakPoint) {
+        createSwiper();
+      }
+
+      // ウィンドウのリサイズ時にSwiperの初期化/破棄を決定
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > breakPoint && swiperBool) {
+          swiper.destroy(true, true);
+          swiperBool = false; // Swiperが破棄されたことを示す
+        } else if (window.innerWidth <= breakPoint && !swiperBool) {
+          createSwiper();
+        }
+      }, false);
+    }
+  }
 });

@@ -43,9 +43,9 @@
     <div class="p-message__inner l-inner">
       <div class="p-message__wrap">
         <div class="p-message__title">
-          <div class="c-title">
-            <span class="c-title__en">message</span>
-            <h2 class="c-title__ja">fiorituraの想い</span>
+          <div class="c-section-title">
+            <span class="c-section-title__en">message</span>
+            <h2 class="c-section-title__ja">fiorituraの想い</span>
             </h2>
           </div>
           <div class="p-message__body">
@@ -119,9 +119,9 @@
   <div class="p-about l-about">
     <div class="p-about__inner l-inner">
       <div class="p-about__title">
-        <div class="c-title">
-          <span class="c-title__en">about</span>
-          <h2 class="c-title__ja">対象の方々</span>
+        <div class="c-section-title">
+          <span class="c-section-title__en">about</span>
+          <h2 class="c-section-title__ja">対象の方々</span>
           </h2>
         </div>
         <div class="p-about__list-wrap swiper js-about-swiper">
@@ -148,9 +148,9 @@
     <div class="p-plan l-plan">
       <div class="p-plan__inner l-inner">
         <div class="p-plan__title">
-          <div class="c-title">
-            <span class="c-title__en">plan</span>
-            <h2 class="c-title__ja">プラン紹介</span>
+          <div class="c-section-title">
+            <span class="c-section-title__en">plan</span>
+            <h2 class="c-section-title__ja">プラン紹介</span>
             </h2>
           </div>
           <div class="p-plan__content">
@@ -226,9 +226,9 @@
     <div class="p-case l-case">
       <div class="p-case__inner l-inner">
         <div class="p-case__title">
-          <div class="c-title">
-            <span class="c-title__en">case</span>
-            <h2 class="c-title__ja">ご相談事例</h2>
+          <div class="c-section-title">
+            <span class="c-section-title__en">case</span>
+            <h2 class="c-section-title__ja">ご相談事例</h2>
             </h1>
           </div>
           <div class="p-case__content">
@@ -277,9 +277,9 @@
     <div class="p-works l-works">
       <div class="p-works__inner l-inner">
         <div class="p-works__title">
-          <div class="c-title">
-            <span class="c-title__en">works</span>
-            <h2 class="c-title__ja">撮影事例</h2>
+          <div class="c-section-title">
+            <span class="c-section-title__en">works</span>
+            <h2 class="c-section-title__ja">撮影事例</h2>
             </d>
           </div>
           <div class="p-works__content">
@@ -316,9 +316,9 @@
     <div class="p-instagram l-instagram">
       <div class="p-instagram__inner l-inner">
         <div class="p-instagram__title">
-          <div class="c-title">
-            <span class="c-title__en">instagram</span>
-            <h2 class="c-title__ja">インスタグラム</span>
+          <div class="c-section-title">
+            <span class="c-section-title__en">instagram</span>
+            <h2 class="c-section-title__ja">インスタグラム</span>
             </h2>
           </div>
           <div class="p-instagram__content">
@@ -343,9 +343,9 @@
   <div class="p-profile l-profile">
     <div class="p-profile__inner l-inner">
       <div class="p-profile__title">
-        <div class="c-title">
-          <span class="c-title__en">profile</span>
-          <h2 class="c-title__ja">プロフィール</span>
+        <div class="c-section-title">
+          <span class="c-section-title__en">profile</span>
+          <h2 class="c-section-title__ja">プロフィール</span>
           </h2>
         </div>
         <div class="p-profile__content">

@@ -1,9 +1,15 @@
 @use "global" as *;
 
+// case詳細
 .c-text {
-
+  font-size: rem(13);
+  font-weight: $medium;
+  line-height: calc(50 / 26);
+  letter-spacing: 0.15em;
   @include mq("md") {
-
+    font-size: rem(14);
+    line-height: calc(30 / 14);
+    letter-spacing: 0.05em;
   }
 }
 

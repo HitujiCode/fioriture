@@ -35,9 +35,9 @@
   <div class="p-case l-common">
     <div class="p-case__inner l-inner">
       <div class="p-case__title">
-        <div class="c-title">
-          <span class="c-title__en">case</span>
-          <h2 class="c-title__ja">ご相談事例</h2>
+        <div class="c-section-title">
+          <span class="c-section-title__en">case</span>
+          <h2 class="c-section-title__ja">ご相談事例</h2>
           </h1>
         </div>
         <div class="p-case__content">

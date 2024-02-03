@@ -1,0 +1,135 @@
+@use "global" as *;
+
+.p-case-article__top {
+  background-color: $beige;
+  padding: rem(50) 0;
+  @include mq("md") {
+    padding: rem(100) 0;
+  }
+}
+
+.p-case-article__top-inner.l-inner {
+}
+
+.p-case-article__top-conteiner {
+}
+
+.p-case-article__top-content {
+  @include mq("md") {
+    display: flex;
+    gap: rem(40);
+  }
+}
+
+.p-case-article__top-body {
+  @include mq("md") {
+    flex: 1;
+  }
+}
+
+.p-case-article__top-category {
+}
+
+.p-case-article__top-title {
+}
+
+.p-case-article__top-text {
+  margin-top: rem(16);
+  @include mq("md") {
+    margin-top: rem(24);
+  }
+}
+
+.p-case-article__top-img {
+  margin-top: rem(20);
+  @include mq("md") {
+    margin-top: initial;
+    width: calc(460 / 960 * 100%);
+  }
+}
+
+.p-case-article__top-img img {
+  aspect-ratio: 630/419;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: rem(6);
+}
+
+.p-case-article__top-comment {
+  margin-top: rem(20);
+  background-color: $white;
+  padding: rem(20);
+  @include mq("md") {
+    margin-top: rem(28);
+    padding: rem(40);
+  }
+}
+
+.p-case-artcile__bottom {
+  margin-top: rem(50);
+  overflow-x: hidden;
+  @include mq("md") {
+    margin-top: rem(100);
+  }
+}
+
+.p-case-article__bottom {
+}
+
+.p-case-article__bottom__inner.l-inner {
+}
+
+.p-case-article__bottom-list {
+}
+
+.p-case-article__bottom-item {
+  @include mq("md") {
+    display: flex;
+    gap: rem(40);
+  }
+}
+
+.p-case-article__bottom-item:not(:first-child) {
+  margin-top: rem(50);
+  @include mq("md") {
+    margin-top: rem(60);
+  }
+}
+
+.p-case-article__bottom-item:nth-child(even) {
+  @include mq("md") {
+    flex-direction: row-reverse;
+  }
+}
+
+.p-case-article__bottom-body {
+  @include mq("md") {
+    width: calc(460 / 960 * 100%);
+  }
+}
+
+.p-case-article__bottom-img {
+  margin-top: rem(30);
+  margin-right: calc(50% - 50vw);
+  @include mq("md") {
+    margin-top: initial;
+    flex: 1;
+  }
+}
+
+.p-case-article__bottom-item:nth-child(even) .p-case-article__bottom-img {
+  margin-right: initial;
+  margin-left: calc(50% - 50vw);
+}
+
+.p-case-article__bottom-img img {
+  aspect-ratio: 690/408;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: rem(6);
+}
+
+.p-case-article__bottom-buttons {
+}

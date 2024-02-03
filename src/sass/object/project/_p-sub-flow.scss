@@ -1,0 +1,80 @@
+@use "global" as *;
+
+// .p-sub-flow {
+// }
+
+// .p-sub-flow:nth-child(even) {
+//   background-color: $beige;
+// }
+
+.p-sub-flow__inner.l-inner {
+  padding: 0 rem(10);
+}
+
+.p-sub-flow__head {
+  word-break: keep-all;
+}
+
+.p-sub-flow__swiper-wrap {
+  margin-top: rem(30);
+  position: relative;
+  @include mq("md") {
+    margin-top: rem(48);
+  }
+
+  .swiper {
+    padding: 0 rem(35);
+  }
+
+  .swiper-slide {
+    width: rem(285);
+    height: auto;
+    @include mq("md") {
+      width: 100%;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin-top: initial;
+    top: 47%;
+    @include mq("md") {
+      display: none;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+
+  .swiper-pagination {
+    bottom: rem(-30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mq("md") {
+      display: none;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background-color: $darkgray;
+    opacity: 1;
+    width: rem(10);
+    height: rem(10);
+  }
+
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 rem(6);
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $base;
+    width: rem(14);
+    height: rem(14);
+  }
+}

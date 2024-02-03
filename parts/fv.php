@@ -24,11 +24,18 @@ $pageSettings = [
     "title_en" => "case",
     "title_ja" => "プラン紹介"
   ],
+  "single" => [
+    "image_pc" => "",
+    "image_sp" => "",
+    "title_en" => "CONSULTATION FROM
+MEGURO(tentative)",
+    "title_ja" => "目黒様（仮）からのご相談"
+  ],
   "flow" => [
     "image_pc" => "/assets/images/flow/fv_pc@2x.webp",
     "image_sp" => "/assets/images/flow/fv@2x.webp",
     "title_en" => "flow",
-    "title_ja" => "プラン紹介"
+    "title_ja" => "撮影の流れ"
   ],
   "works" => [
     "image_pc" => "/assets/images/works/fv_pc@2x.webp",
@@ -72,8 +79,9 @@ $title_ja = $pageSettings[$current_page]['title_ja'] ?? "タイトルが設定�
 </div>
 <div class="p-sub-fv__inner l-inner">
   <div class="p-sub-fv__title">
-    <h2 class="c-title--left">
-      <span class="c-title__en"><?php echo $title_en; ?></span><span class="c-title__ja"><?php echo $title_ja; ?></span>
-    </h2>
+    <div class="c-section-title--left">
+      <span class="c-section-title__en"><?php echo $title_en; ?></span>
+      <h2 class="c-section-title__ja"><?php echo $title_ja; ?></h2>
+    </div>
   </div>
 </div>
