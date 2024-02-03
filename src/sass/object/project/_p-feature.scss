@@ -1,23 +1,23 @@
 @use "global" as *;
 
-.p-sub-consultation {
+.p-feature {
 }
 
-.p-sub-consultation__inner.l-inner {
+.p-feature__inner.l-inner {
 }
 
-.p-sub-consultation__content {
+.p-feature__content {
   margin-top: rem(30);
   @include mq("md") {
     margin-top: rem(48);
   }
 }
 
-.p-sub-consultation__head {
+.p-feature__head {
   text-align: center;
 }
 
-.p-sub-consultation__head-main {
+.p-feature__head-main {
   font-size: rem(20);
   font-weight: $semi-bold;
   line-height: calc(60 / 40);
@@ -29,7 +29,7 @@
   }
 }
 
-.p-sub-consultation__head-sub {
+.p-feature__head-sub {
   display: block;
   font-size: rem(14);
   font-weight: $semi-bold;
@@ -40,10 +40,10 @@
   }
 }
 
-.p-sub-consultation__img {
+.p-feature__img {
 }
 
-.p-sub-consultation__img img {
+.p-feature__img img {
   aspect-ratio: 630/328;
   width: 100%;
   height: 100%;
@@ -54,7 +54,7 @@
   }
 }
 
-.p-sub-consultation__text {
+.p-feature__text {
   margin-top: rem(20);
   font-size: rem(13);
   font-weight: $medium;
@@ -66,4 +66,16 @@
     letter-spacing: 0.05em;
     text-align: center;
   }
+}
+
+.p-feature--delta {
+  @extend .p-feature;
+}
+
+.p-feature__text {
+  letter-spacing: 0.05em;
+}
+
+.p-feature__head-sub {
+  font-size: rem(13);
 }

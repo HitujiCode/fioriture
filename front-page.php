@@ -132,7 +132,7 @@
                 <div class="p-about__item-img">
                   <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
                 </div>
-                <p class="p-about__item-text"><?php echo esc_html($item['text']); ?></p>
+                <p class="p-about__item-text"><?php echo $item['text']; ?></p>
               </li>
             <?php endforeach; ?>
           </ul>

@@ -13,12 +13,12 @@ $pageSettings = [
     "title_ja" => "様々なお悩みに応えるカウンセリング"
   ],
   "photograph" => [
-    "image_pc" => "/assets/images/photograph/fv_pc@2x.webp",
-    "image_sp" => "/assets/images/photograph/fv@2x.webp",
+    "image_pc" => "/assets/images/photo/fv_pc@2x.webp",
+    "image_sp" => "/assets/images/photo/fv@2x.webp",
     "title_en" => "photograph",
     "title_ja" => "プラン紹介"
   ],
-  "case" => [
+  "home" => [
     "image_pc" => "/assets/images/case/fv_pc@2x.webp",
     "image_sp" => "/assets/images/case/fv@2x.webp",
     "title_en" => "case",
