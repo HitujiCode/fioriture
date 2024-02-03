@@ -80,6 +80,7 @@
 }
 
 .p-flow-list__item-text {
+  margin-top: rem(16);
   font-size: rem(13);
   font-weight: $medium;
   line-height: calc(50 / 26);

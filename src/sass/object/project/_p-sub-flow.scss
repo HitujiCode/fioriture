@@ -3,12 +3,16 @@
 // .p-sub-flow {
 // }
 
-// .p-sub-flow:nth-child(even) {
-//   background-color: $beige;
-// }
+.p-sub-flow:nth-of-type(even) {
+  background-color: $beige;
+  padding: rem(50) 0;
+  @include mq("md") {
+    padding: rem(100) 0;
+  }
+}
 
 .p-sub-flow__inner.l-inner {
-  padding: 0 rem(10);
+  // padding: 0 rem(10);
 }
 
 .p-sub-flow__head {
@@ -18,16 +22,20 @@
 .p-sub-flow__swiper-wrap {
   margin-top: rem(30);
   position: relative;
+  // width: fit-content;//tabでも1つだけ表示
+  // margin-inline: auto;//tabでも1つだけ表示
   @include mq("md") {
     margin-top: rem(48);
   }
 
   .swiper {
-    padding: 0 rem(35);
+    // width: rem(285);//tabでも1つだけ表示
+    // margin: 0 rem(35);
+    padding-bottom: rem(30);
   }
 
   .swiper-slide {
-    width: rem(285);
+    width: rem(285); //tabだと見切れる
     height: auto;
     @include mq("md") {
       width: 100%;
@@ -44,15 +52,15 @@
   }
 
   .swiper-button-prev {
-    left: 0;
+    left: rem(-20);
   }
 
   .swiper-button-next {
-    right: 0;
+    right: rem(-20);
   }
 
   .swiper-pagination {
-    bottom: rem(-30);
+    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,4 +85,13 @@
     width: rem(14);
     height: rem(14);
   }
+}
+
+.p-sub-flow__info {
+  margin-top: rem(30);
+}
+
+.p-sub-flow__button {
+  margin-top: rem(50);
+  text-align: center;
 }
