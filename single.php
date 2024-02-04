@@ -28,7 +28,8 @@ $post_type_label = $post_type_data->labels->name;
               <h2 class="p-case-article__top-title c-title">目黒様（仮）からのご相談</h2>
               <p class="p-case-article__top-text c-text">ここ近年で、ようやく社会にその存在を知られるようになり、最近私たちは通常の形式にこだわる必要はないけど、この先ずっと一緒でよかったね、幸せだねと互いに話ができる形をのこしたいと考えました。何が最良か？考え、まずは2人だけの写真撮影を一番にと思い相談させていただきました。費用の事、理解ある式場の有無、内容の事、撮影の事について等など不安・心配な点、最良の選択、親身に対応していただき感謝しています。</p>
             </div>
-            <div class="p-case-article__top-img"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.jpg')); ?>" alt="" width="" height="" loading="lazy" />
+            <div class="p-case-article__top-img">
+              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.jpg')); ?>" alt="" width="" height="" loading="lazy" />
             </div>
           </div>
           <div class="p-case-article__top-comment">

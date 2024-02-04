@@ -333,4 +333,44 @@ jQuery(function ($) {
     initializeFlowSwiper2();
     initializeFlowSwiper3();
   });
+
+  // modal
+  // 画像が1枚の場合
+  var options = {
+    // ESCキーで閉じる(初期値：閉じる)
+    closeWithEscape: true,
+    // スクロールで閉じる(初期値：閉じない)
+    closeOnScroll: false,
+    // 閉じるボタンの表示(初期値：表示)
+    showCloseButton: true,
+    // aタグ以外でポップアップさせる場合のオプション(初期値：href)
+    sourceAttribute: "href",
+    // キャプション(初期値：なし)
+    caption: function (trigger) {
+      return trigger.querySelector("img").getAttribute("alt");
+    },
+  };
+  var luminousTrigger = document.querySelector(".luminous");
+  if (luminousTrigger !== null) {
+    new Luminous(luminousTrigger, options);
+  }
+  // 画像が複数ある場合
+  var options = {
+    // ESCキーで閉じる(初期値：閉じる)
+    closeWithEscape: true,
+    // スクロールで閉じる(初期値：閉じない)
+    closeOnScroll: false,
+    // 閉じるボタンの表示(初期値：表示)
+    showCloseButton: true,
+    // aタグ以外でポップアップさせる場合のオプション(初期値：href)
+    sourceAttribute: "href",
+    // キャプション(初期値：なし)
+    caption: function (trigger) {
+      return trigger.querySelector("img").getAttribute("alt");
+    },
+  };
+  var luminousTrigger = document.querySelectorAll(".luminous");
+  if (luminousTrigger !== null) {
+    new LuminousGallery(luminousTrigger, {}, options);
+  }
 });
