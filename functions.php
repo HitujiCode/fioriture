@@ -67,13 +67,6 @@ function custom_posts_per_page($query)
 }
 add_action('pre_get_posts', 'custom_posts_per_page');
 
-// 投稿画面を非表示
-function my_custom_init()
-{
-  remove_post_type_support('page', 'editor');
-}
-add_action('init', 'my_custom_init');
-
 /* script、style設定 */
 function my_script_init()
 {
@@ -104,6 +97,49 @@ function my_script_init()
   wp_enqueue_style('my-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.1', 'all');
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
+
+// 投稿画面を非表示
+// function my_custom_init()
+// {
+//   remove_post_type_support('page', 'editor');
+// }
+// add_action('init', 'my_custom_init');
+function my_custom_init()
+{
+  remove_post_type_support('post', 'editor');
+}
+add_action('admin_init', 'my_custom_init');
+
+// 相談事例詳細のスラッグを自動設定
+function set_custom_post_slug($data, $postarr)
+{
+  if ($data['post_type'] === 'post' && isset($postarr['ID'])) {
+    $data['post_name'] = 'case-article' . $postarr['ID'];
+  }
+  return $data;
+}
+add_filter('wp_insert_post_data', 'set_custom_post_slug', 10, 2);
+
+// 繰り返しフィールドの画像IDを取得
+function get_attachment_id_from_url($image_url)
+{
+  global $wpdb;
+  $query = "SELECT post_id FROM $wpdb->postmeta WHERE meta_value = %s";
+  $attachment_id = $wpdb->get_var($wpdb->prepare($query, $image_url));
+
+  // IDが見つからない場合は、URLを再構成して再試行
+  if (empty($attachment_id)) {
+    $upload_dir_paths = wp_upload_dir();
+    // URLからベースURLを削除
+    $image_path = str_replace($upload_dir_paths['baseurl'] . '/', '', $image_url);
+    $query = "SELECT post_id FROM $wpdb->postmeta WHERE meta_value LIKE %s";
+    $attachment_id = $wpdb->get_var($wpdb->prepare($query, '%' . $wpdb->esc_like($image_path)));
+  }
+
+  return $attachment_id;
+}
+
+
 
 // // パンくずリスト文字数制限
 // add_filter('bcn_breadcrumb_title', 'truncate_bc_title', 10, 3);

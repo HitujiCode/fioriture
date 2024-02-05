@@ -28,6 +28,8 @@
 }
 
 .p-case-article__top-category {
+  display: flex;
+  gap: rem(10);
 }
 
 .p-case-article__top-title {
@@ -138,7 +140,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: rem(6);
+  border-radius: rem(6) 0 0 rem(6);
+}
+
+.p-case-article__bottom-item:nth-child(even) .p-case-article__bottom-img img {
+  border-radius: 0 rem(6) rem(6) 0;
 }
 
 .p-case-article__bottom-buttons {

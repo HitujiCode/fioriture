@@ -9,6 +9,6 @@
   text-transform: uppercase;
   @include mq("md") {
     font-size: rem(20);
-    line-height: 26/20;
+    line-height: calc(26 / 20);
   }
 }

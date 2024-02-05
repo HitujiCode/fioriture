@@ -42,25 +42,40 @@
         </div>
         <div class="p-case__content">
           <?php if (have_posts()) : ?>
-          <ul class="p-cards">
+            <ul class="p-cards">
               <?php while (have_posts()) : the_post(); ?>
-            <?php foreach ($caseItems as $item) : ?>
-              <li class="p-cards__item">
-                <a href="#" class="p-card">
-                  <div class="p-card__img">
-                    <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
-                  </div>
-                  <div class="p-card__body">
-                    <p class="p-card__category"><?php echo esc_html($item['label']); ?></p>
-                    <p class="p-card__title"><?php echo esc_html($item['text']); ?></p>
-                  </div>
-                </a>
-              </li>
-            <?php endforeach; ?>
-          </ul>
-            <?php endwhile; ?>
+                <li class="p-cards__item">
+                  <a href="<?php the_permalink(); ?>" class="p-card">
+                    <div class="p-card__img">
+                      <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail(); ?>
+                      <?php else : ?>
+                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="No Image" width="" height="" loading="lazy" />
+                      <?php endif; ?>
+                    </div>
+                    <div class="p-card__body">
+                      <div class="p-card__category">
+                        <span class="c-category">
+                          <?php $categories = get_the_category(); ?>
+                          <?php if ($categories) : ?>
+                            <?php foreach ($categories as $category) : ?>
+                              <span class="c-category"><?php echo esc_html($category->name); ?></span>
+                            <?php endforeach; ?>
+                          <?php endif; ?>
+                        </span>
+                      </div>
+                      <p class="p-card__title"><?php the_title(); ?></p>
+                    </div>
+                  </a>
+                </li>
+              <?php endwhile; ?>
+            </ul>
+          <?php else : ?>
+            <p>記事が投稿されていません</p>
+          <?php endif; ?>
+
           <div class="p-case__button">
-            <a class="c-button" href="#"><span>top</span></a>
+            <a class="c-button" href="<?php echo esc_url(home_url("")) ?>"><span>top</span></a>
           </div>
         </div>
       </div>

@@ -1,4 +1,11 @@
-<?php // ページ設定を配列として定義
+<?php
+// 現在の投稿タイトルを取得
+$current_post_title = get_the_title();
+// $current_post_name = get_the_title();
+// CFSからcase_article_bottom-nameフィールドの値を取得
+$acf_name = get_field('case_name');
+
+// ページ設定を配列として定義
 $pageSettings = [
   "plan" => [
     "image_pc" => "/assets/images/plan/fv_pc@2x.webp",
@@ -27,8 +34,9 @@ $pageSettings = [
   "single" => [
     "image_pc" => "/assets/images/case/fv_pc@2x.webp",
     "image_sp" => "/assets/images/case/fv@2x.webp",
-    "title_en" => "",
-    "title_ja" => ""
+    "title_name" => $acf_name,
+    "title_en" => "PHOTO SHOOT",
+    "title_ja" => $current_post_title,
   ],
   "flow" => [
     "image_pc" => "/assets/images/flow/fv_pc@2x.webp",
@@ -47,10 +55,9 @@ $pageSettings = [
     "image_sp" => "/assets/images/works/fv@2x.webp",
     "title_name" => "suzuki",
     "title_en" => "PHOTO SHOOT",
-    "title_ja" => "鈴木様（仮）の撮影"
+    "title_ja" => "$current_post_title"
   ],
 ];
-
 
 // 現在のページ名を取得する関数
 function getCurrentPageName()
@@ -60,9 +67,11 @@ function getCurrentPageName()
     return 'home';
   } elseif (is_singular("works")) {
     return 'single-works';
-  } elseif (is_page() || is_single()) {
-    global $post;
-    return $post->post_name;
+  } elseif (is_singular()) { // 任意の投稿タイプの個別ページであるか判定
+    return 'single';
+    // } elseif (is_page() || is_single()) {
+    //   global $post;
+    //   return $post->post_name;
   } elseif (is_archive()) {
     return get_queried_object()->name;
   }
@@ -72,6 +81,12 @@ function getCurrentPageName()
 // 現在のページ名を取得
 $current_page = getCurrentPageName();
 
+// 'single' の 'title_ja' を動的に設定
+if ($current_page == 'single') {
+  $pageSettings['single']['title_ja'] =
+    $current_post_title; // get_the_title() の結果を使用
+}
+
 // 現在のページの設定を取得（ページが配列に存在しない場合はデフォルト値を使用）
 $image_pc = $pageSettings[$current_page]['image_pc'] ?? "/assets/images/common/noimage_pc@2x.webp";
 $image_sp = $pageSettings[$current_page]['image_sp'] ?? "/assets/images/common/noimage@2x.webp";
@@ -80,7 +95,6 @@ $title_en = $pageSettings[$current_page]['title_en'] ?? "タイトルが設定�
 $title_ja = $pageSettings[$current_page]['title_ja'] ?? "タイトルが設定されていません";
 
 ?>
-
 
 <div class="p-sub-fv__bg">
   <picture>
