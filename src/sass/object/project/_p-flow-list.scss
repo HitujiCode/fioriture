@@ -40,7 +40,7 @@
 }
 
 .p-flow-list__item-number span {
-  padding-top: rem(10);
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   font-size: rem(8);
@@ -52,7 +52,7 @@
   text-align: center;
   text-transform: uppercase;
   @include mq(md) {
-    font-size: rem(8.5);
+    font-size: 8.5px;
   }
 }
 

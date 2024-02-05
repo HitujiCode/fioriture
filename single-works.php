@@ -29,11 +29,9 @@ $post_type_label = $post_type_data->labels->name;
         </div>
         <div class="p-works-article__images">
           <?php for ($i = 0; $i < 4; $i++) : ?>
-            <div class="p-works-article__img">
-              <a href="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.jpg')); ?>" class="luminous">
-                <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.jpg')); ?>" alt="" width="" height="" loading="lazy" />
-              </a>
-            </div>
+            <a href="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.webp')); ?>" class="luminous">
+              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.webp')); ?>" alt="" width="" height="" />
+            </a>
           <?php endfor; ?>
         </div>
       </div>

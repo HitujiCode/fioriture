@@ -21,32 +21,34 @@ $padding-sp: 30px;
 //   font-weight: 400;
 //   font-style: normal;
 //   font-family: "Noto Serif JP";
-//   src: url("../fonts/NotoSerifJP-Medium.otf") format("trueType");
+//   src: url("../fonts/NotoSerifJP-Regular.woff") format("otf");
 // }
 
-@font-face {
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-  font-family: "Noto Serif JP";
-  src: url("../fonts/NotoSerifJP-Regular.woff") format("woff");
-}
+// @font-face {
+//   font-display: swap;
+//   font-weight: 500;
+//   font-style: normal;
+//   font-family: "Noto Serif JP";
+//   src: url("../fonts/NotoSerifJP-Medium.woff") format("otf");
+// }
 
-@font-face {
-  font-display: swap;
-  font-weight: 500;
-  font-style: normal;
-  font-family: "Noto Serif JP";
-  src: url("../fonts/NotoSerifJP-Medium.woff") format("woff");
-}
+// @font-face {
+//   font-display: swap;
+//   font-weight: 600;
+//   font-style: normal;
+//   font-family: "Noto Serif JP";
+//   src:
+//     local("Noto Serif JP"),
+//     url("../fonts/NotoSerifJP-SemiBold.woff") format("otf");
+// }
 
-@font-face {
-  font-display: swap;
-  font-weight: 700;
-  font-style: normal;
-  font-family: "Noto Serif JP";
-  src: url("../fonts/NotoSerifJP-Bold.woff") format("woff");
-}
+// @font-face {
+//   font-display: swap;
+//   font-weight: 700;
+//   font-style: normal;
+//   font-family: "Noto Serif JP";
+//   src: url("../fonts/NotoSerifJP-Bold.woff") format("opentype");
+// }
 
 @font-face {
   font-display: swap;
@@ -56,8 +58,8 @@ $padding-sp: 30px;
   src: url("../fonts/Lora-Regular.woff") format("woff");
 }
 
-$base-font: "Noto Serif JP", sans-serif;
-$en-font: "Lora", sans-serif;
+$base-font: "Noto Serif JP", serif;
+$en-font: "Lora", serif;
 // ※検証ツールでしっかり反映されているか確認する
 
 // フォントウェイト

@@ -70,16 +70,20 @@ add_action('pre_get_posts', 'custom_posts_per_page');
 /* script、style設定 */
 function my_script_init()
 {
-  // フォント
-  wp_enqueue_style('NotoSerifJP', '//fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap', array(), null);
-
   // WordPressに含まれているjquery.jsを読み込まない
   wp_deregister_script('jquery');
 
+  // フォント
+  wp_enqueue_style('google-fonts-noto-serif', '//fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap', array(), '1.0.1', 'all');
+
   // swiper
   wp_enqueue_script('jquery', '//code.jquery.com/jquery-3.7.1.min.js', array(), '1.0.1');
-  wp_enqueue_script('slider-js', '//unpkg.com/swiper@10/swiper-bundle.min.js', array(), '', true);
-  wp_enqueue_style('slider-css', '//unpkg.com/swiper@10/swiper-bundle.min.css', array(), '', 'all');
+  wp_enqueue_script('slider-js', '//unpkg.com/swiper@8/swiper-bundle.min.js', array(), '', true);
+  wp_enqueue_style('slider-css', '//unpkg.com/swiper@8/swiper-bundle.min.css', array(), '', 'all');
+
+  //lightbox
+  // wp_enqueue_script('lightbox-js', '//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js', array(), '', 'true');
+  // wp_enqueue_style('lightbox-css', '//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css', array(), '', 'all');
 
   //luminous
   wp_enqueue_script('luminous-js', get_template_directory_uri() . '/assets/luminous/luminous.min.js', array('jquery'), '', true);

@@ -61,16 +61,18 @@
   }
 }
 
-.p-works-article__img {
-  position: relative;
+.lum-lightbox.lum-open {
+}
+
+.lum-lightbox-inner {
+  max-width: rem(960);
+  margin-inline: auto;
 }
 
 .luminous {
+  position: relative;
   display: block;
-}
-
-.luminous:not(:first-child) {
-  filter: brightness(0.5);
+  max-width: 100%;
 }
 
 .luminous img {
@@ -84,7 +86,7 @@
   }
 }
 
-.p-works-article__img::before {
+.luminous::before {
   position: absolute;
   content: "";
   background-image: url("../images/works/icon-zoom.svg");
@@ -100,5 +102,56 @@
     height: rem(16);
     right: rem(10);
     bottom: rem(10);
+  }
+}
+
+.lum-lightbox-inner img.lum-img {
+  max-width: 100%;
+  width: calc(285 / 356 * 100%);
+  margin-inline: auto;
+  @include mq("md") {
+    width: calc(792 / 960 * 100%);
+  }
+}
+
+.lum-gallery-button {
+  display: block;
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: rem(25);
+  height: rem(25);
+  @include mq("md") {
+    width: rem(44);
+    height: rem(44);
+  }
+}
+
+.lum-previous-button {
+  background-image: url("../images/common/modal-prev.svg");
+  left: 0;
+}
+
+.lum-next-button {
+  background-image: url("../images/common/modal-next.svg");
+  right: 0;
+}
+
+.lum-next-button .lum-previous-button:after,
+.lum-gallery-button:after {
+  content: none;
+}
+
+.lum-close-button {
+  position: fixed;
+  top: 37%;
+  right: rem(-45);
+  transform: translateY(-50%);
+  opacity: 1;
+  @include mq("md") {
+    top: 18%;
+    right: calc(50vw - rem(385));
   }
 }
