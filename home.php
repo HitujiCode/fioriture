@@ -41,7 +41,9 @@
           </h1>
         </div>
         <div class="p-case__content">
+          <?php if (have_posts()) : ?>
           <ul class="p-cards">
+              <?php while (have_posts()) : the_post(); ?>
             <?php foreach ($caseItems as $item) : ?>
               <li class="p-cards__item">
                 <a href="#" class="p-card">
@@ -56,6 +58,7 @@
               </li>
             <?php endforeach; ?>
           </ul>
+            <?php endwhile; ?>
           <div class="p-case__button">
             <a class="c-button" href="#"><span>top</span></a>
           </div>

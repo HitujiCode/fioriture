@@ -61,7 +61,13 @@
   }
 }
 
+.lum-lightbox {
+  display: initial;
+  visibility: hidden;
+}
+
 .lum-lightbox.lum-open {
+  visibility: visible;
 }
 
 .lum-lightbox-inner {

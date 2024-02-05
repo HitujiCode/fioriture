@@ -1706,6 +1706,16 @@ select::-ms-expand {
 	margin-top: 1.875rem;
 }
 
+.lum-lightbox {
+	display: inline;
+	display: initial;
+	visibility: hidden;
+}
+
+.lum-lightbox.lum-open {
+	visibility: visible;
+}
+
 .lum-lightbox-inner {
 	margin-left: auto;
 	margin-right: auto;

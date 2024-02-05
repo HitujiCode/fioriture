@@ -321,3 +321,33 @@ var luminousTrigger = document.querySelectorAll(".luminous");
 if (luminousTrigger !== null) {
   new LuminousGallery(luminousTrigger, {}, options);
 }
+// test
+$(document).ready(function () {
+  // Function to update lum-close-button top value
+  function updateCloseButtonTop() {
+    var totalHeight = 0;
+
+    // Iterate through each lum-lightbox-position-helper element
+    $(".lum-lightbox-position-helper").each(function () {
+      // Accumulate the heights of all lum-lightbox-position-helper elements
+      totalHeight += $(this).height();
+    });
+
+    // Calculate the average height
+    var averageHeight = totalHeight / $(".lum-lightbox-position-helper").length;
+
+    // Calculate the top value for lum-close-button
+    var closeButtonTop = "calc(50% - " + (averageHeight / 2 + 30) + "px)";
+
+    // Apply the calculated top value to lum-close-button
+    $(".lum-close-button").css("top", closeButtonTop);
+  }
+
+  // Initial update on document ready
+  updateCloseButtonTop();
+
+  // Update lum-close-button top value on window resize
+  $(window).on("resize", function () {
+    updateCloseButtonTop();
+  });
+});

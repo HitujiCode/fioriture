@@ -67,6 +67,13 @@ function custom_posts_per_page($query)
 }
 add_action('pre_get_posts', 'custom_posts_per_page');
 
+// 投稿画面を非表示
+function my_custom_init()
+{
+  remove_post_type_support('page', 'editor');
+}
+add_action('init', 'my_custom_init');
+
 /* script、style設定 */
 function my_script_init()
 {
