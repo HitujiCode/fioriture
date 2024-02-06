@@ -1,16 +1,16 @@
 @use "global" as *;
 
-.pagetop {
+.c-pagetop {
   position: fixed;
-  bottom: -800px;
   right: rem(30);
   z-index: 100;
   width: rem(50);
   height: rem(50);
   padding: 0;
+  transform: rotate(-90deg);
   @include mq("md") {
-    width: rem(60);
-    height: rem(60);
-    right: calc(220 / 1400 * 100%);
+    width: rem(50);
+    height: rem(50);
+    right: calc(30 / 1400 * 100%);
   }
 }

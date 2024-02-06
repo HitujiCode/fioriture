@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.p-404 {
+}
+
+.p-404__inner.l-inner {
+}
+
+.p-404__wrap {
+  @include mq("md") {
+    text-align: center;
+  }
+}
+
+.p-404__text {
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.p-404__button {
+  text-align: center;
+  margin-top: rem(50);
+}

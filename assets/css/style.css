@@ -9,6 +9,14 @@
 body {
 	color: #5d5d5d;
 	font-family: "Noto Serif JP", serif;
+	position: relative;
+}
+
+.l-body {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 1fr auto;
+	min-height: 100vh;
 }
 
 .u-desktop {
@@ -267,12 +275,12 @@ select::-ms-expand {
 	width: 100%;
 }
 
-.pagetop {
-	bottom: -800px;
+.c-pagetop {
 	height: 3.125rem;
 	padding: 0;
 	position: fixed;
 	right: 1.875rem;
+	transform: rotate(-90deg);
 	width: 3.125rem;
 	z-index: 100;
 }
@@ -348,6 +356,10 @@ select::-ms-expand {
 
 .l-footer {
 	margin-top: 3.125rem;
+}
+
+.l-grid {
+	display: grid;
 }
 
 .l-inner {
@@ -462,6 +474,16 @@ select::-ms-expand {
 
 .entry-loading.is-show {
 	display: block;
+}
+
+.p-404__text {
+	word-wrap: anywhere;
+	word-break: keep-all;
+}
+
+.p-404__button {
+	margin-top: 3.125rem;
+	text-align: center;
 }
 
 .p-about__swiper-wrap {
@@ -1328,6 +1350,107 @@ select::-ms-expand {
 	margin-top: 1.5rem;
 }
 
+.modal {
+	align-items: center;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	left: 0;
+	padding: 0 1.5625rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+.modal__close-button::before {
+	transform: rotate(45deg);
+}
+
+.modal__close-button::after {
+	transform: rotate(-45deg);
+}
+
+.modal__inner {
+	align-items: center;
+	display: grid;
+	justify-content: center;
+	margin: auto;
+	max-width: 37.5rem;
+	padding: 0 0.625rem;
+	position: relative;
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+.modal__wrap {
+	max-height: -moz-max-content;
+	max-height: max-content;
+	position: absolute;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+.modal__img {
+	height: calc(100% - 2.5rem);
+	height: 100%;
+	max-height: calc(100vh - 5rem);
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+.modal__img img {
+	-o-object-fit: contain;
+	height: 100%;
+	max-height: inherit;
+	object-fit: contain;
+	width: 100%;
+}
+
+.modal__close-button {
+	cursor: pointer;
+	height: 2.0625rem;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 2.1875rem;
+	top: -2.8125rem;
+	width: 2.0625rem;
+}
+
+.modal__close-button::before,
+.modal__close-button::after {
+	background-color: #fff;
+	content: "";
+	height: 0.1875rem;
+	left: 0;
+	position: absolute;
+	top: 0.9375rem;
+	width: 100%;
+}
+
+.modal__prev,
+.modal__next {
+	content: "";
+	height: 1.5625rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1.5625rem;
+}
+
+.modal__prev {
+	left: -2.5rem;
+}
+
+.modal__next {
+	right: -2.5rem;
+}
+
 .p-photo-item:not(:first-child) {
 	margin-top: 1.5625rem;
 }
@@ -1577,6 +1700,7 @@ select::-ms-expand {
 
 .p-sub-fv {
 	height: 14.5625rem;
+	height: max(35vw, 14.5625rem);
 	position: relative;
 }
 
@@ -1730,6 +1854,32 @@ select::-ms-expand {
 	gap: 1.25rem;
 	grid-template-columns: repeat(2, 1fr);
 	margin-top: 1.875rem;
+}
+
+.p-works-article__images img {
+	-o-object-fit: cover;
+	aspect-ratio: 295/295;
+	border-radius: 0.75rem;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.p-works-article__img {
+	position: relative;
+}
+
+.p-works-article__img::before {
+	background-image: url("../images/works/icon-zoom.svg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	bottom: 0.5625rem;
+	content: "";
+	height: 0.875rem;
+	position: absolute;
+	right: 0.5625rem;
+	width: 0.875rem;
 }
 
 .lum-lightbox {
@@ -1908,6 +2058,10 @@ a:hover {
 	opacity: 0.8;
 }
 
+button:hover {
+	opacity: 0.8;
+}
+
 .p-header__nav-link span:hover::after {
 	width: 100%;
 }
@@ -1956,10 +2110,10 @@ a[href^="tel:"] {
 	width: 10.6875rem;
 }
 
-.pagetop {
-	height: 3.75rem;
-	right: 15.7142857143%;
-	width: 3.75rem;
+.c-pagetop {
+	height: 3.125rem;
+	right: 2.1428571429%;
+	width: 3.125rem;
 }
 
 .c-section-title__name {
@@ -2053,6 +2207,10 @@ a[href^="tel:"] {
 
 #fancybox-wrap #fancybox-content {
 	width: 49.5rem;
+}
+
+.p-404__wrap {
+	text-align: center;
 }
 
 .p-about-list {
@@ -2549,6 +2707,12 @@ a[href^="tel:"] {
 	margin-top: 2rem;
 }
 
+.modal__inner {
+	margin: 0 1.5625rem;
+	max-height: 100vh;
+	max-width: 52rem;
+}
+
 .p-photo-item:not(:first-child) {
 	margin-top: 3.75rem;
 }
@@ -2770,6 +2934,17 @@ a[href^="tel:"] {
 .p-works-article__images {
 	grid-template-columns: repeat(5, 1fr);
 	margin-top: 3rem;
+}
+
+.p-works-article__images img {
+	border-radius: 0.375rem;
+}
+
+.p-works-article__img::before {
+	bottom: 0.625rem;
+	height: 1rem;
+	right: 0.625rem;
+	width: 1rem;
 }
 
 .luminous img {

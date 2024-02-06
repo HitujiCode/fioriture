@@ -2,6 +2,7 @@
 
 .p-sub-fv {
   height: rem(233);
+  height: max(35vw, rem(233));
   position: relative;
   @include mq("md") {
     height: rem(300);

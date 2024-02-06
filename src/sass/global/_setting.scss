@@ -16,40 +16,6 @@ $padding-sp: 30px;
 // フォント設定
 ////////////////////
 
-// @font-face {
-//   font-display: swap;
-//   font-weight: 400;
-//   font-style: normal;
-//   font-family: "Noto Serif JP";
-//   src: url("../fonts/NotoSerifJP-Regular.woff") format("otf");
-// }
-
-// @font-face {
-//   font-display: swap;
-//   font-weight: 500;
-//   font-style: normal;
-//   font-family: "Noto Serif JP";
-//   src: url("../fonts/NotoSerifJP-Medium.woff") format("otf");
-// }
-
-// @font-face {
-//   font-display: swap;
-//   font-weight: 600;
-//   font-style: normal;
-//   font-family: "Noto Serif JP";
-//   src:
-//     local("Noto Serif JP"),
-//     url("../fonts/NotoSerifJP-SemiBold.woff") format("otf");
-// }
-
-// @font-face {
-//   font-display: swap;
-//   font-weight: 700;
-//   font-style: normal;
-//   font-family: "Noto Serif JP";
-//   src: url("../fonts/NotoSerifJP-Bold.woff") format("opentype");
-// }
-
 @font-face {
   font-display: swap;
   font-weight: 400;
@@ -85,4 +51,12 @@ $contact: #ebe9e3;
 body {
   font-family: $base-font;
   color: $darkgray;
+  position: relative;
+}
+
+.l-body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 100%;
 }

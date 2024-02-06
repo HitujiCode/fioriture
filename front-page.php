@@ -66,6 +66,52 @@
     </div>
   </div>
 
+  <?php
+  // aboutの情報を配列に格納
+  $aboutItems = [
+    [
+      'head' => '同性カップル',
+      'img' => 'assets/images/top/about1.svg',
+      'text' => '男性同士、女性同士で愛し合っているカップル',
+    ],
+    [
+      'head' => 'エイジングカップル',
+      'img' => 'assets/images/top/about2.svg',
+      'text' => '共に年を重ねた人生経験豊富な熟年のカップル',
+    ],
+    [
+      'head' => '再婚カップル',
+      'img' => 'assets/images/top/about3.svg',
+      'text' => '一方もしくは二人とも結婚経験があるカップル',
+    ],
+    [
+      'head' => 'ソロ',
+      'img' => 'assets/images/top/about4.svg',
+      'text' => '年齢や未婚・既婚問わず自由にウエディングフォトを希望される方',
+    ],
+    [
+      'head' => '2次元カップル',
+      'img' => 'assets/images/top/about5.svg',
+      'text' => '推しさんのうちわなどのグッズ・思い出の品と一緒に撮影を希望される方',
+    ],
+    [
+      'head' => '十三詣り',
+      'img' => 'assets/images/top/about6.svg',
+      'text' => '13歳になったお子さまの撮影を希望される方',
+    ],
+    [
+      'head' => 'ロケーション（新潟県内）',
+      'img' => 'assets/images/top/about8.svg',
+      'text' => '政令指定都市でもある新潟県の街、自然の中で撮影を希望される方',
+    ],
+    [
+      'head' => 'ドローン',
+      'img' => 'assets/images/top/about9.svg',
+      'text' => '主に商用利用向けのドローン撮影を希望される方',
+    ],
+  ];
+
+  ?>
   <section class="p-about l-about">
     <div class="p-about__inner l-inner">
       <div class="p-about__title">

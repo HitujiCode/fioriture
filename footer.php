@@ -1,5 +1,10 @@
-<footer class="p-footer <?php echo is_front_page() ? 'l-footer' : ''; ?>">
-  <button class="c-pagetop js-pagetop"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="トップへ戻る" width="" height="" loading="lazy" /></button>
+<?php if (!is_404()) : ?>
+  <button class="c-pagetop js-pagetop">
+    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="トップへ戻る" />
+  </button>
+<?php endif; ?>
+
+<footer class="p-footer <?php echo is_front_page() || is_404() ? 'l-footer' : ''; ?>">
   <div class="p-footer__inner l-inner">
     <div class="p-footer__wrap">
       <div class="p-footer__logo">

@@ -57,6 +57,12 @@ $pageSettings = [
     "title_en" => "PHOTO SHOOT",
     "title_ja" => "$current_post_title"
   ],
+  "404" => [
+    "image_pc" => "",
+    "image_sp" => "",
+    "title_en" => "404 not found",
+    "title_ja" => "お探しのページが見つかりません"
+  ],
 ];
 
 // 現在のページ名を取得する関数
@@ -67,13 +73,12 @@ function getCurrentPageName()
     return 'home';
   } elseif (is_singular("works")) {
     return 'single-works';
-  } elseif (is_singular()) { // 任意の投稿タイプの個別ページであるか判定
+  } elseif (is_singular()) {
     return 'single';
-    // } elseif (is_page() || is_single()) {
-    //   global $post;
-    //   return $post->post_name;
   } elseif (is_archive()) {
     return get_queried_object()->name;
+  } elseif (is_404()) {
+    return '404';
   }
   return null; // 該当しない場合
 }
@@ -88,8 +93,8 @@ if ($current_page == 'single') {
 }
 
 // 現在のページの設定を取得（ページが配列に存在しない場合はデフォルト値を使用）
-$image_pc = $pageSettings[$current_page]['image_pc'] ?? "/assets/images/common/noimage_pc@2x.webp";
-$image_sp = $pageSettings[$current_page]['image_sp'] ?? "/assets/images/common/noimage@2x.webp";
+$image_pc = !empty($pageSettings[$current_page]['image_pc']) ? $pageSettings[$current_page]['image_pc'] : "/assets/images/common/noimage_pc@2x.webp";
+$image_sp = !empty($pageSettings[$current_page]['image_sp']) ? $pageSettings[$current_page]['image_sp'] : "/assets/images/common/noimage@2x.webp";
 $title_name = $pageSettings[$current_page]['title_name'] ?? "";
 $title_en = $pageSettings[$current_page]['title_en'] ?? "タイトルが設定されていません";
 $title_ja = $pageSettings[$current_page]['title_ja'] ?? "タイトルが設定されていません";

@@ -10,22 +10,21 @@ $pageSettings = [
 ];
 
 // 現在のページ名を取得する関数
-function getCurrentPageNameButtons()
-{
-  if (is_front_page() || is_home()) {
-    error_log('Current Page: home');
-    return 'home';
-  } elseif (is_singular("works")) {
-    return 'single-works';
-  } elseif (is_singular()) { // 任意の投稿タイプの個別ページであるか判定
-    return 'single';
-    // } elseif (is_page() || is_single()) {
-    //   global $post;
-    //   return $post->post_name;
-  } elseif (is_archive()) {
-    return get_queried_object()->name;
+if (!function_exists('getCurrentPageNameButtons')) {
+  function getCurrentPageNameButtons()
+  {
+    if (is_front_page() || is_home()) {
+      error_log('Current Page: home');
+      return 'home';
+    } elseif (is_singular("works")) {
+      return 'single-works';
+    } elseif (is_singular()) { // 任意の投稿タイプの個別ページであるか判定
+      return 'single';
+    } elseif (is_archive()) {
+      return get_queried_object()->name;
+    }
+    return null; // 該当しない場合
   }
-  return null; // 該当しない場合
 }
 
 $current_page = getCurrentPageNameButtons();

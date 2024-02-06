@@ -12,12 +12,13 @@
   <meta property="og:url" content="" />
   <meta property="og:site_name" content="" />
   <meta property="og:description" content="" />
-
+  <?php if (is_404()) : ?>
+    <meta http-equiv="refresh" content=" 3; url=<?php echo esc_url(home_url("")); ?>">
+  <?php endif; ?>
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-  <?php wp_body_open(); ?>
+<body class="l-body">
   <header class="p-header js-header">
     <div class="p-header__inner">
       <?php if (is_front_page()) :
