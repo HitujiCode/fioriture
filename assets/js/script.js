@@ -42,7 +42,7 @@ jQuery(function ($) {
     var scrollPosition = $(this).scrollTop();
     var windowHeight = $(this).height();
     var bodyHeight = $(document).height();
-    var footerHeight = $(".footer").outerHeight();
+    var footerHeight = $(".p-footer").outerHeight();
     if (scrollPosition > 70) {
       pageTop.fadeIn();
     } else {
@@ -51,7 +51,7 @@ jQuery(function ($) {
     if (bodyHeight - scrollPosition <= windowHeight + footerHeight) {
       pageTop.css({
         position: "absolute",
-        bottom: footerHeight + 100 + "px"
+        bottom: footerHeight + 6 + "px"
       });
     } else {
       pageTop.css({
@@ -251,167 +251,74 @@ jQuery(function ($) {
 });
 
 // modal
-// 画像が複数ある場合;
-// var options = {
-//   // ESCキーで閉じる(初期値：閉じる)
-//   closeWithEscape: true,
-//   // スクロールで閉じる(初期値：閉じない)
-//   closeOnScroll: false,
-//   // 閉じるボタンの表示(初期値：表示)
-//   showCloseButton: true,
-//   // aタグ以外でポップアップさせる場合のオプション(初期値：href)
-//   sourceAttribute: "href",
-//   // キャプション(初期値：なし)
-//   caption: function (trigger) {
-//     return trigger.querySelector("img").getAttribute("alt");
-//   },
-// };
-// var luminousTrigger = document.querySelectorAll(".luminous");
-// if (luminousTrigger !== null) {
-//   new LuminousGallery(luminousTrigger, {}, options);
-// }
-
-// test
-$(document).ready(function () {
-  // Function to update lum-close-button top value
-  function updateCloseButtonTop() {
-    var totalHeight = 0;
-
-    // Iterate through each lum-lightbox-position-helper element
-    $(".lum-lightbox-position-helper").each(function () {
-      // Accumulate the heights of all lum-lightbox-position-helper elements
-      totalHeight += $(this).height();
-    });
-
-    // Calculate the average height
-    var averageHeight = totalHeight / $(".lum-lightbox-position-helper").length;
-
-    // Calculate the top value for lum-close-button
-    var closeButtonTop = "calc(50% - " + (averageHeight / 2 + 30) + "px)";
-
-    // Apply the calculated top value to lum-close-button
-    $(".lum-close-button").css("top", closeButtonTop);
-  }
-
-  // Initial update on document ready
-  updateCloseButtonTop();
-
-  // Update lum-close-button top value on window resize
-  $(window).on("resize", function () {
-    updateCloseButtonTop();
-  });
-});
-
-// modal
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Get modal elements
-//   const modal = document.querySelector(".js-modal");
-//   const modalInner = document.querySelector(".modal__inner");
-//   const modalClose = document.querySelector(".modal__close-button");
-//   const modalImg = document.querySelector(".modal__img img");
-
-//   // Get all image links with class js-modal-trigger
-//   const modalTriggers = document.querySelectorAll(".js-modal-trigger");
-
-//   // Function to open modal with a specific image source
-//   function openModal(imgSrc) {
-//     modalImg.src = imgSrc;
-//     modal.style.display = "block";
-//   }
-
-//   // Function to close modal
-//   function closeModal() {
-//     modal.style.display = "none";
-//     modalImg.src = ""; // Clear the image source
-//   }
-
-//   // Attach click event listeners to all modal triggers
-//   modalTriggers.forEach((trigger, index) => {
-//     trigger.addEventListener("click", function (e) {
-//       e.preventDefault(); // Prevent default link behavior
-//       const imgSrc = this.getAttribute("href");
-//       openModal(imgSrc);
-//     });
-//   });
-
-//   // Close modal when the overlay is clicked
-//   modal.addEventListener("click", function () {
-//     closeModal();
-//   });
-
-//   // Close modal when the overlay is clicked
-//   modal.addEventListener("click", function (e) {
-//     if (e.target === modal) {
-//       closeModal();
-//     }
-//   });
-
-//   // Close modal when the Esc key is pressed
-//   document.addEventListener("keydown", function (e) {
-//     if (e.key === "Escape" || e.key === "Esc") {
-//       closeModal();
-//     }
-//   });
-
-//   // Initial state: Hide modal
-//   modal.style.display = "none";
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Get modal elements
   var modal = document.querySelector(".js-modal");
-  var modalInner = document.querySelector(".modal__inner");
-  var modalClose = document.querySelector(".modal__close-button");
-  var modalImg = document.querySelector(".modal__img img");
-
-  // Get all image links with class js-modal-trigger
+  var modalWrap = modal.querySelector(".p-modal__wrap");
+  var modalImgContainer = modal.querySelector(".p-modal__img");
+  var modalImg = modalImgContainer.querySelector("img");
+  var modalClose = document.querySelector(".p-modal__close-button");
+  var prevButton = document.querySelector(".p-modal__prev");
+  var nextButton = document.querySelector(".p-modal__next");
+  var currentIndex = 0;
+  var imageSources = [];
   var modalTriggers = document.querySelectorAll(".js-modal-trigger");
-
-  // Function to open modal with a specific image source
+  modalTriggers.forEach(function (trigger, index) {
+    imageSources.push(trigger.getAttribute("href"));
+    trigger.setAttribute("data-index", index);
+    trigger.addEventListener("click", function (e) {
+      e.preventDefault();
+      currentIndex = parseInt(this.getAttribute("data-index"));
+      openModal(this.getAttribute("href"));
+    });
+  });
   function openModal(imgSrc) {
     modalImg.src = imgSrc;
-    modal.style.display = "grid";
+    modal.classList.add("show");
+    modalWrap.classList.add("show");
+    modal.style.visibility = "visible";
+    updateButtonStates();
+    document.body.style.overflow = "clip"; // モーダルが開いている間はbodyのスクロールを無効化
   }
 
-  // Function to close modal
-  function closeModal() {
-    modal.style.display = "none";
-    modalImg.src = ""; // Clear the image source
+  function updateModalImage(index) {
+    modalImg.src = imageSources[index];
+    updateButtonStates();
   }
-
-  // Attach click event listeners to all modal triggers
-  modalTriggers.forEach(function (trigger, index) {
-    trigger.addEventListener("click", function (e) {
-      e.preventDefault(); // Prevent default link behavior
-      var imgSrc = this.getAttribute("href");
-      openModal(imgSrc);
-    });
+  function updateButtonStates() {
+    prevButton.classList.toggle("is-disabled", currentIndex <= 0);
+    nextButton.classList.toggle("is-disabled", currentIndex >= imageSources.length - 1);
+  }
+  prevButton.addEventListener("click", function () {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateModalImage(currentIndex);
+    }
   });
+  nextButton.addEventListener("click", function () {
+    if (currentIndex < imageSources.length - 1) {
+      currentIndex++;
+      updateModalImage(currentIndex);
+    }
+  });
+  function closeModal() {
+    modal.classList.remove("show");
+    modalWrap.classList.remove("show");
+    modal.addEventListener("transitionend", function onTransitionEnd() {
+      modal.style.visibility = "hidden";
+      modal.removeEventListener("transitionend", onTransitionEnd);
+      document.body.style.overflow = ""; // モーダルが閉じるとbodyのスクロールを再度有効化
+    });
+  }
 
-  // Close modal when the overlay is clicked
   modal.addEventListener("click", function (e) {
     if (e.target === modal) {
       closeModal();
     }
   });
-
-  // Prevent modal from closing when clicking inside the modalInner
-  modalInner.addEventListener("click", function (e) {
-    e.stopPropagation(); // Prevent event from bubbling up to the overlay
-  });
-
-  // Close modal when the close button is clicked
-  modalClose.addEventListener("click", function (e) {
-    closeModal();
-  });
-
-  // Close modal when the Esc key is pressed
+  modalClose.addEventListener("click", closeModal);
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" || e.key === "Esc") {
       closeModal();
     }
   });
-
-  // Initial state: Hide modal
-  modal.style.display = "none";
 });

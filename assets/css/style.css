@@ -276,12 +276,12 @@ select::-ms-expand {
 }
 
 .c-pagetop {
-	height: 3.125rem;
+	height: 2.1875rem;
 	padding: 0;
 	position: fixed;
-	right: 1.875rem;
+	right: 0.625rem;
 	transform: rotate(-90deg);
-	width: 3.125rem;
+	width: 2.1875rem;
 	z-index: 100;
 }
 
@@ -1350,60 +1350,69 @@ select::-ms-expand {
 	margin-top: 1.5rem;
 }
 
-.modal {
-	align-items: center;
-	background: rgba(0, 0, 0, 0.6);
-	display: flex;
+.p-modal {
+	align-content: center;
+	background: rgba(93, 93, 93, 0.7);
+	display: grid;
 	height: 100vh;
 	justify-content: center;
 	left: 0;
-	padding: 0 1.5625rem;
+	opacity: 0;
+	padding: 0 2.1875rem;
+	place-content: center;
 	position: fixed;
 	top: 0;
+	transition: opacity 0.3s linear, transform 0.3s linear;
+	visibility: hidden;
 	width: 100%;
 	z-index: 1000;
 }
 
-.modal__close-button::before {
-	transform: rotate(45deg);
+.p-modal.show {
+	opacity: 1;
+	visibility: visible;
 }
 
-.modal__close-button::after {
-	transform: rotate(-45deg);
-}
-
-.modal__inner {
-	align-items: center;
+.p-modal__inner {
+	align-content: center;
 	display: grid;
 	justify-content: center;
 	margin: auto;
 	max-width: 37.5rem;
-	padding: 0 0.625rem;
+	place-content: center;
 	position: relative;
 	width: -moz-fit-content;
 	width: fit-content;
 }
 
-.modal__wrap {
+.p-modal__wrap {
 	max-height: -moz-max-content;
 	max-height: max-content;
 	position: absolute;
 	position: relative;
 	top: 50%;
-	transform: translateY(-50%);
+	transform: translateY(-50%) scale(0.7);
+	transition: opacity 0.3s linear, transform 0.3s linear;
 	width: -moz-fit-content;
 	width: fit-content;
 }
 
-.modal__img {
-	height: calc(100% - 2.5rem);
+.p-modal__wrap.show {
+	transform: translateY(-50%) scale(1);
+}
+
+.p-modal__img {
+	-webkit-user-select: none;
+	-moz-user-select: none;
 	height: 100%;
 	max-height: calc(100vh - 5rem);
+	transition: opacity 0.7s ease-out;
+	user-select: none;
 	width: -moz-fit-content;
 	width: fit-content;
 }
 
-.modal__img img {
+.p-modal__img img {
 	-o-object-fit: contain;
 	height: 100%;
 	max-height: inherit;
@@ -1411,7 +1420,7 @@ select::-ms-expand {
 	width: 100%;
 }
 
-.modal__close-button {
+.p-modal__close-button {
 	cursor: pointer;
 	height: 2.0625rem;
 	margin: 0;
@@ -1422,8 +1431,8 @@ select::-ms-expand {
 	width: 2.0625rem;
 }
 
-.modal__close-button::before,
-.modal__close-button::after {
+.p-modal__close-button::before,
+.p-modal__close-button::after {
 	background-color: #fff;
 	content: "";
 	height: 0.1875rem;
@@ -1433,9 +1442,18 @@ select::-ms-expand {
 	width: 100%;
 }
 
-.modal__prev,
-.modal__next {
+.p-modal__close-button::before {
+	transform: rotate(45deg);
+}
+
+.p-modal__close-button::after {
+	transform: rotate(-45deg);
+}
+
+.p-modal__prev,
+.p-modal__next {
 	content: "";
+	cursor: pointer;
 	height: 1.5625rem;
 	position: absolute;
 	top: 50%;
@@ -1443,12 +1461,18 @@ select::-ms-expand {
 	width: 1.5625rem;
 }
 
-.modal__prev {
+.p-modal__prev {
 	left: -2.5rem;
 }
 
-.modal__next {
+.p-modal__next {
 	right: -2.5rem;
+}
+
+.p-modal__prev.is-disabled,
+.p-modal__next.is-disabled {
+	cursor: default;
+	opacity: 0.5;
 }
 
 .p-photo-item:not(:first-child) {
@@ -2707,10 +2731,13 @@ a[href^="tel:"] {
 	margin-top: 2rem;
 }
 
-.modal__inner {
+.p-modal {
+	padding: 0 1.5625rem;
+}
+
+.p-modal__inner {
 	margin: 0 1.5625rem;
-	max-height: 100vh;
-	max-width: 52rem;
+	max-width: 50.125rem;
 }
 
 .p-photo-item:not(:first-child) {

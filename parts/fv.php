@@ -3,7 +3,8 @@
 $current_post_title = get_the_title();
 // $current_post_name = get_the_title();
 // CFSからcase_article_bottom-nameフィールドの値を取得
-$acf_name = get_field('case_name');
+$case_name = get_field('case_name');
+$works_name = get_field('works_name');
 
 // ページ設定を配列として定義
 $pageSettings = [
@@ -34,7 +35,7 @@ $pageSettings = [
   "single" => [
     "image_pc" => "/assets/images/case/fv_pc@2x.webp",
     "image_sp" => "/assets/images/case/fv@2x.webp",
-    "title_name" => $acf_name,
+    "title_name" => $case_name,
     "title_en" => "PHOTO SHOOT",
     "title_ja" => $current_post_title,
   ],
@@ -53,7 +54,7 @@ $pageSettings = [
   "single-works" => [
     "image_pc" => "/assets/images/works/fv_pc@2x.webp",
     "image_sp" => "/assets/images/works/fv@2x.webp",
-    "title_name" => "suzuki",
+    "title_name" => "$works_name",
     "title_en" => "PHOTO SHOOT",
     "title_ja" => "$current_post_title"
   ],

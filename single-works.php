@@ -74,39 +74,39 @@
       <div class="p-works-article__images">
         <?php $fields = CFS()->get('works_gallery'); ?>
         <?php if ($fields) : ?>
-          <?php foreach ($fields as $field) : ?>
-            <a href="<?php echo esc_html($field['works_img']); ?>" class="p-works-article__img  js-modal-trigger">
-              <img src="<?php echo esc_html($field['works_img']); ?>" alt="投稿画像" width="" height="" data-index="<?php echo $index; ?>" />
+          <?php foreach ($fields as $index => $field) : ?>
+            <a href="<?php echo esc_html($field['works_img']); ?>" class="p-works-article__img js-modal-trigger" data-img-src="<?php echo esc_html($field['works_img']); ?>" data-index="<?php echo $index; ?>">
+              <img src="<?php echo esc_html($field['works_img']); ?>" alt="投稿画像" width="" height="" />
             </a>
           <?php endforeach; ?>
         <?php endif; ?>
       </div>
-      <!-- モーダル -->
-      <div class="modal js-modal">
-        <div class="modal__inner">
-          <!-- モーダルコンテンツ -->
-
-          <!-- 画像表示用のimgタグ -->
-          <div class="modal__wrap">
-            <div class="modal__img">
-              <img src="" alt="モーダル画像">
-            </div>
-            <button class="modal__close-button"></button>
-            <div class="modal__prev">
-              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/modal-prev.svg')); ?>" alt="前の画像へ" width="" height="" loading="lazy" />
-            </div>
-            <div class="modal__next">
-              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/modal-next.svg')); ?>" alt="次の画像へ" width="" height="" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- モーダル -->
       <div class="p-works-article__buttons l-common">
         <?php get_template_part("parts/buttons") ?>
       </div>
     </div>
   </article>
+
+  <!-- モーダル -->
+  <div class="p-modal js-modal">
+    <div class="p-modal__inner">
+      <!-- モーダルコンテンツ -->
+
+      <!-- 画像表示用のimgタグ -->
+      <div class="p-modal__wrap">
+        <div class="p-modal__img">
+          <img src="" alt="モーダル画像">
+        </div>
+        <button class="p-modal__close-button"></button>
+        <div class="p-modal__prev">
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/modal-prev.svg')); ?>" alt="前の画像へ" width="" height="" loading="lazy" />
+        </div>
+        <div class="p-modal__next">
+          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/modal-next.svg')); ?>" alt="次の画像へ" width="" height="" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </div>
 
   <?php get_template_part('parts/contact'); ?>
 </main>
