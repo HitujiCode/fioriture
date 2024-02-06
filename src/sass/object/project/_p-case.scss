@@ -24,6 +24,13 @@
   }
 }
 
+.p-case__pagenavi {
+  margin-top: rem(50);
+  @include mq("md") {
+    margin-top: rem(48);
+  }
+}
+
 .p-case__nav-buttons {
   margin-top: rem(50);
   display: flex;

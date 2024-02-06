@@ -1,4 +1,5 @@
 <footer class="p-footer <?php echo is_front_page() ? 'l-footer' : ''; ?>">
+  <button class="c-pagetop js-pagetop"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="トップへ戻る" width="" height="" loading="lazy" /></button>
   <div class="p-footer__inner l-inner">
     <div class="p-footer__wrap">
       <div class="p-footer__logo">
@@ -23,16 +24,16 @@
       <div class="p-footer__nav p-global-nav ">
         <ul class="p-global-nav__items">
           <li class="p-global-nav__item">
-            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/plan")) ?>"><span>plan</span></a>
+            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("plan")) ?>"><span>plan</span></a>
           </li>
           <li class="p-global-nav__item">
-            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/case")) ?>"><span>case</span></a>
+            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("case")) ?>"><span>case</span></a>
           </li>
           <li class="p-global-nav__item">
-            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/works")) ?>"><span>works</span></a>
+            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("works")) ?>"><span>works</span></a>
           </li>
           <li class="p-global-nav__item">
-            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/flow")) ?>" target="_blank" rel="noopener"><span>flow</span></a>
+            <a class="p-global-nav__link" href="<?php echo esc_url(home_url("flow")) ?>"><span>flow</span></a>
           </li>
         </ul>
         <ul class="p-global-nav__icons p-sns-icons--white">
@@ -58,7 +59,7 @@
       </p>
       <div class="p-footer__copyright">
         <small>
-          © 2023 FILTURA
+          © <?php echo wp_date("Y"); ?> FILTURA
         </small>
       </div>
     </div>

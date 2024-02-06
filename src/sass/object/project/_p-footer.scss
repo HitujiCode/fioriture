@@ -106,7 +106,7 @@
   line-height: calc(32 / 18);
   letter-spacing: 0.15em;
   @include mq("md") {
-    font-size: rem(8);
+    font-size: 8px;
     line-height: 2;
   }
 }
@@ -122,6 +122,6 @@
   font-family: $en-font;
   line-height: 1;
   @include mq("md") {
-    font-size: rem(10);
+    font-size: 10px;
   }
 }

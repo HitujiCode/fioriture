@@ -64,26 +64,8 @@
       </div>
     </div>
   </section>
-  <?php
-  // instaの情報を配列に格納
-  $caseItems = [
-    [
-      'img' => 'assets/images/common/noimage@2x.webp',
-      'label' => '同性カップル',
-      'text' => '目黒様（仮）からのご相談',
-    ],
-    [
-      'img' => 'assets/images/common/noimage@2x.webp',
-      'label' => 'エイジングカップル',
-      'text' => '小野様（仮）からのご相談',
-    ],
-    [
-      'img' => 'assets/images/common/noimage@2x.webp',
-      'label' => '再婚カップル',
-      'text' => '稲葉様（仮）からのご相談',
-    ],
-  ] ?>
-  <div class="p-case l-case">
+
+  <section class="p-case l-case">
     <div class="p-case__inner l-inner">
       <div class="p-case__title">
         <div class="c-section-title">
@@ -93,19 +75,55 @@
       </div>
       <div class="p-case__content">
         <ul class="p-cards">
-          <?php foreach ($caseItems as $item) : ?>
-            <li class="p-cards__item">
-              <a href="#" class="p-card">
-                <div class="p-card__img">
-                  <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
-                </div>
-                <div class="p-card__body">
-                  <p class="p-card__category"><?php echo esc_html($item['label']); ?></p>
-                  <p class="p-card__title"><?php echo esc_html($item['text']); ?></p>
-                </div>
-              </a>
-            </li>
-          <?php endforeach; ?>
+          <?php
+
+          $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 3, // 表示する投稿数
+            'orderby' => 'date', // 日付で並び替え
+            'order' => 'DESC' // 降順
+
+          );
+
+          $the_query = new WP_Query($args);
+
+          if ($the_query->have_posts()) :
+            while ($the_query->have_posts()) : $the_query->the_post();
+          ?>
+
+              <li class="p-cards__item">
+                <a href="<?php the_permalink(); ?>" class="p-card">
+                  <div class="p-card__img">
+                    <?php if (has_post_thumbnail()) : ?>
+                      <img src="<?php the_post_thumbnail_url(); ?>" alt="サムネイル画像" width="" height="" loading="lazy" />
+                    <?php else : ?>
+                      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="NoImage" width="" height="" loading="lazy" />
+                    <?php endif; ?>
+                  </div>
+                  <div class="p-card__body">
+                    <div class="p-card__category">
+                      <?php
+                      $categories = get_the_category();
+                      $display_categories = array_slice($categories, 0, 2);
+
+                      foreach ($display_categories as $category) {
+                        echo '<span class="c-category">' . esc_html($category->name) . '</span>';
+                      }
+                      ?>
+                    </div>
+                    <p class="p-card__title"><?php the_title(); ?></p>
+                  </div>
+                </a>
+              </li>
+            <?php
+            endwhile;
+            wp_reset_postdata(); // クエリのリセット
+          else :
+            ?>
+            <p>最新の投稿はありません。</p>
+          <?php
+          endif;
+          ?>
         </ul>
         <div class="p-case__button">
           <a class="c-button" href="#"><span>view all</span></a>
@@ -120,7 +138,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
   </div>
   <?php get_template_part("parts/contact") ?>
 </main>

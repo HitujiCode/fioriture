@@ -3,6 +3,7 @@
 .p-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .p-card__img {
@@ -35,17 +36,14 @@
   }
 }
 
-.p-card__body {
+.p-card__category {
+  display: flex;
+  gap: rem(6);
+  flex-wrap: wrap;
   margin-top: rem(15);
   @include mq("md") {
     margin-top: rem(20);
   }
-}
-
-.p-card__category {
-  display: flex;
-  gap: rem(10);
-  // padding: rem(7) rem(13);
 }
 
 .p-card__title {
@@ -54,4 +52,9 @@
   font-weight: $semi-bold;
   line-height: calc(50 / 32);
   letter-spacing: 0.05em;
+  flex-grow: 1;
+  word-break: break-word;
+  @include mq("md") {
+    line-height: calc(26 / 16);
+  }
 }

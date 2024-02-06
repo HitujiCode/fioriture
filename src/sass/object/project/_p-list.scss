@@ -108,7 +108,6 @@
 }
 
 .p-list__item-head-main {
-  display: block;
   font-size: rem(16);
   line-height: calc(50 / 32);
   @include mq("md") {
@@ -119,7 +118,6 @@
 }
 
 .p-list__head-sub {
-  display: block;
   font-size: rem(12);
   line-height: calc(50 / 24);
   letter-spacing: 0.05em;

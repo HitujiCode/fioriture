@@ -81,56 +81,7 @@ jQuery(function ($) {
     });
   }
 
-  // Aboutスライダー
-  // window.onload = function () {
-  //   const swiperContainer = document.querySelector(".js-about-swiper");
-
-  //   if (swiperContainer) {
-  //     let swiper;
-  //     let swiperBool = false; // 初期状態ではSwiperは未初期化とする
-  //     const breakPoint = 767; // ブレークポイントを設定
-
-  //     const createSwiper = () => {
-  //       swiper = new Swiper(swiperContainer, {
-  //         loop: true,
-  //         speed: 1500,
-  //         autoplay: {
-  //           disableOnInteraction: false,
-  //         },
-  //         pagination: {
-  //           el: ".swiper-pagination",
-  //           clickable: true,
-  //         },
-  //         navigation: {
-  //           nextEl: ".swiper-button-next",
-  //           prevEl: ".swiper-button-prev",
-  //         },
-  //       });
-  //       swiperBool = true; // Swiperが初期化されたことを示す
-  //     };
-
-  //     // ページロード時にSwiperの初期化を決定
-  //     if (window.innerWidth <= breakPoint) {
-  //       createSwiper();
-  //     }
-
-  //     // ウィンドウのリサイズ時にSwiperの初期化/破棄を決定
-  //     window.addEventListener(
-  //       "resize",
-  //       () => {
-  //         if (window.innerWidth > breakPoint && swiperBool) {
-  //           swiper.destroy(true, true);
-  //           swiperBool = false; // Swiperが破棄されたことを示す
-  //         } else if (window.innerWidth <= breakPoint && !swiperBool) {
-  //           createSwiper();
-  //         }
-  //       },
-  //       false
-  //     );
-  //   }
-  // };
-
-  // test2
+  // SPのみスライダー
   function initializeAboutSwiper() {
     const aboutSwiper = document.querySelector(".js-about-swiper");
 
@@ -199,7 +150,6 @@ jQuery(function ($) {
 
         if (!swiperInstance) {
           swiperInstance = new Swiper(flowSwiper1, {
-            // initialSlide: 0,
             loop: true,
             spaceBetween: 45,
             slidesPerView: "auto",

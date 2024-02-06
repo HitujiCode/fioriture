@@ -68,6 +68,10 @@
   }
 }
 
+.p-form-textarea textarea {
+  resize: none;
+}
+
 .p-form-input input,
 .p-form-textarea textarea {
   font-size: inherit;

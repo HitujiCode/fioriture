@@ -13,6 +13,7 @@
 .p-about__swiper-wrap {
   margin-top: rem(30);
   position: relative;
+  // width: rem(285);
   // width: fit-content;//tabでも1つだけ表示
   // margin-inline: auto;//tabでも1つだけ表示
   @include mq("md") {

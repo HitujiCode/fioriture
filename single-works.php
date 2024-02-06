@@ -1,10 +1,10 @@
 <?php get_header(); ?>
-<?php
-$post_type = get_post_type();
-$post_type_data = get_post_type_object($post_type);
-$post_type_label = $post_type_data->labels->name;
+<!-- <?php
+      $post_type = get_post_type();
+      $post_type_data = get_post_type_object($post_type);
+      $post_type_label = $post_type_data->labels->name;
 
-?>
+      ?> -->
 
 <main class="l-main">
 
@@ -23,16 +23,32 @@ $post_type_label = $post_type_data->labels->name;
     <div class="p-works-article__inner l-inner">
       <div class="p-works-article__content">
         <div class="p-works-article__body">
-          <span class="p-works-article__category c-category">ソロ</span>
-          <h2 class="p-works-article__title c-title">鈴木様（仮）の撮影</h2>
-          <p>出で立ち、撮影までの経緯など出で立ち、撮影までの経緯など出で立ち、撮影までの経緯など出で立ち、撮影までの経緯など出で立ち、撮影までの経緯など出で立ち、撮影までの経緯など出で立ち、撮影までの経緯など出で立ち、撮影までの経緯など出で立ち、撮影までの経緯など出で立ち、撮影までの経緯など出で立ち、撮影までの経緯など</p>
+          <div class="p-works-article__category"> <span class=" c-category">
+              <?php
+              $terms = get_the_terms(get_the_ID(), 'genre');
+              if ($terms && !is_wp_error($terms)) :
+                $display_terms = array_slice($terms, 0, 1);
+                foreach ($display_terms as $term) {
+                  echo '<span class="c-category">' . esc_html($term->name) . '</span>';
+                }
+              endif;
+              ?></div>
+          <h2 class="p-works-article__title c-title"><?php the_title(); ?></h2>
         </div>
         <div class="p-works-article__images">
-          <?php for ($i = 0; $i < 4; $i++) : ?>
-            <a href="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.webp')); ?>" class="luminous">
-              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/noimage@2x.webp')); ?>" alt="" width="" height="" />
-            </a>
-          <?php endfor; ?>
+          <?php if (has_post_thumbnail()) : ?>
+            <div class="luminous">
+              <?php the_post_thumbnail(); ?>
+            </div>
+          <?php endif; ?>
+          <?php $fields = CFS()->get('works_gallery'); ?>
+          <?php if ($fields) : ?>
+            <?php foreach ($fields as $field) : ?>
+              <a href="<?php echo esc_html($field['works_img']); ?>" class="luminous">
+                <img src="<?php echo esc_html($field['works_img']); ?>" alt="" width="" height="" />
+              </a>
+            <?php endforeach; ?>
+          <?php endif; ?>
         </div>
       </div>
       <div class="p-works-article__buttons l-common">

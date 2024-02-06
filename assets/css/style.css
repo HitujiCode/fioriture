@@ -267,6 +267,16 @@ select::-ms-expand {
 	width: 100%;
 }
 
+.pagetop {
+	bottom: -800px;
+	height: 3.125rem;
+	padding: 0;
+	position: fixed;
+	right: 1.875rem;
+	width: 3.125rem;
+	z-index: 100;
+}
+
 .c-section-title,
 .c-section-title--left {
 	font-weight: 500;
@@ -442,6 +452,18 @@ select::-ms-expand {
 	width: 100%;
 }
 
+.entry-loading {
+	display: none;
+	font-weight: 700;
+	margin: 3em 0;
+	text-align: center;
+	width: 100%;
+}
+
+.entry-loading.is-show {
+	display: block;
+}
+
 .p-about__swiper-wrap {
 	margin-top: 1.875rem;
 	position: relative;
@@ -546,6 +568,7 @@ select::-ms-expand {
 .p-card {
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 }
 
 .p-card__img {
@@ -573,21 +596,21 @@ select::-ms-expand {
 	width: 100%;
 }
 
-.p-card__body {
+.p-card__category {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.375rem;
 	margin-top: 0.9375rem;
 }
 
-.p-card__category {
-	display: flex;
-	gap: 0.625rem;
-}
-
 .p-card__title {
+	flex-grow: 1;
 	font-size: 1rem;
 	font-weight: 600;
 	letter-spacing: 0.05em;
 	line-height: 1.5625;
 	margin-top: 0.5rem;
+	word-break: break-word;
 }
 
 .p-cards {
@@ -675,6 +698,10 @@ select::-ms-expand {
 .p-case__button {
 	margin-top: 3.125rem;
 	text-align: center;
+}
+
+.p-case__pagenavi {
+	margin-top: 3.125rem;
 }
 
 .p-case__nav-buttons {
@@ -929,6 +956,10 @@ select::-ms-expand {
 	font-size: 1rem;
 	height: 11.25rem;
 	padding: 0.75rem;
+}
+
+.p-form-textarea textarea {
+	resize: none;
 }
 
 .p-form-input input,
@@ -1253,13 +1284,11 @@ select::-ms-expand {
 }
 
 .p-list__item-head-main {
-	display: block;
 	font-size: 1rem;
 	line-height: 1.5625;
 }
 
 .p-list__head-sub {
-	display: block;
 	font-size: 0.75rem;
 	letter-spacing: 0.05em;
 	line-height: 2.0833333333;
@@ -1388,15 +1417,10 @@ select::-ms-expand {
 	margin-top: 1.5rem;
 }
 
-.p-profile__head,
 .p-profile__text {
 	font-size: 0.8125rem;
 	font-weight: 500;
 	line-height: 1.9230769231;
-}
-
-.p-profile__head {
-	letter-spacing: 0.15em;
 }
 
 .p-profile__name {
@@ -1807,6 +1831,77 @@ select::-ms-expand {
 	text-align: center;
 }
 
+.wp-pagenavi {
+	align-items: center;
+	display: flex;
+	gap: 1.25rem;
+	justify-content: center;
+}
+
+.wp-pagenavi .previouspostslink {
+	display: inline-block;
+	font-size: 0;
+	height: 1.5625rem;
+	position: relative;
+	width: 1.5625rem;
+}
+
+.wp-pagenavi .previouspostslink::after {
+	background-image: url("../images/common/arrow-prev.svg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.wp-pagenavi .page {
+	align-items: center;
+	display: inline-flex;
+	font-size: 1rem;
+	font-weight: 500;
+	height: 1.5625rem;
+	justify-content: center;
+	line-height: 1;
+	width: 1.5625rem;
+}
+
+.wp-pagenavi .current {
+	align-items: center;
+	background-color: #79c9bc;
+	border-radius: 50%;
+	color: #fff;
+	display: inline-flex;
+	height: 1.5625rem;
+	justify-content: center;
+	width: 1.5625rem;
+}
+
+.wp-pagenavi .nextpostslink {
+	display: inline-block;
+	font-size: 0;
+	height: 1.5625rem;
+	position: relative;
+	width: 1.5625rem;
+}
+
+.wp-pagenavi .nextpostslink::after {
+	background-image: url("../images/common/arrow-next.svg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
 @media (hover: hover) {
 
 a:hover {
@@ -1859,6 +1954,12 @@ a[href^="tel:"] {
 
 .c-logo__img {
 	width: 10.6875rem;
+}
+
+.pagetop {
+	height: 3.75rem;
+	right: 15.7142857143%;
+	width: 3.75rem;
 }
 
 .c-section-title__name {
@@ -2029,8 +2130,12 @@ a[href^="tel:"] {
 	border-radius: 0.375rem;
 }
 
-.p-card__body {
+.p-card__category {
 	margin-top: 1.25rem;
+}
+
+.p-card__title {
+	line-height: 1.625;
 }
 
 .p-cards {
@@ -2102,6 +2207,10 @@ a[href^="tel:"] {
 }
 
 .p-case__button {
+	margin-top: 3rem;
+}
+
+.p-case__pagenavi {
 	margin-top: 3rem;
 }
 
@@ -2234,12 +2343,12 @@ a[href^="tel:"] {
 }
 
 .p-footer__text {
-	font-size: 0.5rem;
+	font-size: 8px;
 	line-height: 2;
 }
 
 .p-footer__copyright small {
-	font-size: 0.625rem;
+	font-size: 10px;
 }
 
 .p-form__label {
@@ -2494,7 +2603,7 @@ a[href^="tel:"] {
 }
 
 .p-profile__content {
-	align-items: center;
+	align-items: start;
 	display: flex;
 	gap: 1.875rem;
 	margin-top: 3rem;
@@ -2510,14 +2619,10 @@ a[href^="tel:"] {
 	margin-top: initial;
 }
 
-.p-profile__head,
 .p-profile__text {
 	font-size: 0.875rem;
+	letter-spacing: 0.11em;
 	line-height: 2.1428571429;
-}
-
-.p-profile__head {
-	letter-spacing: 0.05em;
 }
 
 .p-profile__name {

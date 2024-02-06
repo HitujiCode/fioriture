@@ -49,12 +49,12 @@
             </h2>
           </div>
           <div class="p-message__body">
-            <p class="p-message__text">同性の結婚だから…<br>
+            <p class="p-message__text c-text-message">同性の結婚だから…<br>
               年齢を重ねてからの結婚だから…<br>
               2回目の結婚だから…<br>
               2.5次元推しキャラとの結婚だから…
             </p>
-            <p class="p-message__text">fioritureでは悩まないで。<br>
+            <p class="p-message__text c-text-message">fioritureでは悩まないで。<br>
               あなたの個性は美しい。<br>
               大切に残したいステキなあなたの今この瞬間を。<br>
               それぞれの想いに沿うウェディングフォトや<br class="u-mobile">
@@ -65,57 +65,7 @@
       </div>
     </div>
   </div>
-  <?php
-  // aboutの情報を配列に格納
-  $aboutItems = [
-    [
-      'head' => '同性カップル',
-      'img' => 'assets/images/top/about1.svg',
-      'text' => '男性同士、女性同士で愛し合っているカップル',
-    ],
-    [
-      'head' => 'エイジングカップル',
-      'img' => 'assets/images/top/about2.svg',
-      'text' => '共に年を重ねた人生経験豊富な熟年のカップル',
-    ],
-    [
-      'head' => '再婚カップル',
-      'img' => 'assets/images/top/about3.svg',
-      'text' => '一方もしくは二人とも結婚経験があるカップル',
-    ],
-    [
-      'head' => 'ソロ',
-      'img' => 'assets/images/top/about4.svg',
-      'text' => '年齢や未婚・既婚問わず自由にウエディングフォトを希望される方',
-    ],
-    [
-      'head' => '2次元カップル',
-      'img' => 'assets/images/top/about5.svg',
-      'text' => '推しさんのうちわなどのグッズ・思い出の品と一緒に撮影を希望される方',
-    ],
-    [
-      'head' => '十三詣り',
-      'img' => 'assets/images/top/about6.svg',
-      'text' => '13歳になったお子さまの撮影を希望される方',
-    ],
-    [
-      'head' => 'コスプレ',
-      'img' => 'assets/images/top/about7.svg',
-      'text' => '推しキャラになりきって撮影を希望される方',
-    ],
-    [
-      'head' => 'ロケーション（新潟県内）',
-      'img' => 'assets/images/top/about8.svg',
-      'text' => '政令指定都市でもある新潟県の街、自然の中で撮影を希望される方',
-    ],
-    [
-      'head' => 'ドローン',
-      'img' => 'assets/images/top/about9.svg',
-      'text' => '主に商用利用向けのドローン撮影を希望される方',
-    ],
-  ];
 
-  ?>
   <section class="p-about l-about">
     <div class="p-about__inner l-inner">
       <div class="p-about__title">
@@ -166,14 +116,15 @@
                 </picture>
               </div>
               <div class="p-list__item-body">
-                <h3 class="p-list__item-head"><span class="p-list__item-head-main">個々のアイデンティティを尊重し、<br>
-                    真摯に向き合うカウンセリング</span>
+                <div class="p-list__item-head">
+                  <h3 class="p-list__item-head-main">個々のアイデンティティを尊重し、<br>
+                    真摯に向き合うカウンセリング</h3>
                   <span class="p-list__head-sub">（自己同一性、存在証明、同性愛など）</span>
-                </h3>
+                </div>
                 <p class="p-list__item-text">未来の幸せの形はさまざまです。私たちはそれを祝福致します。全ての幸せへの尊重を表現し、受け入れ、推奨する世界を一緒に創りたいと考えています。
                 </p>
                 <div class="p-list__item-button">
-                  <a class="c-button" href="#">more</a>
+                  <a class="c-button" href="<?php echo esc_url(home_url("consultation")) ?>">more</a>
                 </div>
               </div>
             </li>
@@ -185,48 +136,31 @@
                 </picture>
               </div>
               <div class="p-list__item-body">
-                <h3 class="p-list__item-head"><span class="p-list__item-head-main">かけがえのない思い出になる
+                <div class="p-list__item-head">
+                  <h3 class="p-list__item-head-main">かけがえのない思い出になる
                     <br>
-                    記念撮影</span>
+                    記念撮影
+                  </h3>
                   <span class="p-list__head-sub">（ロケーションの提案、ヘアメイク、小道具貸出など）</span>
-                </h3>
-                <p class="p-list__item-text">
-                  同性、年齢、未婚や既婚問わず、ご自身の「今」を残す撮影をいたします。ロケーションの提案、ヘアメイクや小道具の貸出も承っております。一緒に思い出を作りましょう！
-                </p>
-                <div class="p-list__item-button">
-                  <a class="c-button" href="#">more</a>
+                  </d>
+                  <p class="p-list__item-text">
+                    同性、年齢、未婚や既婚問わず、ご自身の「今」を残す撮影をいたします。ロケーションの提案、ヘアメイクや小道具の貸出も承っております。一緒に思い出を作りましょう！
+                  </p>
+                  <div class="p-list__item-button">
+                    <a class="c-button" href="<?php echo esc_url(home_url("photograph")) ?>">more</a>
+                  </div>
                 </div>
-              </div>
             </li>
           </ul>
           <div class="p-plan__button">
-            <a class="c-button" href="#"><span>view all</span></a>
+            <a class="c-button" href="<?php echo esc_url(home_url("plan")) ?>"><span>view all</span></a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <?php
-  // instaの情報を配列に格納
-  $caseItems = [
-    [
-      'img' => 'assets/images/common/noimage@2x.webp',
-      'label' => '同性カップル',
-      'text' => '目黒様（仮）からのご相談',
-    ],
-    [
-      'img' => 'assets/images/common/noimage@2x.webp',
-      'label' => 'エイジングカップル',
-      'text' => '小野様（仮）からのご相談',
-    ],
-    [
-      'img' => 'assets/images/common/noimage@2x.webp',
-      'label' => '再婚カップル',
-      'text' => '稲葉様（仮）からのご相談',
-    ],
-  ] ?>
-  <div class="p-case l-case">
+  <section class="p-case l-case">
     <div class="p-case__inner l-inner">
       <div class="p-case__title">
         <div class="c-section-title">
@@ -236,138 +170,190 @@
         </div>
         <div class="p-case__content">
           <ul class="p-cards">
-            <?php foreach ($caseItems as $item) : ?>
-              <li class="p-cards__item">
-                <a href="#" class="p-card">
-                  <div class="p-card__img">
-                    <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
-                  </div>
-                  <div class="p-card__body">
-                    <p class="p-card__category"><?php echo esc_html($item['label']); ?></p>
-                    <p class="p-card__title"><?php echo esc_html($item['text']); ?></p>
-                  </div>
-                </a>
-              </li>
-            <?php endforeach; ?>
+            <?php
+
+            $args = array(
+              'post_type' => 'post',
+              'posts_per_page' => 3,
+              'orderby' => 'date',
+              'order' => 'DESC'
+
+            );
+
+            $the_query = new WP_Query($args);
+
+            if ($the_query->have_posts()) :
+              while ($the_query->have_posts()) : $the_query->the_post();
+            ?>
+
+                <li class="p-cards__item">
+                  <a href="<?php the_permalink(); ?>" class="p-card">
+                    <div class="p-card__img">
+                      <?php if (has_post_thumbnail()) : ?>
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="サムネイル画像" width="" height="" loading="lazy" />
+                      <?php else : ?>
+                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="NoImage" width="" height="" loading="lazy" />
+                      <?php endif; ?>
+                    </div>
+                    <div class="p-card__category">
+                      <?php
+                      $categories = get_the_category();
+                      $display_categories = array_slice($categories, 0, 2);
+
+                      foreach ($display_categories as $category) {
+                        echo '<span class="c-category">' . esc_html($category->name) . '</span>';
+                      }
+                      ?>
+                    </div>
+                    <p class="p-card__title"><?php the_title(); ?></p>
+                  </a>
+                </li>
+              <?php
+              endwhile;
+              wp_reset_postdata();
+            else :
+              ?>
+              <p>最新の投稿はありません。</p>
+            <?php
+            endif;
+            ?>
           </ul>
           <div class="p-case__button">
-            <a class="c-button" href="#"><span>view all</span></a>
+            <a class="c-button" href="<?php echo esc_url(home_url("case")) ?>"><span>view all</span></a>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    </div>
 
-  <?php
-  // worksの情報を配列に格納
-  $worksItems = [
-    [
-      'img' => 'assets/images/works/wokrs1@2x.webp',
-      'label' => '十三詣り',
-      'text' => '丸山様（仮）の撮影',
-    ],
-    [
-      'img' => 'assets/images/works/wokrs2@2x.webp',
-      'label' => 'ソロ',
-      'text' => '鈴木様（仮）の撮影',
-    ],
-    [
-      'img' => 'assets/images/common/noimage@2x.webp',
-      'label' => 'エイジングカップル',
-      'text' => '稲葉様（仮）の撮影',
-    ],
-  ] ?>
-  <div class="p-works l-works">
-    <div class="p-works__inner l-inner">
-      <div class="p-works__title">
-        <div class="c-section-title">
-          <span class="c-section-title__en">works</span>
-          <h2 class="c-section-title__ja">撮影事例</h2>
-          </d>
-        </div>
-        <div class="p-works__content">
-          <ul class="p-cards">
-            <?php foreach ($worksItems as $item) : ?>
-              <li class="p-cards__item">
-                <a href="#" class="p-card">
-                  <div class="p-card__img">
-                    <img src="<?php echo esc_url(get_theme_file_uri($item['img'])); ?>" alt="" width="" height="" loading="lazy" />
-                  </div>
-                  <div class="p-card__body">
-                    <p class="p-card__category"><?php echo esc_html($item['label']); ?></p>
-                    <p class="p-card__title"><?php echo esc_html($item['text']); ?></p>
-                  </div>
-                </a>
-              </li>
-            <?php endforeach; ?>
-          </ul>
-          <div class="p-works__button">
-            <a class="c-button" href="#"><span>view all</span></a>
+    <div class="p-works l-works">
+      <div class="p-works__inner l-inner">
+        <div class="p-works__title">
+          <div class="c-section-title">
+            <span class="c-section-title__en">works</span>
+            <h2 class="c-section-title__ja">撮影事例</h2>
+            </d>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          <div class="p-works__content">
+            <ul class="p-cards">
+              <?php
 
-  <?php
-  // instaの情報を配列に格納 後でプラグインで実装
-  $instaItem = [
-    [
-      'img' => 'assets/images/top/instagram@2x.webp',
-    ],
-  ] ?>
-  <div class="p-instagram l-instagram">
-    <div class="p-instagram__inner l-inner">
-      <div class="p-instagram__title">
-        <div class="c-section-title">
-          <span class="c-section-title__en">instagram</span>
-          <h2 class="c-section-title__ja">インスタグラム</span>
-          </h2>
-        </div>
-        <div class="p-instagram__content">
-          <ul class="p-grid-list">
-            <?php for ($i = 0; $i < 10; $i++) : ?>
-              <li class="p-grid-list__item p-grid-item">
-                <div class="p-grid-item__img">
-                  <img src="<?php echo esc_url(get_theme_file_uri($instaItem[0]['img'])); ?>" alt="" width="" height="" loading="lazy" />
-                </div>
-              </li>
-            <?php endfor; ?>
-          </ul>
-          <div class="p-instagram__button">
-            <a class="c-button--blank" href="#"><span>Instagram</span></a>
+              $args = array(
+                'post_type' => 'works',
+                'posts_per_page' => 3,
+                'orderby' => 'date',
+                'order' => 'DESC'
+
+              );
+
+              $the_query = new WP_Query($args);
+
+              if ($the_query->have_posts()) :
+                while ($the_query->have_posts()) : $the_query->the_post();
+              ?>
+
+                  <li class="p-cards__item">
+                    <a href="<?php the_permalink(); ?>" class="p-card">
+                      <div class="p-card__img">
+                        <?php if (has_post_thumbnail()) : ?>
+                          <img src="<?php the_post_thumbnail_url(); ?>" alt="サムネイル画像" width="" height="" loading="lazy" />
+                        <?php else : ?>
+                          <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="NoImage" width="" height="" loading="lazy" />
+                        <?php endif; ?>
+                      </div>
+                      <div class="p-card__category">
+                        <?php
+                        $categories = get_the_category();
+                        if (!empty($categories)) : // カテゴリがある場合のみ実行
+                          foreach ($categories as $category) {
+                            echo '<span class="c-category">' . esc_html($category->name) . '</span>';
+                          }
+                        endif;
+                        ?>
+                      </div>
+                      <p class="p-card__title"><?php the_title(); ?></p>
+                    </a>
+                  </li>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+              else :
+                ?>
+                <p>最新の投稿はありません。</p>
+              <?php
+              endif;
+              ?>
+            </ul>
+            <div class="p-works__button">
+              <a class="c-button" href="<?php echo esc_url(home_url("works")) ?>"><span>view all</span></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <?php get_template_part("parts/contact") ?>
-  </div>
-  </div>
-  <div class="p-profile l-profile">
-    <div class="p-profile__inner l-inner">
-      <div class="p-profile__title">
-        <div class="c-section-title">
-          <span class="c-section-title__en">profile</span>
-          <h2 class="c-section-title__ja">プロフィール</span>
-          </h2>
-        </div>
-        <div class="p-profile__content">
-          <div class="p-profile__img">
-            <picture>
-              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile_pc@2x.webp')); ?>" media="(min-width:768px)" width="" height="" />
-              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile@2x.webp')); ?>" alt="プロフィール写真" width="" height="" loading="lazy" />
-            </picture>
+
+    <?php
+    // instaの情報を配列に格納 後でプラグインで実装
+    $instaItem = [
+      [
+        'img' => 'assets/images/top/instagram@2x.webp',
+      ],
+    ] ?>
+    <section class="p-instagram l-instagram">
+      <div class="p-instagram__inner l-inner">
+        <div class="p-instagram__title">
+          <div class="c-section-title">
+            <span class="c-section-title__en">instagram</span>
+            <h2 class="c-section-title__ja">インスタグラム</span>
+            </h2>
           </div>
-          <div class="p-profile__body">
-            <p class="p-profile__head">肩書が入ります。肩書が入ります。</p>
-            <p class="p-profile__name">石井 由香里</p>
-            <p class="p-profile__text">
-              ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。ここにプロフィールが入ります。
-            </p>
+          <div class="p-instagram__content">
+            <ul class="p-grid-list">
+              <?php for ($i = 0; $i < 10; $i++) : ?>
+                <li class="p-grid-list__item p-grid-item">
+                  <div class="p-grid-item__img">
+                    <img src="<?php echo esc_url(get_theme_file_uri($instaItem[0]['img'])); ?>" alt="" width="" height="" loading="lazy" />
+                  </div>
+                </li>
+              <?php endfor; ?>
+            </ul>
+            <div class="p-instagram__button">
+              <a class="c-button--blank" href="#"><span>Instagram</span></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <?php get_template_part("parts/contact") ?>
+    </section>
+
+    <section class="p-profile l-profile">
+      <div class="p-profile__inner l-inner">
+        <div class="p-profile__title">
+          <div class="c-section-title">
+            <span class="c-section-title__en">profile</span>
+            <h2 class="c-section-title__ja">プロフィール</span>
+            </h2>
+          </div>
+          <div class="p-profile__content">
+            <div class="p-profile__img">
+              <picture>
+                <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile_pc@2x.webp')); ?>" media="(min-width:768px)" width="" height="" />
+                <img src="<?php echo esc_url(get_theme_file_uri('assets/images/top/profile@2x.webp')); ?>" alt="プロフィール写真" width="" height="" loading="lazy" />
+              </picture>
+            </div>
+            <div class="p-profile__body">
+              <p class="p-profile__name">石井 由香里</p>
+              <p class="p-profile__text">
+                長岡市生まれ。前職は日本旅行 子会社新潟JATS時代、日中国交３０周年記念「新潟県日中友好の翼」等アジアを中心として国内・海外添乗業務に従事。<br>
+                中国語を学ぶことの面白さを知り、中国江蘇省 蘇州に語学ホームステイを経験、多種多様なジャンルから新潟への想いを再認識経験、東京ツアコンへの移籍。<br>
+                2006年に結婚を機に退職、その後、サービス業経験を活かし結婚式場にて、サービス部門アテンドやキッチン飲食部門等で8年間勤務。この経験が大きく影響し繋ぎ深く感化、この事業の指針・使命となっている。<br>
+                家族４人2児の母<br> 国内・海外で培った経験・視点からこの街の未来を明るく照らしたいと願い日々奮闘…。<br>
+                座右の銘は「知覚動考」
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 </main>
 
 <?php get_footer(); ?>

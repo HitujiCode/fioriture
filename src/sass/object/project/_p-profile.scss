@@ -15,7 +15,7 @@
     margin-top: rem(48);
     display: flex;
     gap: rem(30);
-    align-items: center;
+    align-items: start;
   }
 }
 
@@ -43,7 +43,6 @@
   }
 }
 
-.p-profile__head,
 .p-profile__text {
   font-size: rem(13);
   font-weight: $medium;
@@ -51,13 +50,7 @@
   @include mq("md") {
     font-size: rem(14);
     line-height: calc(30 / 14);
-  }
-}
-
-.p-profile__head {
-  letter-spacing: 0.15em;
-  @include mq("md") {
-    letter-spacing: 0.05em;
+    letter-spacing: 0.11em;
   }
 }
 
