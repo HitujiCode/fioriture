@@ -38,17 +38,11 @@ $pageSettings = [
     "title_en" => "consultation from",
     "title_ja" => $current_post_title,
   ],
-  "flow" => [
-    "image_pc" => "/assets/images/flow/fv_pc@2x.webp",
-    "image_sp" => "/assets/images/flow/fv@2x.webp",
-    "title_en" => "flow",
-    "title_ja" => "撮影の流れ"
-  ],
   "works" => [
     "image_pc" => "/assets/images/works/fv_pc@2x.webp",
     "image_sp" => "/assets/images/works/fv@2x.webp",
     "title_en" => "works",
-    "title_ja" => "プラン紹介"
+    "title_ja" => "撮影事例"
   ],
   "single-works" => [
     "image_pc" => "/assets/images/works/fv_pc@2x.webp",
@@ -56,6 +50,12 @@ $pageSettings = [
     "title_name_works" => "$works_name",
     "title_en" => "photo shoot",
     "title_ja" => "$current_post_title"
+  ],
+  "flow" => [
+    "image_pc" => "/assets/images/flow/fv_pc@2x.webp",
+    "image_sp" => "/assets/images/flow/fv@2x.webp",
+    "title_en" => "flow",
+    "title_ja" => "撮影の流れ"
   ],
   "404" => [
     "image_pc" => "",
@@ -71,10 +71,12 @@ function getCurrentPageType()
 
   if (is_front_page() || is_home()) {
     return 'home';
-  } elseif (is_single() && get_post_type() == 'post') {
+  } elseif (is_singular('post')) { // WordPress 標準の投稿のシングルページ
     return 'single';
-  } elseif (is_single() && get_post_type() == 'works') {
+  } elseif (is_singular('works')) { // 'works' カスタム投稿タイプのシングルページ
     return 'single-works';
+  } elseif (is_post_type_archive('works')) { // 'works' カスタム投稿タイプのアーカイブページ
+    return 'works';
   } elseif (is_tax() || is_category() || is_tag()) {
     return 'taxonomy';
   } elseif (is_page()) {
@@ -86,12 +88,12 @@ function getCurrentPageType()
   }
 }
 
+
 // 現在のページタイプに基づいて設定を取得
 $current_page_type = getCurrentPageType();
 
 // ページタイプをキーとしてページ設定を取得
 $pageConfig = $pageSettings[$current_page_type] ?? null;
-
 
 // ページ設定が存在する場合、それに基づいてHTMLを出力
 if ($pageConfig) {
@@ -101,9 +103,8 @@ if ($pageConfig) {
   $title_en = $pageConfig['title_en'] ?? "タイトルが設定されていません";
   $title_name_case = $pageConfig['title_name_case'] ?? "";
   $title_ja = $pageConfig['title_ja'] ?? "タイトルが設定されていません";
-
-  // HTML出力部分は以前のコードを保持
 }
+
 ?>
 
 <div class="p-sub-fv__bg">
@@ -113,9 +114,8 @@ if ($pageConfig) {
   </picture>
 </div>
 <div class="p-sub-fv__inner l-inner<?php if (is_single() && (get_post_type() == 'post' || get_post_type() == 'works')) echo ' p-sub-fv__inner--article'; ?>">
-
   <div class="p-sub-fv__title">
-    <div class="c-section-title--left">
+    <div class="c-section-title--left<?php if (is_singular('works')) echo ' c-section-title--delta'; ?>">
       <!-- $title_nameが空でない場合のみ出力 -->
       <?php if (!empty($title_name_works)) : ?>
         <span class="c-section-title__name"><?php echo $title_name_works; ?></span>

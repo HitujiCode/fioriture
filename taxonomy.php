@@ -92,7 +92,7 @@
           </ul>
         </div>
         <div class="p-archive-works__button">
-          <a href="<?php echo esc_url(home_url('taxonomy/works')); ?>" class="c-button">view all</a>
+          <a href="<?php echo esc_url(home_url('taxonomy')); ?>" class="c-button">view all</a>
         </div>
       </section>
       <!-- 十三詣り -->
@@ -170,7 +170,7 @@
           </ul>
         </div>
         <div class="p-archive-works__button">
-          <a href="<?php echo esc_url(home_url('/taxonomy_works')); ?>" class="c-button">view all</a>
+          <a href="<?php echo esc_url(home_url('taxonomy')); ?>" class="c-button">view all</a>
         </div>
       </section>
       <!-- ドローン -->
@@ -244,7 +244,7 @@
             </ul>
           </div>
           <div class="p-archive-works__button">
-            <a href="<?php echo esc_url(get_term_link('taxonomy-works', 'taxonomy_works')); ?>" class="c-button">view all</a>
+            <a href="<?php echo esc_url(home_url('taxonomy')); ?>" class="c-button">view all</a>
           </div>
         </section>
       <?php endwhile; ?>

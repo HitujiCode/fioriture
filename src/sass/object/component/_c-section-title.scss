@@ -49,3 +49,11 @@
   text-align: left;
   color: $white;
 }
+
+.c-section-title--delta .c-section-title__en {
+  line-height: calc(40 / 32);
+}
+
+.c-section-title--delta .c-section-title__ja {
+  margin-top: rem(12);
+}

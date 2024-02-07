@@ -36,24 +36,6 @@ function disable_author_archive()
 }
 add_action('init', 'disable_author_archive');
 
-/* テンプレートパスの取得 */
-function temp_path()
-{
-  echo esc_url(get_template_directory_uri());
-}
-
-/* assetsパスの取得 */
-function assets_path()
-{
-  echo esc_url(get_template_directory_uri() . '/assets');
-}
-
-/* imgパスの取得 */
-function img_path()
-{
-  echo esc_url(get_template_directory_uri() . '/assets/images');
-}
-
 /* blogの最大投稿数 */
 function custom_posts_per_page($query)
 {
@@ -100,12 +82,7 @@ function my_script_init()
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
 
-// 投稿画面を非表示
-// function my_custom_init()
-// {
-//   remove_post_type_support('page', 'editor');
-// }
-// add_action('init', 'my_custom_init');
+// エディターを非表示
 function my_custom_init()
 {
   remove_post_type_support('post', 'editor');
@@ -122,6 +99,16 @@ function set_custom_post_slug($data, $postarr)
   return $data;
 }
 add_filter('wp_insert_post_data', 'set_custom_post_slug', 10, 2);
+
+// 撮影事例詳細のスラッグを自動設定
+function set_custom_archive_slug($data, $postarr)
+{
+  if ($data['post_type'] === 'works' && isset($postarr['ID'])) {
+    $data['post_name'] = 'works-article-' . $postarr['ID']; // スラッグの形式を変更
+  }
+  return $data;
+}
+add_filter('wp_insert_post_data', 'set_custom_archive_slug', 10, 2);
 
 // 繰り返しフィールドの画像IDを取得
 function get_attachment_id_from_url($image_url)

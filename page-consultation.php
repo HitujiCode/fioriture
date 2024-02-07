@@ -4,7 +4,7 @@
 
   <div class="p-sub-fv">
     <?php if (function_exists('bcn_display')) { ?>
-      <div class="p-sub-fv__breadcrumb c-breadcrumb top-breadcrumb">
+      <div class="p-sub-fv__breadcrumb c-breadcrumb ">
         <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
           <?php bcn_display(); ?>
         </div>
