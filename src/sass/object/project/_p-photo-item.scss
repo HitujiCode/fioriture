@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .p-photo-item:not(:first-child) {
-  margin-top: rem(25);
+  margin-top: rem(50);
   @include mq("md") {
     margin-top: rem(60);
   }
@@ -10,7 +10,7 @@
 .p-photo-item__content {
   display: flex;
   flex-direction: column;
-  gap: rem(20);
+  gap: rem(16);
   @include mq("md") {
     flex-direction: initial;
     gap: rem(40);
@@ -44,19 +44,33 @@
   line-height: calc(50 / 24);
   letter-spacing: 0.05em;
   @include mq("md") {
-    line-height: calc(40 / 12);
+    line-height: 1;
+    display: block;
+    margin-top: rem(4);
   }
 }
 
 .p-photo-item__text {
-  margin-top: rem(16);
+  margin-top: rem(10);
   font-size: rem(13);
   font-weight: $semi-bold;
   line-height: calc(50 / 26);
+  text-align: justify;
   @include mq("md") {
     font-size: rem(14);
     line-height: calc(30 / 14);
     letter-spacing: 0.05em;
+    margin-top: rem(20);
+  }
+}
+
+.p-photo-item__text:not(:first-of-type) {
+  margin-top: rem(26);
+}
+
+.p-photo-item:not(:first-child) .p-photo-item__text {
+  @include mq("md") {
+    margin-top: rem(16);
   }
 }
 
@@ -65,6 +79,13 @@
     width: calc(460 / 960 * 100%);
   }
 }
+
+// .p-photo-item:not(:first-child) .p-photo-item__img {
+//   margin-top: rem(26);
+//   @include mq("md") {
+//     margin-top: initial;
+//   }
+// }
 
 .p-photo-item__img img {
   aspect-ratio: 630/419;
@@ -83,6 +104,7 @@
   gap: rem(20);
   justify-content: center;
   @include mq("md") {
+    margin-top: rem(40);
     gap: rem(32);
   }
 }

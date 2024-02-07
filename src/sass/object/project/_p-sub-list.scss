@@ -20,6 +20,8 @@
 
 .p-sub-list__item-img {
   position: relative;
+  overflow: hidden;
+  border-radius: rem(6);
 }
 
 .p-sub-list__item-img img {
@@ -28,8 +30,14 @@
   aspect-ratio: 630/354;
   object-fit: cover;
   object-position: top;
+  transition: transform 0.3s ease-in-out;
   @include mq(md) {
+    aspect-ratio: 464/261;
   }
+}
+
+.p-sub-list__item-img:hover img {
+  transform: scale(1.05);
 }
 
 .p-sub-list__item-img::before,
@@ -38,15 +46,16 @@
   position: absolute;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;
+  background-size: cover;
 }
 
 .p-sub-list__item-img::before {
   background-image: url(../images/common/text-img1.svg);
   bottom: rem(14);
-  left: rem(14);
-  width: rem2(237);
-  height: rem2(55);
+  left: rem(13);
+  width: calc(237 / 750 * 100vw);
+  height: calc(55 / 750 * 100vw);
+  z-index: 1;
   @include mq("md") {
     width: rem(197);
     height: rem(45);
@@ -58,13 +67,13 @@
 .p-sub-list__item:nth-child(even) .p-sub-list__item-img::before {
   bottom: rem(14);
   left: rem(14);
-  width: rem2(415);
-  height: rem2(45);
+  width: calc(415 / 750 * 100vw);
+  height: calc(45 / 750 * 100vw);
   background-image: url(../images/common/text-img2.svg);
   @include mq("md") {
     width: rem(375);
     height: rem(41);
-    bottom: rem(14);
+    bottom: rem(20);
     left: rem(14);
   }
 }
@@ -77,12 +86,9 @@
   transform: translate(-50%, -50%);
   width: calc(456 / 464 * 100%);
   height: calc(253 / 261 * 100%);
-  border-radius: rem(6);
-  border: 2px solid $base;
+  border: 1px solid $base;
   box-sizing: border-box;
-  @include mq("md") {
-    border-radius: rem(4);
-  }
+  border-radius: rem(6);
 }
 
 .p-sub-list__item-body {
@@ -103,9 +109,11 @@
   font-size: rem(16);
   line-height: calc(50 / 32);
   letter-spacing: 0.05em;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
   @include mq("md") {
     font-size: rem(20);
-    line-height: calc(38 / 20);
+    line-height: 1.7;
     letter-spacing: 0.1em;
   }
 }
@@ -116,7 +124,7 @@
   line-height: calc(50 / 24);
   letter-spacing: 0.05em;
   @include mq("md") {
-    margin-top: rem(10);
+    margin-top: rem(4);
   }
 }
 
@@ -126,7 +134,7 @@
   font-weight: $medium;
   line-height: calc(50 / 26);
   @include mq("md") {
-    margin-top: rem(24);
+    margin-top: rem(16);
     font-size: rem(14);
     line-height: calc(30 / 14);
     letter-spacing: 0.05em;

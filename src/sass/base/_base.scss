@@ -43,3 +43,8 @@ a {
     opacity: 0.8;
   }
 }
+
+// スムーススクロール
+body {
+  scroll-behavior: smooth;
+}

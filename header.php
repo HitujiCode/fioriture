@@ -37,16 +37,16 @@
           <nav class="p-header__nav">
             <ul class="p-header__nav-items">
               <li class="p-header__nav-item">
-                <a class="p-header__nav-link" href="<?php echo esc_url(home_url("/plan")) ?>"><span>plan</span></a>
+                <a class="p-header__nav-link" href="<?php echo esc_url(home_url("plan")) ?>"><span>plan</span></a>
               </li>
               <li class="p-header__nav-item">
-                <a class="p-header__nav-link" href="<?php echo esc_url(home_url("/case")) ?>"><span>case</span></a>
+                <a class="p-header__nav-link" href="<?php echo esc_url(home_url("case")) ?>"><span>case</span></a>
               </li>
               <li class="p-header__nav-item">
-                <a class="p-header__nav-link" href="<?php echo esc_url(home_url("/works")) ?>"><span>works</span></a>
+                <a class="p-header__nav-link" href="<?php echo esc_url(home_url("works")) ?>"><span>works</span></a>
               </li>
               <li class="p-header__nav-item">
-                <a class="p-header__nav-link" href="flow"><span>flow</span></a>
+                <a class="p-header__nav-link" href="<?php echo esc_url(home_url("flow")) ?>"><span>flow</span></a>
               </li>
             </ul>
             <ul class="p-header__sns-icons p-sns-icons">
@@ -83,7 +83,7 @@
                     <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/works")) ?>"><span>works</span></a>
                   </li>
                   <li class="p-global-nav__item">
-                    <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/flow")) ?>" target="_blank" rel="noopener"><span>flow</span></a>
+                    <a class="p-global-nav__link" href="<?php echo esc_url(home_url("/flow")) ?>"><span>flow</span></a>
                   </li>
                 </ul>
                 <ul class="p-global-nav__icons p-sns-icons--white">

@@ -8,6 +8,7 @@
 }
 
 .c-section-title__name {
+  margin-top: rem(-2);
   display: block;
   font-size: rem2(56);
   font-family: $en-font;
@@ -15,6 +16,7 @@
   line-height: 1.3;
   letter-spacing: 0.1em;
   @include mq("md") {
+    margin-top: initial;
     font-size: rem(32);
   }
 }
@@ -23,10 +25,10 @@
   font-size: rem2(56);
   font-family: $en-font;
   font-weight: $regular;
-  line-height: 1.3;
+  line-height: calc(64 / 56);
   letter-spacing: 0.1em;
   @include mq("md") {
-    font-size: rem(32);
+    font-size: 32px;
   }
 }
 
@@ -38,7 +40,7 @@
   display: block;
   @include mq("md") {
     margin-top: rem(2);
-    font-size: rem(12);
+    font-size: 12px;
   }
 }
 

@@ -1,11 +1,13 @@
 @use "global" as *;
 
 .p-message {
+  padding: rem(50) 0;
   background-image: url(../images/top/bg@2x.webp);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   @include mq("md") {
+    padding: rem(160) 0 rem(100);
     background-image: url(../images/top/bg_pc@2x.webp);
   }
 }
@@ -21,6 +23,8 @@
 
 .p-message__body {
   margin-top: rem(30);
+  width: fit-content;
+  margin-inline: auto;
   @include mq("md") {
     text-align: center;
   }

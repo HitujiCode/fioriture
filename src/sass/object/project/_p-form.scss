@@ -46,10 +46,17 @@
   font-size: rem(16);
   background-color: $white;
   border-radius: rem(4);
-  padding: rem(12);
   @include mq("md") {
     margin-top: rem(10);
-    padding: rem(7);
+  }
+}
+
+.p-form-input input {
+  height: rem(50);
+  padding: rem(12);
+  @include mq("md") {
+    height: rem(40);
+    padding: rem(7) rem(12);
   }
 }
 
@@ -61,7 +68,6 @@
   font-size: rem(16);
   background-color: $white;
   border-radius: rem(4);
-  padding: rem(12);
   height: rem(180);
   @include mq("md") {
     height: rem(80);
@@ -70,6 +76,13 @@
 
 .p-form-textarea textarea {
   resize: none;
+  height: inherit;
+  padding: rem(12);
+}
+
+.p-form-textarea .wpcf7-form-control-wrap {
+  display: block;
+  height: inherit;
 }
 
 .p-form-input input,
@@ -87,5 +100,37 @@
 }
 
 .p-form-submit input {
+  font-size: rem(16);
+  font-weight: $semi-bold;
   color: $white;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: rem(17);
+  background-color: $base;
+  width: 100%;
+  max-width: rem(315);
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $darkgray;
+  }
+  @include mq(md) {
+    font-size: rem(14);
+    letter-spacing: 0.1em;
+    padding: rem(15);
+    max-width: rem(180);
+  }
+}
+
+.wpcf7-not-valid-tip {
+  position: absolute;
+  font-size: rem(12);
+}
+
+.wpcf7 form .wpcf7-response-output {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.wpcf7-spinner {
+  display: none;
 }

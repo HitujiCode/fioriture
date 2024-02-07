@@ -5,7 +5,6 @@ $current_post_title = get_the_title();
 // CFSからcase_article_bottom-nameフィールドの値を取得
 $case_name = get_field('case_name');
 $works_name = get_field('works_name');
-
 // ページ設定を配列として定義
 $pageSettings = [
   "plan" => [
@@ -24,19 +23,19 @@ $pageSettings = [
     "image_pc" => "/assets/images/photo/fv_pc@2x.webp",
     "image_sp" => "/assets/images/photo/fv@2x.webp",
     "title_en" => "photograph",
-    "title_ja" => "プラン紹介"
+    "title_ja" => "かけがえのない思い出になる記念撮影"
   ],
   "home" => [
     "image_pc" => "/assets/images/case/fv_pc@2x.webp",
     "image_sp" => "/assets/images/case/fv@2x.webp",
     "title_en" => "case",
-    "title_ja" => "プラン紹介"
+    "title_ja" => "ご相談事例"
   ],
   "single" => [
     "image_pc" => "/assets/images/case/fv_pc@2x.webp",
     "image_sp" => "/assets/images/case/fv@2x.webp",
-    "title_name" => $case_name,
-    "title_en" => "PHOTO SHOOT",
+    "title_name_case" => $case_name,
+    "title_en" => "consultation from",
     "title_ja" => $current_post_title,
   ],
   "flow" => [
@@ -54,8 +53,8 @@ $pageSettings = [
   "single-works" => [
     "image_pc" => "/assets/images/works/fv_pc@2x.webp",
     "image_sp" => "/assets/images/works/fv@2x.webp",
-    "title_name" => "$works_name",
-    "title_en" => "PHOTO SHOOT",
+    "title_name_works" => "$works_name",
+    "title_en" => "photo shoot",
     "title_ja" => "$current_post_title"
   ],
   "404" => [
@@ -66,40 +65,45 @@ $pageSettings = [
   ],
 ];
 
-// 現在のページ名を取得する関数
-function getCurrentPageName()
+function getCurrentPageType()
 {
+  global $post;
+
   if (is_front_page() || is_home()) {
-    error_log('Current Page: home');
     return 'home';
-  } elseif (is_singular("works")) {
-    return 'single-works';
-  } elseif (is_singular()) {
+  } elseif (is_single() && get_post_type() == 'post') {
     return 'single';
-  } elseif (is_archive()) {
-    return get_queried_object()->name;
-  } elseif (is_404()) {
-    return '404';
+  } elseif (is_single() && get_post_type() == 'works') {
+    return 'single-works';
+  } elseif (is_tax() || is_category() || is_tag()) {
+    return 'taxonomy';
+  } elseif (is_page()) {
+    // 固定ページの場合、スラッグに基づいてページタイプを返す
+    return $post->post_name; // ここでスラッグを返す
+  } else {
+    // 他のページタイプに基づいて条件分岐を追加
+    return null;
   }
-  return null; // 該当しない場合
 }
 
-// 現在のページ名を取得
-$current_page = getCurrentPageName();
+// 現在のページタイプに基づいて設定を取得
+$current_page_type = getCurrentPageType();
 
-// 'single' の 'title_ja' を動的に設定
-if ($current_page == 'single') {
-  $pageSettings['single']['title_ja'] =
-    $current_post_title; // get_the_title() の結果を使用
+// ページタイプをキーとしてページ設定を取得
+$pageConfig = $pageSettings[$current_page_type] ?? null;
+
+
+// ページ設定が存在する場合、それに基づいてHTMLを出力
+if ($pageConfig) {
+  $image_pc = $pageConfig['image_pc'] ?? "/assets/images/common/noimage_pc@2x.webp";
+  $image_sp = $pageConfig['image_sp'] ?? "/assets/images/common/noimage@2x.webp";
+  $title_name_works = $pageConfig['title_name_works'] ?? "";
+  $title_en = $pageConfig['title_en'] ?? "タイトルが設定されていません";
+  $title_name_case = $pageConfig['title_name_case'] ?? "";
+  $title_ja = $pageConfig['title_ja'] ?? "タイトルが設定されていません";
+
+  // HTML出力部分は以前のコードを保持
 }
-
-// 現在のページの設定を取得（ページが配列に存在しない場合はデフォルト値を使用）
-$image_pc = !empty($pageSettings[$current_page]['image_pc']) ? $pageSettings[$current_page]['image_pc'] : "/assets/images/common/noimage_pc@2x.webp";
-$image_sp = !empty($pageSettings[$current_page]['image_sp']) ? $pageSettings[$current_page]['image_sp'] : "/assets/images/common/noimage@2x.webp";
-$title_name = $pageSettings[$current_page]['title_name'] ?? "";
-$title_en = $pageSettings[$current_page]['title_en'] ?? "タイトルが設定されていません";
-$title_ja = $pageSettings[$current_page]['title_ja'] ?? "タイトルが設定されていません";
-
 ?>
 
 <div class="p-sub-fv__bg">
@@ -108,14 +112,19 @@ $title_ja = $pageSettings[$current_page]['title_ja'] ?? "タイトルが設定�
     <img src="<?php echo esc_url(get_theme_file_uri("$image_sp")); ?>" alt="" width="" height="" />
   </picture>
 </div>
-<div class="p-sub-fv__inner l-inner">
+<div class="p-sub-fv__inner l-inner<?php if (is_single() && (get_post_type() == 'post' || get_post_type() == 'works')) echo ' p-sub-fv__inner--article'; ?>">
+
   <div class="p-sub-fv__title">
     <div class="c-section-title--left">
       <!-- $title_nameが空でない場合のみ出力 -->
-      <?php if (!empty($title_name)) : ?>
-        <span class="c-section-title__name"><?php echo $title_name; ?></span>
+      <?php if (!empty($title_name_works)) : ?>
+        <span class="c-section-title__name"><?php echo $title_name_works; ?></span>
       <?php endif; ?>
-      <span class="c-section-title__en"><?php echo $title_en; ?></span>
+      <span class="c-section-title__en"><?php echo $title_en; ?>
+        <!-- $title_nameが空でない場合のみ出力 -->
+        <?php if (!empty($title_name_case)) : ?>
+          <span class="c-section-title__name"><?php echo $title_name_case; ?></span>
+        <?php endif; ?></span>
       <h2 class="c-section-title__ja"><?php echo $title_ja; ?></h2>
     </div>
   </div>

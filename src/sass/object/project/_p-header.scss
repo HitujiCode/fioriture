@@ -66,7 +66,7 @@
 }
 
 .p-header__nav-link span {
-  // position: relative;
+  position: relative;
 }
 
 .p-header__nav-link span::after {
@@ -74,15 +74,16 @@
   position: absolute;
   bottom: -2px;
   left: 0;
-  width: 0;
-  height: 2px;
-  background-color: $white;
+  width: 100%;
+  transform: scale(0);
+  height: 1px;
+  background-color: $base;
   transition: 0.3s;
 }
 
 @media (hover: hover) {
   .p-header__nav-link span:hover::after {
-    width: 100%;
+    transform: scale(1);
   }
 }
 
@@ -165,10 +166,8 @@
 .p-header__drawer-wrap {
   overflow-y: auto;
   height: 100%;
-  display: grid;
-  align-items: center;
+  padding: rem(126) 0 rem(50);
 }
 
 .p-header__drawer-nav {
-  padding: rem(50) 0;
 }

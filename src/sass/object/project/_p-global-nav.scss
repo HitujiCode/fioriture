@@ -40,6 +40,28 @@
   }
 }
 
+.p-global-nav__item span {
+  position: relative;
+}
+
+.p-global-nav__item span::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  transform: scale(0);
+  height: 1px;
+  background-color: $white;
+  transition: 0.3s;
+}
+
+@media (hover: hover) {
+  .p-global-nav__item span:hover::after {
+    transform: scale(1);
+  }
+}
+
 .p-global-nav__icons {
   margin-top: rem(15);
   @include mq("md") {

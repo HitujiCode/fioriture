@@ -64,6 +64,39 @@ jQuery(function ($) {
     return false;
   });
 
+  // アンカーリンク
+  $(document).ready(function () {
+    // 別ページからの遷移を考慮して、ページ読み込み時とハッシュ変更時に処理を実行
+    function adjustAnchor() {
+      const headerHeight = $(".js-header").outerHeight(); // ヘッダーの動的な高さを取得
+      const hash = window.location.hash; // 現在のハッシュを取得
+
+      if (hash) {
+        const target = $(hash);
+        if (target.length) {
+          const position = target.offset().top - headerHeight; // ヘッダーの高さを考慮した位置を計算
+          $("html, body").stop().animate({ scrollTop: position }, 600, "swing");
+        }
+      }
+    }
+
+    // ページ読み込み時とハッシュが変更された時にアンカー位置調整を実行
+    $(window).on("load hashchange", function () {
+      adjustAnchor();
+    });
+
+    // ページ内リンクに対するクリックイベント
+    $('a[href^="#"]').click(function (e) {
+      const href = $(this).attr("href");
+      // 別ページへのアンカーの場合はデフォルトの動作を実行
+      if (href.startsWith("#") && href.length > 1) {
+        // ハッシュ変更をトリガーとして位置調整を実行する
+        window.location.hash = href;
+        return false; // デフォルトのアンカー動作をキャンセル
+      }
+    });
+  });
+
   // Fvスライダー
   const fvSwiperContainer = document.querySelector(".js-fv-swiper");
   if (fvSwiperContainer) {
@@ -104,11 +137,14 @@ jQuery(function ($) {
 
         if (!swiperInstance) {
           swiperInstance = new Swiper(aboutSwiper, {
-            // initialSlide: 0,
             loop: true,
             spaceBetween: 45,
             slidesPerView: "auto",
             centeredSlides: true,
+            speed: 1000,
+            autoplay: {
+              disableOnInteraction: false,
+            },
             pagination: {
               el: aboutSwiper.querySelector(".swiper-pagination"),
               clickable: true,
@@ -287,85 +323,111 @@ jQuery(function ($) {
 // modal
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.querySelector(".js-modal");
-  const modalWrap = modal.querySelector(".p-modal__wrap");
-  const modalImgContainer = modal.querySelector(".p-modal__img");
-  const modalImg = modalImgContainer.querySelector("img");
-  const modalClose = document.querySelector(".p-modal__close-button");
-  const prevButton = document.querySelector(".p-modal__prev");
-  const nextButton = document.querySelector(".p-modal__next");
 
-  let currentIndex = 0;
-  let imageSources = [];
+  // `modal` 要素が存在する場合のみ処理を実行
+  if (modal) {
+    const modalWrap = modal.querySelector(".p-modal__wrap");
+    const modalImgContainer = modal.querySelector(".p-modal__img");
+    const modalImg = modalImgContainer
+      ? modalImgContainer.querySelector("img")
+      : null;
+    const modalClose = document.querySelector(".p-modal__close-button");
+    const prevButton = document.querySelector(".p-modal__prev");
+    const nextButton = document.querySelector(".p-modal__next");
 
-  const modalTriggers = document.querySelectorAll(".js-modal-trigger");
-  modalTriggers.forEach((trigger, index) => {
-    imageSources.push(trigger.getAttribute("href"));
-    trigger.setAttribute("data-index", index);
+    let currentIndex = 0;
+    let imageSources = [];
 
-    trigger.addEventListener("click", function (e) {
-      e.preventDefault();
-      currentIndex = parseInt(this.getAttribute("data-index"));
-      openModal(this.getAttribute("href"));
+    const modalTriggers = document.querySelectorAll(".js-modal-trigger");
+    modalTriggers.forEach((trigger, index) => {
+      imageSources.push(trigger.getAttribute("href"));
+      trigger.setAttribute("data-index", index);
+
+      trigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        currentIndex = parseInt(this.getAttribute("data-index"));
+        if (modalImg) {
+          openModal(this.getAttribute("href"));
+        }
+      });
     });
-  });
 
-  function openModal(imgSrc) {
-    modalImg.src = imgSrc;
-    modal.classList.add("show");
-    modalWrap.classList.add("show");
-    modal.style.visibility = "visible";
-    updateButtonStates();
-    document.body.style.overflow = "clip"; // モーダルが開いている間はbodyのスクロールを無効化
-  }
-
-  function updateModalImage(index) {
-    modalImg.src = imageSources[index];
-    updateButtonStates();
-  }
-
-  function updateButtonStates() {
-    prevButton.classList.toggle("is-disabled", currentIndex <= 0);
-    nextButton.classList.toggle(
-      "is-disabled",
-      currentIndex >= imageSources.length - 1
-    );
-  }
-
-  prevButton.addEventListener("click", function () {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateModalImage(currentIndex);
+    function openModal(imgSrc) {
+      if (modalImg) {
+        modalImg.src = imgSrc;
+      }
+      modal.classList.add("show");
+      if (modalWrap) {
+        modalWrap.classList.add("show");
+      }
+      modal.style.visibility = "visible";
+      updateButtonStates();
+      document.body.style.overflow = "clip";
     }
-  });
 
-  nextButton.addEventListener("click", function () {
-    if (currentIndex < imageSources.length - 1) {
-      currentIndex++;
-      updateModalImage(currentIndex);
+    function updateModalImage(index) {
+      if (modalImg) {
+        modalImg.src = imageSources[index];
+      }
+      updateButtonStates();
     }
-  });
 
-  function closeModal() {
-    modal.classList.remove("show");
-    modalWrap.classList.remove("show");
-    modal.addEventListener("transitionend", function onTransitionEnd() {
-      modal.style.visibility = "hidden";
-      modal.removeEventListener("transitionend", onTransitionEnd);
-      document.body.style.overflow = ""; // モーダルが閉じるとbodyのスクロールを再度有効化
+    function updateButtonStates() {
+      if (prevButton) {
+        prevButton.classList.toggle("is-disabled", currentIndex <= 0);
+      }
+      if (nextButton) {
+        nextButton.classList.toggle(
+          "is-disabled",
+          currentIndex >= imageSources.length - 1
+        );
+      }
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener("click", function () {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateModalImage(currentIndex);
+        }
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", function () {
+        if (currentIndex < imageSources.length - 1) {
+          currentIndex++;
+          updateModalImage(currentIndex);
+        }
+      });
+    }
+
+    function closeModal() {
+      modal.classList.remove("show");
+      if (modalWrap) {
+        modalWrap.classList.remove("show");
+      }
+      modal.addEventListener("transitionend", function onTransitionEnd() {
+        modal.style.visibility = "hidden";
+        modal.removeEventListener("transitionend", onTransitionEnd);
+        document.body.style.overflow = "";
+      });
+    }
+
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    if (modalClose) {
+      modalClose.addEventListener("click", closeModal);
+    }
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" || e.key === "Esc") {
+        closeModal();
+      }
     });
   }
-
-  modal.addEventListener("click", function (e) {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  modalClose.addEventListener("click", closeModal);
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" || e.key === "Esc") {
-      closeModal();
-    }
-  });
 });

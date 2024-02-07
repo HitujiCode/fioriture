@@ -2,9 +2,13 @@
 
 .c-breadcrumb {
   position: absolute;
-  top: rem(15);
+  top: rem(17);
   left: rem(15);
   z-index: 1;
+  @include mq("md") {
+    top: calc(30 / 1400 * 100vw);
+    left: calc(20 / 1400 * 100%);
+  }
 }
 
 .top-breadcrumb {
@@ -17,6 +21,10 @@
   font-weight: $bold;
   color: $white;
   line-height: 1;
+  @include mq("md") {
+    font-size: 12px;
+    gap: rem(12);
+  }
 }
 
 .breadcrumb span > a {

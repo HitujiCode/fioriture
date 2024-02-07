@@ -13,7 +13,7 @@
     <?php get_template_part("parts/fv"); ?>
   </div>
   <!-- 通常の撮影の流れ -->
-  <section class="p-sub-flow l-common">
+  <section id="flow1" class="p-sub-flow l-common">
     <?php $flowItems1 = [
       [
         'num' => '01',
@@ -70,7 +70,7 @@
   </section>
 
   <!-- 十三詣りの撮影の流れ -->
-  <section class="p-sub-flow l-common">
+  <section id="flow2" class="p-sub-flow l-common">
     <?php $flowItems1 = [
       [
         'num' => '01',
@@ -130,7 +130,7 @@
   </section>
 
   <!-- ドローン撮影の流れ -->
-  <section class="p-sub-flow l-common">
+  <section id="flow3" class="p-sub-flow l-common">
     <?php $flowItems3 = [
       [
         'num' => '01',

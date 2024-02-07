@@ -17,22 +17,23 @@
     <div class="p-sub-consultation__inner l-inner">
       <div class="p-feature">
         <div class="p-feature__head">
-          <h2 class="p-feature__head-main">個々のアイデンティティを尊重し、<br class="u-mobile">
-            真摯に向き合うカウンセリング</h2>
+          <h2 class="p-feature__head-main">個々のアイデンティティを尊重し、真摯に向き合うカウンセリング</h2>
           <span class="p-feature__head-sub">（自己同一性、存在証明、同性愛など）</span>
         </div>
-        <div class="p-feature__content">
-          <div class="p-feature__img">
-            <picture>
-              <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/consultation/consultation_pc@2x.webp')); ?>" media="(min-width:768px)" width="" height="" />
-              <img src="<?php echo esc_url(get_theme_file_uri('assets/images/consultation/consultation@2x.webp')); ?>" alt="" width="" height="" loading="lazy" />
-            </picture>
+        <div class="p-feature__inner l-inner">
+          <div class="p-feature__content">
+            <div class="p-feature__img">
+              <picture>
+                <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/consultation/consultation_pc@2x.webp')); ?>" media="(min-width:768px)" width="" height="" />
+                <img src="<?php echo esc_url(get_theme_file_uri('assets/images/consultation/consultation@2x.webp')); ?>" alt="" width="" height="" loading="lazy" />
+              </picture>
+            </div>
+            <p class="p-feature__text c-text">
+              未来の幸せの形はさまざまです。私たちはそれを祝福致します。<br>
+              全ての幸せへの尊重を表現し、受け入れ、推奨する世界を一緒に創りたいと考えています。<br>
+              ご自身のパートナーのことや恋愛対象、なかなか家族や友人に相談できないことなどお気軽にご相談ください。<br>
+              スタッフ一同、サポートいたします。
           </div>
-          <p class="p-feature__text">
-            未来の幸せの形はさまざまです。私たちはそれを祝福致します。<br>
-            全ての幸せへの尊重を表現し、受け入れ、推奨する世界を一緒に創りたいと考えています。<br>
-            ご自身のパートナーのことや恋愛対象、なかなか家族や友人に相談できないことなどお気軽にご相談ください。<br>
-            スタッフ一同、サポートいたします。
         </div>
       </div>
     </div>
@@ -100,19 +101,17 @@
                       <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="NoImage" width="" height="" loading="lazy" />
                     <?php endif; ?>
                   </div>
-                  <div class="p-card__body">
-                    <div class="p-card__category">
-                      <?php
-                      $categories = get_the_category();
-                      $display_categories = array_slice($categories, 0, 2);
+                  <div class="p-card__category">
+                    <?php
+                    $categories = get_the_category();
+                    $display_categories = array_slice($categories, 0, 2);
 
-                      foreach ($display_categories as $category) {
-                        echo '<span class="c-category">' . esc_html($category->name) . '</span>';
-                      }
-                      ?>
-                    </div>
-                    <p class="p-card__title"><?php the_title(); ?></p>
+                    foreach ($display_categories as $category) {
+                      echo '<span class="c-category">' . esc_html($category->name) . '</span>';
+                    }
+                    ?>
                   </div>
+                  <p class="p-card__title"><?php the_title(); ?></p>
                 </a>
               </li>
             <?php
@@ -128,14 +127,9 @@
         <div class="p-case__button">
           <a class="c-button" href="#"><span>view all</span></a>
         </div>
-        <div class="p-case__nav-buttons">
-          <div class="p-case__nav-button">
-            <a class="c-button" href="#"><span>back</span></a>
-          </div>
-          <div class="p-case__nav-button">
-            <a class="c-button" href="#"><span>top</span></a>
-          </div>
-        </div>
+      </div>
+      <div class="p-case__buttons l-common">
+        <?php get_template_part("parts/buttons") ?>
       </div>
     </div>
   </section>
