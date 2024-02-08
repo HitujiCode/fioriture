@@ -308,7 +308,19 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     var updateModalImage = function updateModalImage(index) {
       if (modalImg) {
+        // 既存のアニメーションクラスをクリア
+        modalImg.classList.remove("fadeIn");
+
+        // アニメーションが終了したらクラスを削除
+        modalImg.addEventListener("animationend", function () {
+          modalImg.classList.remove("fadeIn");
+        }, {
+          once: true
+        });
+
+        // 新しい画像ソースを設定してアニメーションクラスを追加
         modalImg.src = imageSources[index];
+        modalImg.classList.add("fadeIn");
       }
       updateButtonStates();
     };

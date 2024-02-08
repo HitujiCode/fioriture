@@ -158,63 +158,15 @@
 }
 
 /* 右からフェードイン */
-@keyframes slideInFromRight {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateX(100%);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
   }
 }
 
-/* 左へフェードアウト */
-@keyframes fadeOutToLeft {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-}
-
-/* 左からフェードイン */
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* 右へフェードアウト */
-@keyframes fadeOutToRight {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-}
-
-.slide-in-from-right {
-  animation: slideInFromRight 0.5s forwards;
-}
-
-.fade-out-to-left {
-  animation: fadeOutToLeft 0.5s forwards;
-}
-
-.slide-in-from-left {
-  animation: slideInFromLeft 0.5s forwards;
-}
-
-.fade-out-to-right {
-  animation: fadeOutToRight 0.5s forwards;
+.fadeIn {
+  animation: fadeIn 0.5s forwards;
 }
