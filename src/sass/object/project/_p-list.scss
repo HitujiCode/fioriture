@@ -67,9 +67,9 @@
   background-position: center center;
   background-size: contain;
   @include mq("md") {
-    width: rem(323);
-    height: rem(75);
-    top: rem(-38);
+    width: calc(323 / 1400 * 100vw);
+    height: calc(75 / 1400 * 100vw);
+    top: calc(-38 / 1400 * 100vw);
   }
 }
 
@@ -86,9 +86,9 @@
   background-position: center center;
   background-size: contain;
   @include mq("md") {
-    width: rem(616);
-    height: rem(67);
-    top: rem(-30);
+    width: calc(616 / 1400 * 100vw);
+    height: calc(67 / 1400 * 100vw);
+    top: calc(-32 / 1400 * 100vw);
   }
 }
 

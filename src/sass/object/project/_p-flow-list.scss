@@ -8,11 +8,12 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: rem(30);
     row-gap: rem(60);
+    padding-top: rem(35);
   }
 }
 
 .p-flow-list__item {
-  padding: rem(48) rem(20) rem(30);
+  padding: rem(52) rem(20) rem(24);
   width: 100%;
   position: relative;
   border: rem(2) solid $base;
@@ -20,7 +21,7 @@
   display: flex;
   flex-direction: column;
   @include mq(md) {
-    padding: rem(45) rem(30) rem(32);
+    padding: rem(45) rem(30) rem(26);
     border-radius: rem(6);
   }
 }
@@ -36,14 +37,19 @@
   border: rem(2) solid $base;
   border-radius: 50%;
   @include mq(md) {
+    top: rem(-32);
   }
 }
 
+.p-sub-flow:nth-child(odd) .p-flow-list__item-number {
+  background-color: $beige;
+}
+
 .p-flow-list__item-number span {
-  padding-top: 10px;
+  padding-top: rem(10);
   display: flex;
   flex-direction: column;
-  font-size: rem(8);
+  font-size: rem(7.5);
   font-weight: $semi-bold;
   font-family: $en-font;
   line-height: 1;
@@ -59,10 +65,11 @@
 .p-flow-list__item-number span::after {
   // counter-increment: number;
   content: attr(data-num);
-  margin-top: rem(3);
+  margin-top: rem(4);
   font-size: rem(20);
   font-weight: $regular;
   @include mq("md") {
+    margin-top: rem(2);
     font-size: rem(23);
     letter-spacing: 0.1em;
   }

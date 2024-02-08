@@ -2,18 +2,10 @@
 
 <main class="l-main">
 
-  <div class="p-sub-fv">
-    <?php if (function_exists('bcn_display')) { ?>
-      <div class="p-sub-fv__breadcrumb c-breadcrumb ">
-        <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-          <?php bcn_display(); ?>
-        </div>
-      </div>
-    <?php } ?>
-    <?php get_template_part("parts/fv"); ?>
-  </div>
+  <?php get_template_part("parts/fv"); ?>
+
   <!-- 通常の撮影の流れ -->
-  <section id="flow1" class="p-sub-flow l-common">
+  <section class="p-sub-flow l-common">
     <?php $flowItems1 = [
       [
         'num' => '01',
@@ -45,7 +37,7 @@
       <div class="p-sub-flow__head">
         <div class="c-head">
           <h2 class="c-head__main">通常の撮影の流れ</h2>
-          <span class="c-head__sub">（同性、エイジング、再婚、ソロ、2次元、コスプレ、ロケーション）</span>
+          <span class="c-head__sub">（同性、エイジング、再婚、ソロ、2次元、ロケーション）</span>
         </div>
       </div>
       <div class="p-sub-flow__swiper-wrap">
@@ -63,14 +55,14 @@
           <div class="p-sub-flow__pagination swiper-pagination"></div>
         </div>
         <!-- 前後の矢印 -->
-        <div class="p-sub-flow__button-prev swiper-button-prev js-flow-swiper-prev1"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-prev.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
-        <div class="p-sub-flow__button-next swiper-button-next js-flow-swiper-next1"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
+        <div class="p-sub-flow__button-prev swiper-button-prev js-flow-swiper-prev1"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-prev.svg')); ?>" alt="前へ" width="27" height="27" /></div>
+        <div class="p-sub-flow__button-next swiper-button-next js-flow-swiper-next1"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="次へ" width="27" height="27" /></div>
       </div>
     </div>
   </section>
 
   <!-- 十三詣りの撮影の流れ -->
-  <section id="flow2" class="p-sub-flow l-common">
+  <section class="p-sub-flow l-common">
     <?php $flowItems1 = [
       [
         'num' => '01',
@@ -120,8 +112,8 @@
           <div class="p-sub-flow__pagination swiper-pagination"></div>
         </div>
         <!-- 前後の矢印 -->
-        <div class="p-sub-flow__button-prev swiper-button-prev js-flow-swiper-prev2"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-prev.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
-        <div class="p-sub-flow__button-next swiper-button-next js-flow-swiper-next2"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
+        <div class="p-sub-flow__button-prev swiper-button-prev js-flow-swiper-prev2"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-prev.svg')); ?>" alt="前へ" width="27" height="27" /></div>
+        <div class="p-sub-flow__button-next swiper-button-next js-flow-swiper-next2"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="次へ" width="27" height="27" /></div>
       </div>
       <p class="p-sub-flow__info c-text">
         ※衣装に関しましては、お着物などお持ちであればご持参いただき、お持ちでない場合は貸衣装の手配ができますので、ご相談ください。
@@ -130,7 +122,7 @@
   </section>
 
   <!-- ドローン撮影の流れ -->
-  <section id="flow3" class="p-sub-flow l-common">
+  <section class="p-sub-flow l-common">
     <?php $flowItems3 = [
       [
         'num' => '01',
@@ -189,11 +181,11 @@
           <div class="p-sub-flow__pagination swiper-pagination"></div>
         </div>
         <!-- 前後の矢印 -->
-        <div class="p-sub-flow__button-prev swiper-button-prev js-flow-swiper-prev3"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-prev.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
-        <div class="p-sub-flow__button-next swiper-button-next js-flow-swiper-next3"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="" width="" height="" loading="lazy" /></div>
+        <div class="p-sub-flow__button-prev swiper-button-prev js-flow-swiper-prev3"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-prev.svg')); ?>" alt="前へ" width="27" height="27" /></div>
+        <div class="p-sub-flow__button-next swiper-button-next js-flow-swiper-next3"><img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/arrow-next.svg')); ?>" alt="次へ" width="27" height="27" /></div>
       </div>
       <div class="p-sub-flow__button">
-        <a href="<?php echo esc_url(home_url('')); ?>" class="c-button">top</a>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="c-button">top</a>
       </div>
     </div>
   </section>

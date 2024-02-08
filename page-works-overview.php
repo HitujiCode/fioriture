@@ -2,21 +2,13 @@
 
 <main class="l-main">
 
-  <div class="p-sub-fv">
-    <?php if (function_exists('bcn_display')) { ?>
-      <div class="p-sub-fv__breadcrumb c-breadcrumb">
-        <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-          <?php bcn_display(); ?>
-        </div>
-      </div>
-    <?php } ?>
-    <?php get_template_part("parts/fv"); ?>
-  </div>
+  <?php get_template_part("parts/fv"); ?>
 
-  <div class="p-archive-works">
-    <div class="p-archive-works__inner l-inner">
+  <div class="p-works-overview l-common">
+    <div class="p-works-overview__inner l-inner">
+
       <!-- 通常の撮影 -->
-      <section class="p-archive-works__section l-common">
+      <section class="p-works-overview__section p-archive-works">
         <div class="p-archive-works__title">
           <div class="c-head">
             <h2 class="c-head__main">通常の撮影</h2>
@@ -74,8 +66,7 @@
                       <?php
                       $terms = get_the_terms(get_the_ID(), 'genre');
                       if ($terms && !is_wp_error($terms)) :
-                        $display_terms = array_slice($terms, 0, 1);
-                        foreach ($display_terms as $term) {
+                        foreach ($terms as $term) {
                           echo '<span class="c-category">' . esc_html($term->name) . '</span>';
                         }
                       endif;
@@ -92,11 +83,11 @@
           </ul>
         </div>
         <div class="p-archive-works__button">
-          <a href="<?php echo esc_url(home_url('works')); ?>" class="c-button">view all</a>
+          <a href="<?php echo esc_url(home_url('/works')); ?>" class="c-button">view all</a>
         </div>
       </section>
       <!-- 十三詣り -->
-      <section class="p-archive-works__section l-common">
+      <section class="p-works-overview__section p-archive-works l-common">
         <div class="p-archive-works__title">
           <div class="c-head">
             <h2 class="c-head__main">十三詣り</h2>
@@ -107,12 +98,12 @@
             <?php
             $jusan_mairi_args = array(
               'post_type' => 'works',
-              'posts_per_page' => -1,
+              'posts_per_page' => 3,
               'tax_query' => array(
                 array(
                   'taxonomy' => 'genre',
                   'field'    => 'slug',
-                  'terms'    => 'jusan-mairi', // 表示したいタームのスラッグ
+                  'terms'    => 'jusan-mairi',
                 ),
               ),
             );
@@ -152,8 +143,7 @@
                       <?php
                       $terms = get_the_terms(get_the_ID(), 'genre');
                       if ($terms && !is_wp_error($terms)) :
-                        $display_terms = array_slice($terms, 0, 1);
-                        foreach ($display_terms as $term) {
+                        foreach ($terms as $term) {
                           echo '<span class="c-category">' . esc_html($term->name) . '</span>';
                         }
                       endif;
@@ -170,7 +160,7 @@
           </ul>
         </div>
         <div class="p-archive-works__button">
-          <a href="<?php echo esc_url(home_url('works')); ?>" class="c-button">view all</a>
+          <a href="<?php echo esc_url(home_url('/works')); ?>" class="c-button">view all</a>
         </div>
       </section>
       <!-- ドローン -->
@@ -189,7 +179,7 @@
       $drone_query = new WP_Query($drone_arg);
 
       if ($drone_query->have_posts()) : ?>
-        <section class="p-archive-works__section l-common">
+        <section class="p-works-overview__section p-archive-works l-common">
           <div class="p-archive-works__title">
             <div class="c-head">
               <h2 class="c-head__main">ドローン</h2>
@@ -231,20 +221,20 @@
                       <?php
                       $terms = get_the_terms(get_the_ID(), 'genre');
                       if ($terms && !is_wp_error($terms)) :
-                        $display_terms = array_slice($terms, 0, 1);
-                        foreach ($display_terms as $term) {
+                        foreach ($terms as $term) {
                           echo '<span class="c-category">' . esc_html($term->name) . '</span>';
                         }
                       endif;
                       ?>
                     </div>
+
                     <p class="p-card__title"><?php the_title(); ?></p>
                   </a>
                 </li>
             </ul>
           </div>
           <div class="p-archive-works__button">
-            <a href="<?php echo esc_url(home_url('taxonomy')); ?>" class="c-button">view all</a>
+            <a href="<?php echo esc_url(home_url('/works')); ?>" class="c-button">view all</a>
           </div>
         </section>
       <?php endwhile; ?>
@@ -252,7 +242,7 @@
       wp_reset_postdata(); ?>
 
     <div class="p-archive-works__button-top l-common">
-      <a href="<?php echo esc_url(home_url('')); ?>" class="c-button">top</a>
+      <a href="<?php echo esc_url(home_url('/')); ?>" class="c-button">top</a>
     </div>
     </div>
   </div>

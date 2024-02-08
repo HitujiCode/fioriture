@@ -1,8 +1,6 @@
 <?php
 // 現在の投稿タイトルを取得
 $current_post_title = get_the_title();
-// $current_post_name = get_the_title();
-// CFSからcase_article_bottom-nameフィールドの値を取得
 $case_name = get_field('case_name');
 $works_name = get_field('works_name');
 // ページ設定を配列として定義
@@ -85,6 +83,8 @@ function getCurrentPageType()
     return 'works';
   } elseif (is_tax() || is_category() || is_tag()) {
     return 'taxonomy';
+  } elseif (is_404()) { // 404ページの判定を修正
+    return '404'; // 404ページの場合に '404' を返す
   } elseif (is_page()) {
     // 固定ページの場合、スラッグに基づいてページタイプを返す
     return $post->post_name; // ここでスラッグを返す
@@ -103,8 +103,8 @@ $pageConfig = $pageSettings[$current_page_type] ?? null;
 
 // ページ設定が存在する場合、それに基づいてHTMLを出力
 if ($pageConfig) {
-  $image_pc = $pageConfig['image_pc'] ?? "/assets/images/common/noimage_pc@2x.webp";
-  $image_sp = $pageConfig['image_sp'] ?? "/assets/images/common/noimage@2x.webp";
+  $image_pc = !empty($pageConfig['image_pc']) ? $pageConfig['image_pc'] : "/assets/images/common/noimage_pc@2x.webp";
+  $image_sp = !empty($pageConfig['image_sp']) ? $pageConfig['image_sp'] : "/assets/images/common/noimage@2x.webp";
   $title_name_works = $pageConfig['title_name_works'] ?? "";
   $title_en = $pageConfig['title_en'] ?? "タイトルが設定されていません";
   $title_name_case = $pageConfig['title_name_case'] ?? "";
@@ -113,25 +113,34 @@ if ($pageConfig) {
 
 ?>
 
-<div class="p-sub-fv__bg">
-  <picture>
-    <source srcset="<?php echo esc_url(get_theme_file_uri("$image_pc")); ?>" media="(min-width:768px)" width="" height="" />
-    <img src="<?php echo esc_url(get_theme_file_uri("$image_sp")); ?>" alt="" width="" height="" />
-  </picture>
-</div>
-<div class="p-sub-fv__inner l-inner<?php if (is_single() && (get_post_type() == 'post' || get_post_type() == 'works')) echo ' p-sub-fv__inner--article'; ?>">
-  <div class="p-sub-fv__title">
-    <div class="c-section-title--left<?php if (is_singular('works')) echo ' c-section-title--delta'; ?>">
-      <!-- $title_nameが空でない場合のみ出力 -->
-      <?php if (!empty($title_name_works)) : ?>
-        <span class="c-section-title__name"><?php echo $title_name_works; ?></span>
-      <?php endif; ?>
-      <span class="c-section-title__en"><?php echo $title_en; ?>
+<section class="p-sub-fv">
+  <?php if (function_exists('bcn_display')) { ?>
+    <div class="p-sub-fv__breadcrumb c-breadcrumb ">
+      <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+        <?php bcn_display(); ?>
+      </div>
+    </div>
+  <?php } ?>
+  <div class="p-sub-fv__bg">
+    <picture>
+      <source srcset="<?php echo esc_url(get_theme_file_uri("$image_pc")); ?>" media="(min-width:768px)" width="" height="" />
+      <img src="<?php echo esc_url(get_theme_file_uri("$image_sp")); ?>" alt="" width="" height="" />
+    </picture>
+  </div>
+  <div class="p-sub-fv__inner l-inner<?php if (is_single() && (get_post_type() == 'post' || get_post_type() == 'works')) echo ' p-sub-fv__inner--article'; ?>">
+    <div class="p-sub-fv__title">
+      <div class="c-section-title--left<?php if (is_singular('works')) echo ' c-section-title--delta'; ?>">
         <!-- $title_nameが空でない場合のみ出力 -->
-        <?php if (!empty($title_name_case)) : ?>
-          <span class="c-section-title__name"><?php echo $title_name_case; ?></span>
-        <?php endif; ?></span>
-      <h2 class="c-section-title__ja"><?php echo $title_ja; ?></h2>
+        <?php if (!empty($title_name_works)) : ?>
+          <span class="c-section-title__name"><?php echo $title_name_works; ?></span>
+        <?php endif; ?>
+        <span class="c-section-title__en"><?php echo $title_en; ?>
+          <!-- $title_nameが空でない場合のみ出力 -->
+          <?php if (!empty($title_name_case)) : ?>
+            <span class="c-section-title__name"><?php echo $title_name_case; ?></span>
+          <?php endif; ?></span>
+        <h1 class="c-section-title__ja"><?php echo $title_ja; ?></h1>
+      </div>
     </div>
   </div>
-</div>
+</section>

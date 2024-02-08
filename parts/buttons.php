@@ -1,5 +1,4 @@
 <?php
-// ページ設定を配列として定義
 $pageSettings = [
   "single" => [
     "link" => "case",
@@ -7,23 +6,26 @@ $pageSettings = [
   "single-works" => [
     "link" => "works",
   ],
-  "photograph" => [
+  "consultation" => [
     "link" => "plan",
   ],
-  "consultation" => [
+  "photograph" => [
     "link" => "plan",
   ],
 ];
 
-// リンクの初期設定
-$link = '/'; // デフォルトのリンク
-$backButtonOnClick = ''; // 戻るボタンのonClickイベント
+/* リンクの初期設定 */
+// デフォルトのリンク
+$link = '/';
+// 戻るボタンのonClickイベント
+$backButtonOnClick = '';
 
 if (is_singular('post') || is_singular('works')) {
-  // 「戻る」ボタンが1つ前のページに戻るようにJavaScriptのonClickイベントを設定
+  // 1つ前のページに戻るようにJavaScriptのonClickイベントを設定
   $backButtonOnClick = 'onclick="window.history.back(); return false;"';
 } elseif (is_page()) {
-  $slug = get_post_field('post_name', get_post()); // 現在のページのスラッグを取得
+  // 現在のページのスラッグを取得
+  $slug = get_post_field('post_name', get_post());
   if (array_key_exists($slug, $pageSettings)) {
     $link = $pageSettings[$slug]['link'];
   }

@@ -3,7 +3,7 @@
 // .p-sub-flow {
 // }
 
-.p-sub-flow:nth-of-type(even) {
+.p-sub-flow:nth-child(odd) {
   background-color: $beige;
   padding: rem(50) 0;
   @include mq("md") {
@@ -25,7 +25,7 @@
   // width: fit-content;//tabでも1つだけ表示
   // margin-inline: auto;//tabでも1つだけ表示
   @include mq("md") {
-    margin-top: rem(48);
+    margin-top: rem(40);
   }
 
   .swiper {
@@ -45,7 +45,7 @@
   .swiper-button-prev,
   .swiper-button-next {
     margin-top: initial;
-    top: 47%;
+    top: 42%;
     @include mq("md") {
       display: none;
     }
@@ -89,6 +89,9 @@
 
 .p-sub-flow__info {
   margin-top: rem(30);
+  @include mq("md") {
+    margin-top: initial;
+  }
 }
 
 .p-sub-flow__button {

@@ -2,16 +2,7 @@
 
 <main class="l-main">
 
-  <div class="p-sub-fv">
-    <?php if (function_exists('bcn_display')) { ?>
-      <div class="p-sub-fv__breadcrumb c-breadcrumb ">
-        <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-          <?php bcn_display(); ?>
-        </div>
-      </div>
-    <?php } ?>
-    <?php get_template_part("parts/fv"); ?>
-  </div>
+  <?php get_template_part("parts/fv"); ?>
 
   <section class="p-sub-consultation l-common">
     <div class="p-sub-consultation__inner l-inner">
@@ -24,8 +15,8 @@
           <div class="p-feature__content">
             <div class="p-feature__img">
               <picture>
-                <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/consultation/consultation_pc@2x.webp')); ?>" media="(min-width:768px)" width="" height="" />
-                <img src="<?php echo esc_url(get_theme_file_uri('assets/images/consultation/consultation@2x.webp')); ?>" alt="" width="" height="" loading="lazy" />
+                <source srcset="<?php echo esc_url(get_theme_file_uri('assets/images/consultation/consultation_pc@2x.webp')); ?>" media="(min-width:768px)" width="760" height="396" />
+                <img src="<?php echo esc_url(get_theme_file_uri('assets/images/consultation/consultation@2x.webp')); ?>" alt="カウンセリングの様子" width="315" height="164" />
               </picture>
             </div>
             <p class="p-feature__text c-text">
@@ -77,28 +68,24 @@
       <div class="p-case__content">
         <ul class="p-cards">
           <?php
-
           $args = array(
             'post_type' => 'post',
-            'posts_per_page' => 3, // 表示する投稿数
-            'orderby' => 'date', // 日付で並び替え
-            'order' => 'DESC' // 降順
-
+            'posts_per_page' => 3,
+            'orderby' => 'date',
+            'order' => 'DESC'
           );
-
           $the_query = new WP_Query($args);
 
           if ($the_query->have_posts()) :
             while ($the_query->have_posts()) : $the_query->the_post();
           ?>
-
               <li class="p-cards__item">
                 <a href="<?php the_permalink(); ?>" class="p-card">
                   <div class="p-card__img">
                     <?php if (has_post_thumbnail()) : ?>
                       <img src="<?php the_post_thumbnail_url(); ?>" alt="サムネイル画像" width="" height="" loading="lazy" />
                     <?php else : ?>
-                      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="NoImage" width="" height="" loading="lazy" />
+                      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="NoImage" width="315" height="178" loading="lazy" />
                     <?php endif; ?>
                   </div>
                   <div class="p-card__category">
@@ -125,7 +112,7 @@
           ?>
         </ul>
         <div class="p-case__button">
-          <a class="c-button" href="#"><span>view all</span></a>
+          <a class="c-button" href="<?php echo esc_url(home_url("/case")) ?>"><span>view all</span></a>
         </div>
       </div>
       <div class="p-case__buttons l-common">
@@ -134,7 +121,9 @@
     </div>
   </section>
   </div>
+
   <?php get_template_part("parts/contact") ?>
+
 </main>
 
 <?php get_footer(); ?>

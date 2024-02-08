@@ -2,18 +2,9 @@
 
 <main class="l-main">
 
-  <div class="p-sub-fv">
-    <?php if (function_exists('bcn_display')) { ?>
-      <div class="p-sub-fv__breadcrumb c-breadcrumb ">
-        <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-          <?php bcn_display(); ?>
-        </div>
-      </div>
-    <?php } ?>
-    <?php get_template_part("parts/fv"); ?>
-  </div>
+  <?php get_template_part("parts/fv"); ?>
 
-  <div class="p-case l-common">
+  <section class="p-case l-common">
     <div class="p-case__inner l-inner">
       <div class="p-case__content">
         <ul class="p-cards">
@@ -26,15 +17,14 @@
                     <?php if (has_post_thumbnail()) : ?>
                       <?php the_post_thumbnail(); ?>
                     <?php else : ?>
-                      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="No Image" width="" height="" loading="lazy" />
+                      <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="No Image" width="300" height="169" />
                     <?php endif; ?>
                   </div>
                   <div class="p-card__category">
                     <?php
                     $categories = get_the_category();
-                    $display_categories = array_slice($categories, 0, 2);
 
-                    foreach ($display_categories as $category) {
+                    foreach ($categories as $category) {
                       echo '<span class="c-category">' . esc_html($category->name) . '</span>';
                     }
                     ?>
@@ -54,11 +44,10 @@
         } ?>
       </div>
       <div class="p-case__button">
-        <a class="c-button" href="<?php echo esc_url(home_url("")) ?>"><span>top</span></a>
+        <a class="c-button" href="<?php echo esc_url(home_url("/")) ?>"><span>top</span></a>
       </div>
     </div>
-  </div>
-  </div>
+  </section>
 
   <?php get_template_part('parts/contact'); ?>
 </main>

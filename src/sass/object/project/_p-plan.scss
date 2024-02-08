@@ -3,6 +3,7 @@
 .p-plan {
   padding: rem(50) 0;
   background-color: $beige;
+  overflow: hidden;
   @include mq("md") {
     padding: rem(100) 0;
   }

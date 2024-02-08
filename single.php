@@ -1,22 +1,8 @@
 <?php get_header(); ?>
-<?php
-$post_type = get_post_type();
-$post_type_data = get_post_type_object($post_type);
-$post_type_label = $post_type_data->labels->name;
-?>
 
 <main class="l-main">
 
-  <div class="p-sub-fv">
-    <?php if (function_exists('bcn_display')) { ?>
-      <div class="p-sub-fv__breadcrumb c-breadcrumb ">
-        <div class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-          <?php bcn_display(); ?>
-        </div>
-      </div>
-    <?php } ?>
-    <?php get_template_part("parts/fv"); ?>
-  </div>
+  <?php get_template_part("parts/fv"); ?>
 
   <div class="p-case-article">
     <article class="p-case-article__top">
@@ -37,7 +23,7 @@ $post_type_label = $post_type_data->labels->name;
               <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail(); ?>
               <?php else : ?>
-                <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="No Image" width="" height="" loading="lazy" />
+                <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/noimage@2x.webp')); ?>" alt="No Image" width="315" height="210" />
               <?php endif; ?>
             </div>
           </div>
@@ -64,7 +50,7 @@ $post_type_label = $post_type_data->labels->name;
                   <div class="p-case-article__bottom-img">
                     <?php
                     $image_url = !empty($field['case-article-bottom_img']) ? $field['case-article-bottom_img'] : get_theme_file_uri('/assets/images/common/noimage@2x.webp');
-                    $image_id = get_attachment_id_from_url($image_url); // URLからIDを取得
+                    $image_id = get_attachment_id_from_url($image_url);
 
                     if ($image_url === get_theme_file_uri('/assets/images/common/noimage@2x.webp')) {
                       $image_alt = 'noimage';

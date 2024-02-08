@@ -121,6 +121,7 @@
   font-weight: $regular;
   font-family: $en-font;
   line-height: 1;
+  text-transform: uppercase;
   @include mq("md") {
     font-size: 10px;
   }
