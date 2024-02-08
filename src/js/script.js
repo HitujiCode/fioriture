@@ -327,6 +327,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // `modal` 要素が存在する場合のみ処理を実行
   if (modal) {
     const modalWrap = modal.querySelector(".p-modal__wrap");
+    const modalInner = modal.querySelector(".p-modal__inner"); // modal__inner 要素を取得
     const modalImgContainer = modal.querySelector(".p-modal__img");
     const modalImg = modalImgContainer
       ? modalImgContainer.querySelector("img")
@@ -415,10 +416,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     modal.addEventListener("click", function (e) {
-      if (e.target === modal) {
+      if (
+        e.target === modal ||
+        e.target === modalInner ||
+        e.target === modalInner
+      ) {
         closeModal();
       }
     });
+
+    // modalWrap をクリックした場合にも closeModal を実行
+    if (modalWrap) {
+      modalWrap.addEventListener("click", function (e) {
+        if (e.target === modalWrap) {
+          // クリックされた要素が modalWrap 自身である場合のみ
+          closeModal();
+        }
+      });
+    }
 
     if (modalClose) {
       modalClose.addEventListener("click", closeModal);

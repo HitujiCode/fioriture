@@ -332,6 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     };
     var modalWrap = modal.querySelector(".p-modal__wrap");
+    var modalInner = modal.querySelector(".p-modal__inner"); // modal__inner 要素を取得
     var modalImgContainer = modal.querySelector(".p-modal__img");
     var modalImg = modalImgContainer ? modalImgContainer.querySelector("img") : null;
     var modalClose = document.querySelector(".p-modal__close-button");
@@ -368,10 +369,20 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
     modal.addEventListener("click", function (e) {
-      if (e.target === modal) {
+      if (e.target === modal || e.target === modalInner || e.target === modalInner) {
         closeModal();
       }
     });
+
+    // modalWrap をクリックした場合にも closeModal を実行
+    if (modalWrap) {
+      modalWrap.addEventListener("click", function (e) {
+        if (e.target === modalWrap) {
+          // クリックされた要素が modalWrap 自身である場合のみ
+          closeModal();
+        }
+      });
+    }
     if (modalClose) {
       modalClose.addEventListener("click", closeModal);
     }

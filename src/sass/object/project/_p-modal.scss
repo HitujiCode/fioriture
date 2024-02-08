@@ -33,15 +33,21 @@
   display: grid;
   place-content: center;
   position: relative;
+  // padding: rem(20);
+  height: inherit;
   @include mq("md") {
-    max-width: rem(792);
+    max-width: rem(960);
+    padding: 0 rem(84);
   }
 }
 
 .p-modal__wrap {
+  padding: rem(72) 0;
+  padding: calc(72 / 1400 * 100vw) 0;
   position: absolute;
   width: fit-content;
-  max-height: max-content;
+  max-height: 100vh;
+  // max-height: calc(100vh - rem(144));
   position: relative;
   top: 50%;
   transform: translateY(-50%) scale(0.7);
@@ -61,7 +67,7 @@
   transition: opacity 0.7s ease-out;
   user-select: none;
   @include mq("md") {
-    max-height: calc(100vh - rem(100));
+    max-height: 80vh;
   }
 }
 
@@ -75,24 +81,33 @@
 .p-modal__close-button {
   position: absolute;
   top: rem(-50);
+  top: 0;
   right: rem(-4);
   margin: 0;
   padding: 0;
   width: rem(33);
   height: rem(33);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @include mq("md") {
     top: rem(-72);
-    width: rem(42);
-    height: rem(42);
+    top: min(-4.5vw, rem(-72));
+    top: 0;
+    width: rem(40);
+    height: rem(40);
+    // width: calc(40 / 1400 * 100vw);
+    width: min(calc(40 / 1400 * 100vw), calc(40 / 600 * 100vh));
+    height: min(calc(40 / 1400 * 100vw), calc(40 / 600 * 100vh));
   }
 }
 
 .p-modal__close-button::before,
 .p-modal__close-button::after {
+  display: block;
   content: "";
   position: absolute;
-  top: rem(15);
   left: 0;
   width: 100%;
   height: rem(3);
@@ -125,14 +140,14 @@
 .p-modal__prev {
   left: rem(-35);
   @include mq("md") {
-    left: rem(-80);
+    left: 0;
   }
 }
 
 .p-modal__next {
   right: rem(-35);
   @include mq("md") {
-    right: rem(-80);
+    right: 0;
   }
 }
 
@@ -140,4 +155,66 @@
 .p-modal__next.is-disabled {
   cursor: default;
   opacity: 0.5;
+}
+
+/* 右からフェードイン */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 左へフェードアウト */
+@keyframes fadeOutToLeft {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+/* 左からフェードイン */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 右へフェードアウト */
+@keyframes fadeOutToRight {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.slide-in-from-right {
+  animation: slideInFromRight 0.5s forwards;
+}
+
+.fade-out-to-left {
+  animation: fadeOutToLeft 0.5s forwards;
+}
+
+.slide-in-from-left {
+  animation: slideInFromLeft 0.5s forwards;
+}
+
+.fade-out-to-right {
+  animation: fadeOutToRight 0.5s forwards;
 }

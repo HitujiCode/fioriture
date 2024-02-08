@@ -91,19 +91,19 @@
   <div class="p-modal js-modal">
     <div class="p-modal__inner">
       <!-- モーダルコンテンツ -->
-
+      <div class="p-modal__prev">
+        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/modal-prev.svg')); ?>" alt="前の画像へ" width="" height="" loading="lazy" />
+      </div>
+      <div class="p-modal__next">
+        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/modal-next.svg')); ?>" alt="次の画像へ" width="" height="" loading="lazy" />
+      </div>
       <!-- 画像表示用のimgタグ -->
       <div class="p-modal__wrap">
+        <button class="p-modal__close-button"></button>
         <div class="p-modal__img">
           <img src="" alt="モーダル画像">
         </div>
-        <button class="p-modal__close-button"></button>
-        <div class="p-modal__prev">
-          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/modal-prev.svg')); ?>" alt="前の画像へ" width="" height="" loading="lazy" />
-        </div>
-        <div class="p-modal__next">
-          <img src="<?php echo esc_url(get_theme_file_uri('assets/images/common/modal-next.svg')); ?>" alt="次の画像へ" width="" height="" loading="lazy" />
-        </div>
+
       </div>
     </div>
   </div>

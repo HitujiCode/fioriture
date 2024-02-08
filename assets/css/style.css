@@ -599,6 +599,10 @@ select::-ms-expand {
 	margin-top: 1.875rem;
 }
 
+.p-archive-works__paginaition {
+	margin-top: 3.125rem;
+}
+
 .p-archive-works__button {
 	margin-top: 3.125rem;
 	text-align: center;
@@ -1480,6 +1484,7 @@ select::-ms-expand {
 .p-modal__inner {
 	align-content: center;
 	display: grid;
+	height: inherit;
 	justify-content: center;
 	margin: auto;
 	max-width: 37.5rem;
@@ -1490,8 +1495,9 @@ select::-ms-expand {
 }
 
 .p-modal__wrap {
-	max-height: -moz-max-content;
-	max-height: max-content;
+	max-height: 100vh;
+	padding: 4.5rem 0;
+	padding: 5.1428571429vw 0;
 	position: absolute;
 	position: relative;
 	top: 50%;
@@ -1525,13 +1531,17 @@ select::-ms-expand {
 }
 
 .p-modal__close-button {
+	align-items: center;
 	cursor: pointer;
+	display: flex;
 	height: 2.0625rem;
+	justify-content: center;
 	margin: 0;
 	padding: 0;
 	position: absolute;
 	right: -0.25rem;
 	top: -3.125rem;
+	top: 0;
 	width: 2.0625rem;
 }
 
@@ -1539,10 +1549,10 @@ select::-ms-expand {
 .p-modal__close-button::after {
 	background-color: #fff;
 	content: "";
+	display: block;
 	height: 0.1875rem;
 	left: 0;
 	position: absolute;
-	top: 0.9375rem;
 	width: 100%;
 }
 
@@ -1577,6 +1587,30 @@ select::-ms-expand {
 .p-modal__next.is-disabled {
 	cursor: default;
 	opacity: 0.5;
+}
+
+/* 右からフェードイン */
+
+/* 左へフェードアウト */
+
+/* 左からフェードイン */
+
+/* 右へフェードアウト */
+
+.slide-in-from-right {
+	animation: slideInFromRight 0.5s forwards;
+}
+
+.fade-out-to-left {
+	animation: fadeOutToLeft 0.5s forwards;
+}
+
+.slide-in-from-left {
+	animation: slideInFromLeft 0.5s forwards;
+}
+
+.fade-out-to-right {
+	animation: fadeOutToRight 0.5s forwards;
 }
 
 .p-photo-item:not(:first-child) {
@@ -2053,6 +2087,81 @@ select::-ms-expand {
 .p-works__button {
 	margin-top: 3.125rem;
 	text-align: center;
+}
+
+.pagination {
+	text-align: center;
+}
+
+.nav-links .page-numbers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.nav-links a.page-numbers,
+.nav-links .current,
+.nav-links a.prev,
+.nav-links a.next,
+.nav-links .dots {
+	background: #fff;
+	border: 1px solid #7090dd;
+	border-radius: 50%;
+	color: #7090dd;
+	font-size: 12px;
+	font-weight: bold;
+	height: 50px;
+	line-height: 50px;
+	margin-right: 25px;
+	text-align: center;
+	width: 50px;
+}
+
+.nav-links a.page-numbers:hover {
+	background-color: #999;
+	border-color: #999;
+	border-radius: 50%;
+	color: #fff;
+}
+
+.nav-links .current {
+	background: #7090dd;
+	color: #ffffff;
+	padding: 0;
+}
+
+/* 前への「＜」、次への「＞」 */
+
+.nav-links a.prev,
+.nav-links a.next {
+	border: 1px solid #004bb1;
+	color: #004bb1;
+	position: relative;
+}
+
+.nav-links .next::before,
+.nav-links .prev::after {
+	background-color: rgb(224, 215, 215);
+	content: "";
+	display: inline-block;
+	height: 40px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0.5px;
+}
+
+.nav-links .next::before {
+	left: -15px;
+}
+
+.nav-links .prev::after {
+	right: -15px;
+}
+
+.nav-links .dots {
+	background: transparent;
+	border: none;
 }
 
 .wp-pagenavi {
@@ -2853,17 +2962,22 @@ a[href^="tel:"] {
 }
 
 .p-modal__inner {
-	max-width: 49.5rem;
+	max-width: 60rem;
+	padding: 0 5.25rem;
 }
 
 .p-modal__img {
-	max-height: calc(100vh - 6.25rem);
+	max-height: 80vh;
 }
 
 .p-modal__close-button {
-	height: 2.625rem;
+	height: 2.5rem;
+	height: min(2.8571428571vw, 6.6666666667vh);
 	top: -4.5rem;
-	width: 2.625rem;
+	top: min(-4.5vw, -4.5rem);
+	top: 0;
+	width: 2.5rem;
+	width: min(2.8571428571vw, 6.6666666667vh);
 }
 
 .p-modal__prev,
@@ -2873,11 +2987,11 @@ a[href^="tel:"] {
 }
 
 .p-modal__prev {
-	left: -5rem;
+	left: 0;
 }
 
 .p-modal__next {
-	right: -5rem;
+	right: 0;
 }
 
 .p-photo-item:not(:first-child) {
@@ -3171,6 +3285,60 @@ html {
 
 html {
 	font-size: 4.2666666667vw;
+}
+
+}
+
+@keyframes slideInFromRight {
+
+from {
+	opacity: 0;
+	transform: translateX(100%);
+}
+
+to {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+}
+
+@keyframes fadeOutToLeft {
+
+from {
+	opacity: 1;
+}
+
+to {
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+}
+
+@keyframes slideInFromLeft {
+
+from {
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+to {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+}
+
+@keyframes fadeOutToRight {
+
+from {
+	opacity: 1;
+}
+
+to {
+	opacity: 0;
+	transform: translateX(100%);
 }
 
 }
