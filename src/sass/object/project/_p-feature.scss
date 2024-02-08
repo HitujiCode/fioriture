@@ -9,6 +9,7 @@
   font-weight: $semi-bold;
   line-height: calc(60 / 40);
   word-break: keep-all;
+  overflow-wrap: anywhere;
   letter-spacing: 0.05em;
   @include mq("md") {
     font-size: clamp(20px, calc(28 / 1400 * 100vw), 28px);

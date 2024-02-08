@@ -96,6 +96,7 @@
   letter-spacing: 0.05em;
   text-align: center;
   word-break: keep-all;
+  overflow-wrap: anywhere;
   @include mq("md") {
     font-size: rem(22);
     line-height: 1.2;

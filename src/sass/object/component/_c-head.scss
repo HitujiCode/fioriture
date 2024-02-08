@@ -23,6 +23,7 @@
   line-height: calc(50 / 28);
   letter-spacing: 0.05em;
   word-break: keep-all;
+  overflow-wrap: anywhere;
   @include mq("md") {
     font-size: rem(16);
     line-height: calc(40 / 16);

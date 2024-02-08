@@ -159,6 +159,16 @@ jQuery(function ($) {
       window.addEventListener("resize", createSwiper);
     }
   }
+
+  // 表示崩れ対策の共通関数
+  function applyCommonSwiperStyles() {
+    var flows = document.querySelectorAll(".p-sub-flow");
+    flows.forEach(function (flow) {
+      flow.style.opacity = 1;
+      flow.style.visibility = "visible";
+      flow.style.transform = "translateY(0px)";
+    });
+  }
   function initializeFlowSwiper1() {
     var flowSwiper1 = document.querySelector(".js-flow-swiper1");
 
@@ -186,6 +196,12 @@ jQuery(function ($) {
             navigation: {
               nextEl: document.querySelector(".js-flow-swiper-next1"),
               prevEl: document.querySelector(".js-flow-swiper-prev1")
+            },
+            // Swiper初期化後に共通スタイル適用関数を呼び出し
+            on: {
+              init: function init() {
+                applyCommonSwiperStyles();
+              }
             }
           });
         }
@@ -222,6 +238,12 @@ jQuery(function ($) {
             navigation: {
               nextEl: document.querySelector(".js-flow-swiper-next2"),
               prevEl: document.querySelector(".js-flow-swiper-prev2")
+            },
+            // Swiper初期化後に共通スタイル適用関数を呼び出し
+            on: {
+              init: function init() {
+                applyCommonSwiperStyles();
+              }
             }
           });
         }
@@ -259,6 +281,12 @@ jQuery(function ($) {
             navigation: {
               nextEl: document.querySelector(".js-flow-swiper-next3"),
               prevEl: document.querySelector(".js-flow-swiper-prev3")
+            },
+            // Swiper初期化後に共通スタイル適用関数を呼び出し
+            on: {
+              init: function init() {
+                applyCommonSwiperStyles();
+              }
             }
           });
         }

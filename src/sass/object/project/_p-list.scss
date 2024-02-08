@@ -109,6 +109,7 @@
   font-size: rem(16);
   line-height: calc(50 / 32);
   word-break: keep-all;
+  overflow-wrap: anywhere;
   @include mq("md") {
     font-size: rem(24);
     line-height: calc(38 / 24);

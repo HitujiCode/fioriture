@@ -16,13 +16,6 @@ function my_setup()
 }
 add_action('after_setup_theme', 'my_setup');
 
-/* Contact Form 7で自動挿入されるPタグ、brタグを削除 */
-add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
-function wpcf7_autop_return_false()
-{
-  return false;
-}
-
 /* wordpressバージョン情報の削除 */
 remove_action("wp_head", "wp_generator");
 
@@ -43,14 +36,12 @@ function my_script_init()
   wp_deregister_script('jquery');
 
   // フォント
-  wp_enqueue_style('google-fonts-noto-serif', '//fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap', array(), '1.0.1', 'all');
+  wp_enqueue_style('google-fonts-noto-serif', '//fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap', array(), 'null');
 
   // swiper
   wp_enqueue_script('jquery', '//code.jquery.com/jquery-3.7.1.min.js', array(), '1.0.1');
   wp_enqueue_script('slider-js', '//unpkg.com/swiper@10/swiper-bundle.min.js', array(), '', true);
   wp_enqueue_style('slider-css', '//unpkg.com/swiper@10/swiper-bundle.min.css', array(), '', 'all');
-
-
 
   // JavaScript
   wp_enqueue_script('my-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '1.0.1', true);
@@ -59,6 +50,25 @@ function my_script_init()
   wp_enqueue_style('my-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.1', 'all');
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
+
+/**
+ * wp_enqueue_scriptで読み込むjsにdeferを付ける
+ */
+add_filter('script_loader_tag', 'add_defer', 10, 2);
+function add_defer($tag, $handle)
+{
+  if ($handle !== 'my-script') {
+    return $tag;
+  }
+  return str_replace(' src=', ' defer src=', $tag);
+}
+
+/* Contact Form 7で自動挿入されるPタグ、brタグを削除 */
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false()
+{
+  return false;
+}
 
 // エディターを非表示
 function my_custom_init()

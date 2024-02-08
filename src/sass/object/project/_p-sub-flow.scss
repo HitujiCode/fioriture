@@ -1,5 +1,19 @@
 @use "global" as *;
 
+.p-sub-flow {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  @include mq("md") {
+    opacity: 1;
+    visibility: visible;
+    transform: initial;
+  }
+}
+
 .p-sub-flow:nth-child(3) {
   background-color: $beige;
   padding: rem(50) 0;
@@ -10,17 +24,23 @@
 
 .p-sub-flow__head {
   word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .p-sub-flow__swiper-wrap {
   margin-top: rem(30);
   position: relative;
+  // opacity: 1;
+  // transition: opacity 0.1s ease-in-out;
   @include mq("md") {
     margin-top: rem(40);
   }
 
   .swiper {
     padding-bottom: rem(30);
+  }
+
+  .swiper-wrapper {
   }
 
   .swiper-slide {
@@ -87,3 +107,10 @@
   margin-top: rem(50);
   text-align: center;
 }
+
+// 表示崩れ対策のための初期表示
+// .js-flow-swiper1,
+// .js-flow-swiper2,
+// .js-flow-swiper3 {
+//   visibility: hidden;
+// }

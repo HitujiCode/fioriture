@@ -235,6 +235,7 @@ select::-ms-expand {
 }
 
 .c-head__sub {
+	word-wrap: anywhere;
 	font-size: 0.875rem;
 	font-weight: 600;
 	letter-spacing: 0.05em;
@@ -441,6 +442,7 @@ select::-ms-expand {
 }
 
 .p-about__item-head {
+	word-wrap: anywhere;
 	font-size: 1rem;
 	font-weight: 600;
 	letter-spacing: 0.05em;
@@ -681,6 +683,7 @@ select::-ms-expand {
 }
 
 .p-feature__head-main {
+	word-wrap: anywhere;
 	font-size: 1.25rem;
 	font-weight: 600;
 	letter-spacing: 0.05em;
@@ -1292,6 +1295,7 @@ select::-ms-expand {
 }
 
 .p-list__item-head-main {
+	word-wrap: anywhere;
 	font-size: 1rem;
 	line-height: 1.5625;
 	word-break: keep-all;
@@ -1675,12 +1679,20 @@ select::-ms-expand {
 	width: 100%;
 }
 
+.p-sub-flow {
+	opacity: 0;
+	transform: translateY(10px);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+	visibility: hidden;
+}
+
 .p-sub-flow:nth-child(3) {
 	background-color: #f5f4f1;
 	padding: 3.125rem 0;
 }
 
 .p-sub-flow__head {
+	word-wrap: anywhere;
 	word-break: keep-all;
 }
 
@@ -2914,6 +2926,13 @@ a[href^="tel:"] {
 
 .p-sub-access__map iframe {
 	aspect-ratio: 464/309;
+}
+
+.p-sub-flow {
+	opacity: 1;
+	transform: none;
+	transform: initial;
+	visibility: visible;
 }
 
 .p-sub-flow:nth-child(3) {
