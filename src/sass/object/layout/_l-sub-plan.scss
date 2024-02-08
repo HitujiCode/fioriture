@@ -1,8 +1,0 @@
-@use "global" as *;
-
-.l-sub-plan {
-  margin-top: rem(50);
-  @include mq("md") {
-    margin-top: rem(100);
-  }
-}

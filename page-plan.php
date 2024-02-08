@@ -4,7 +4,7 @@
 
   <?php get_template_part("parts/fv"); ?>
 
-  <section class="p-sub-plan l-sub-plan">
+  <section class="p-sub-plan l-common">
     <div class="p-sub-plan__inner l-inner">
       <div class="p-sub-plan__content">
         <ul class="p-sub-list">

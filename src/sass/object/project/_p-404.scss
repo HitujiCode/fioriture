@@ -1,11 +1,5 @@
 @use "global" as *;
 
-.p-404 {
-}
-
-.p-404__inner.l-inner {
-}
-
 .p-404__wrap {
   @include mq("md") {
     text-align: center;

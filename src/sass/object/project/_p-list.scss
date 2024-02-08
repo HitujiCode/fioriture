@@ -1,8 +1,5 @@
 @use "global" as *;
 
-.p-list {
-}
-
 .p-list__item {
   @include mq(md) {
     display: flex;

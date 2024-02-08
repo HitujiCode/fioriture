@@ -1,21 +1,9 @@
 @use "global" as *;
 
-.p-works-article {
-}
-
-.p-works-article__inner.l-inner {
-}
-
-.p-works-article__content {
-}
-
 .p-works-article__body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.p-works-article__category {
 }
 
 .p-works-article__title {
@@ -38,17 +26,6 @@
     line-height: calc(30 / 14);
   }
 }
-
-// .p-works-article__images {
-//   margin-top: rem(30);
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-//   gap: rem(20);
-//   @include mq("md") {
-//     margin-top: rem(48);
-//     grid-template-columns: repeat(5, 1fr);
-//   }
-// }
 
 .p-works-article__images {
   margin-top: rem(30);

@@ -33,7 +33,6 @@
   display: grid;
   place-content: center;
   position: relative;
-  // padding: rem(20);
   height: inherit;
   @include mq("md") {
     max-width: rem(960);
@@ -47,7 +46,6 @@
   position: absolute;
   width: fit-content;
   max-height: 100vh;
-  // max-height: calc(100vh - rem(144));
   position: relative;
   top: 50%;
   transform: translateY(-50%) scale(0.7);
@@ -97,7 +95,6 @@
     top: 0;
     width: rem(40);
     height: rem(40);
-    // width: calc(40 / 1400 * 100vw);
     width: min(calc(40 / 1400 * 100vw), calc(40 / 600 * 100vh));
     height: min(calc(40 / 1400 * 100vw), calc(40 / 600 * 100vh));
   }

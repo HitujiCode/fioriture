@@ -1,14 +1,5 @@
 @use "global" as *;
 
-.p-case {
-}
-
-.p-case__inner.l-inner {
-}
-
-.p-case__title {
-}
-
 .p-case__content {
   margin-top: rem(30);
   @include mq("md") {
@@ -42,7 +33,4 @@
     gap: rem(32);
     justify-content: center;
   }
-}
-
-.p-case__nav-button {
 }

@@ -1,11 +1,5 @@
 @use "global" as *;
 
-.p-form {
-}
-
-.p-form__wrap {
-}
-
 .p-form__wrap:not(:first-child) {
   margin-top: rem(20);
 }
@@ -80,11 +74,6 @@
   padding: rem(12);
 }
 
-.p-form-textarea .wpcf7-form-control-wrap {
-  display: block;
-  height: inherit;
-}
-
 .p-form-input input,
 .p-form-textarea textarea {
   font-size: inherit;
@@ -129,6 +118,11 @@
 .wpcf7 form .wpcf7-response-output {
   width: fit-content;
   margin-inline: auto;
+}
+
+.wpcf7-form-control-wrap {
+  display: block;
+  height: inherit;
 }
 
 .wpcf7-spinner {

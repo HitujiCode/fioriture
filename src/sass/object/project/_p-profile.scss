@@ -1,14 +1,5 @@
 @use "global" as *;
 
-.p-profile {
-}
-
-.p-profile__inner {
-}
-
-.p-profile__title {
-}
-
 .p-profile__content {
   margin-top: rem(30);
   @include mq("md") {

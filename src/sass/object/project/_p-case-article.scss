@@ -8,12 +8,6 @@
   }
 }
 
-.p-case-article__top-inner.l-inner {
-}
-
-.p-case-article__top-conteiner {
-}
-
 .p-case-article__top-content {
   @include mq("md") {
     display: flex;
@@ -82,15 +76,6 @@
   @include mq("md") {
     margin-top: rem(100);
   }
-}
-
-.p-case-article__bottom {
-}
-
-.p-case-article__bottom__inner.l-inner {
-}
-
-.p-case-article__bottom-list {
 }
 
 .p-case-article__bottom-item {

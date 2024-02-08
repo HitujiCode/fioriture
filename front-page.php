@@ -145,7 +145,7 @@
     </div>
   </section>
 
-  <section class="p-plan l-common">
+  <section class="p-plan l-plan">
     <div class="p-plan__inner l-inner">
       <div class="p-plan__title">
         <div class="c-section-title">

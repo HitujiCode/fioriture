@@ -2,7 +2,6 @@
 
 .p-flow-list {
   padding-top: rem(28);
-  // counter-reset: number;
   @include mq(md) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -41,7 +40,7 @@
   }
 }
 
-.p-sub-flow:nth-child(odd) .p-flow-list__item-number {
+.p-sub-flow:nth-child(3) .p-flow-list__item-number {
   background-color: $beige;
 }
 
@@ -63,7 +62,6 @@
 }
 
 .p-flow-list__item-number span::after {
-  // counter-increment: number;
   content: attr(data-num);
   margin-top: rem(4);
   font-size: rem(20);

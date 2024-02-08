@@ -1,14 +1,5 @@
 @use "global" as *;
 
-.p-instagram {
-}
-
-.p-instagram__inner {
-}
-
-.p-instagram__title {
-}
-
 .p-instagram__content {
   margin-top: rem(30);
   @include mq("md") {

@@ -1,7 +1,5 @@
 @use "global" as *;
 
-@use "global" as *;
-
 .p-header {
   position: fixed;
   z-index: 900;
@@ -167,7 +165,4 @@
   overflow-y: auto;
   height: 100%;
   padding: rem(126) 0 rem(50);
-}
-
-.p-header__drawer-nav {
 }

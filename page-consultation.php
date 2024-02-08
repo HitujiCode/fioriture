@@ -57,7 +57,7 @@
     </div>
   </section>
 
-  <section class="p-case l-case">
+  <section class="p-case l-common">
     <div class="p-case__inner l-inner">
       <div class="p-case__title">
         <div class="c-section-title">

@@ -1,28 +1,13 @@
 @use "global" as *;
 
-.p-about {
-}
-
-.p-about__inner.l-inner {
-  // padding: 0 rem(10);
-  @include mq("md") {
-    // padding: 0 rem(25);
-  }
-}
-
 .p-about__swiper-wrap {
   margin-top: rem(30);
   position: relative;
-  // width: rem(285);
-  // width: fit-content;//tabでも1つだけ表示
-  // margin-inline: auto;//tabでも1つだけ表示
   @include mq("md") {
     margin-top: rem(48);
   }
 
   .swiper {
-    // width: rem(285);//tabでも1つだけ表示
-    // margin: 0 rem(35);
     padding-bottom: rem(30);
     @include mq("md") {
       padding-bottom: 0;
@@ -84,8 +69,6 @@
 }
 
 .p-about__list {
-  // margin-top: rem(30);
-  // padding-bottom: rem(38);
   @include mq("md") {
     margin-top: rem(55);
     display: grid;
@@ -100,7 +83,6 @@
   flex-direction: column;
   align-items: center;
   gap: rem(20);
-  // padding: 0 rem(35);
   @include mq("md") {
     gap: rem(18);
     padding: initial;
@@ -143,9 +125,6 @@
     line-height: calc(24 / 14);
     letter-spacing: initial;
     flex-grow: 1;
-    // word-break: keep-all;
-    // overflow-wrap: anywhere;
-    // text-align: center;
   }
 }
 

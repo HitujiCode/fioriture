@@ -1,8 +1,5 @@
 @use "global" as *;
 
-.p-feature {
-}
-
 .p-feature__head {
   text-align: center;
 }
@@ -43,9 +40,6 @@
   @include mq("md") {
     margin-top: rem(44);
   }
-}
-
-.p-feature__img {
 }
 
 .p-feature__img img {

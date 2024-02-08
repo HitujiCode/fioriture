@@ -1,18 +1,11 @@
 @use "global" as *;
 
-// .p-sub-flow {
-// }
-
-.p-sub-flow:nth-child(odd) {
+.p-sub-flow:nth-child(3) {
   background-color: $beige;
   padding: rem(50) 0;
   @include mq("md") {
     padding: rem(100) 0;
   }
-}
-
-.p-sub-flow__inner.l-inner {
-  // padding: 0 rem(10);
 }
 
 .p-sub-flow__head {
@@ -22,20 +15,16 @@
 .p-sub-flow__swiper-wrap {
   margin-top: rem(30);
   position: relative;
-  // width: fit-content;//tabでも1つだけ表示
-  // margin-inline: auto;//tabでも1つだけ表示
   @include mq("md") {
     margin-top: rem(40);
   }
 
   .swiper {
-    // width: rem(285);//tabでも1つだけ表示
-    // margin: 0 rem(35);
     padding-bottom: rem(30);
   }
 
   .swiper-slide {
-    width: rem(285); //tabだと見切れる
+    width: rem(285);
     height: auto;
     @include mq("md") {
       width: 100%;

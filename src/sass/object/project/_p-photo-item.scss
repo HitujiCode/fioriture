@@ -23,9 +23,6 @@
   }
 }
 
-.p-photo-item__head {
-}
-
 .p-photo-item__head-main {
   font-size: rem(16);
   font-weight: $semi-bold;
@@ -79,13 +76,6 @@
     width: calc(460 / 960 * 100%);
   }
 }
-
-// .p-photo-item:not(:first-child) .p-photo-item__img {
-//   margin-top: rem(26);
-//   @include mq("md") {
-//     margin-top: initial;
-//   }
-// }
 
 .p-photo-item__img img {
   aspect-ratio: 630/419;
