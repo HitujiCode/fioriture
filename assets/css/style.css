@@ -1942,7 +1942,7 @@ select::-ms-expand {
 }
 
 .p-works-article__img::before {
-	background-image: url("../images/works/icon-zoom.svg");
+	background-image: url("../images/common/icon-zoom.svg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
