@@ -40,8 +40,8 @@ function my_script_init()
 
   // swiper
   wp_enqueue_script('jquery', '//code.jquery.com/jquery-3.7.1.min.js', array(), '1.0.1');
-  wp_enqueue_script('slider-js', '//unpkg.com/swiper@10/swiper-bundle.min.js', array(), '', true);
-  wp_enqueue_style('slider-css', '//unpkg.com/swiper@10/swiper-bundle.min.css', array(), '', 'all');
+  wp_enqueue_script('slider-js', '//unpkg.com/swiper@8/swiper-bundle.min.js', array(), '', true);
+  wp_enqueue_style('slider-css', '//unpkg.com/swiper@8/swiper-bundle.min.css', array(), '', 'all');
 
   // JavaScript
   wp_enqueue_script('my-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '1.0.1', true);

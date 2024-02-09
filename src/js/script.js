@@ -168,7 +168,6 @@ jQuery(function ($) {
     flows.forEach(function (flow) {
       flow.style.opacity = 1;
       flow.style.visibility = "visible";
-      flow.style.transform = "translateY(0px)";
     });
   }
 

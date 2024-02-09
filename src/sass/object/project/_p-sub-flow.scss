@@ -3,14 +3,9 @@
 .p-sub-flow {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
   @include mq("md") {
     opacity: 1;
     visibility: visible;
-    transform: initial;
   }
 }
 
@@ -30,8 +25,6 @@
 .p-sub-flow__swiper-wrap {
   margin-top: rem(30);
   position: relative;
-  // opacity: 1;
-  // transition: opacity 0.1s ease-in-out;
   @include mq("md") {
     margin-top: rem(40);
   }

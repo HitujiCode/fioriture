@@ -1681,8 +1681,6 @@ select::-ms-expand {
 
 .p-sub-flow {
 	opacity: 0;
-	transform: translateY(10px);
-	transition: opacity 0.3s ease, transform 0.3s ease;
 	visibility: hidden;
 }
 
@@ -2930,8 +2928,6 @@ a[href^="tel:"] {
 
 .p-sub-flow {
 	opacity: 1;
-	transform: none;
-	transform: initial;
 	visibility: visible;
 }
 
